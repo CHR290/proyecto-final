@@ -2,7 +2,18 @@
 
 [sub_resource type="SphereMesh" id="SphereMesh_1nt6f"]
 
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_1nt6f"]
+
 [node name="bola" type="Node3D" unique_id=1442723265]
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1848015860]
+transform = Transform3D(0.32838878, 1.5755999, 0, -1.5397936, 0.33602515, 0, 0, 0, 1.945506, -0.617741, 0.23111272, 0.060237765)
 mesh = SubResource("SphereMesh_1nt6f")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="MeshInstance3D" unique_id=920602815]
+transform = Transform3D(0.32838878, 1.5755998, 0, -1.5397936, 0.3360251, 0, 0, 0, 1.9455053, 0.90057826, 0.47356603, -1.2781768)
+mesh = SubResource("SphereMesh_1nt6f")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="." unique_id=1522422422]
+transform = Transform3D(1, 0, 0, 0, -0.0063005704, -0.99998015, 0, 0.99998015, -0.0063005704, 0.1302098, 0, 0.767514)
+mesh = SubResource("CapsuleMesh_1nt6f")
