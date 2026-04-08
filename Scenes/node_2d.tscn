@@ -4,6 +4,11 @@
 [ext_resource type="FontFile" uid="uid://40f5rs1xwmcm" path="res://Fonts/KarmaFuture.ttf" id="2_v1qfn"]
 [ext_resource type="Texture2D" uid="uid://cev7ku5vjwm8s" path="res://Sprites/icono_maletin.png" id="3_6whob"]
 [ext_resource type="Script" uid="uid://b7v42cr2uo6fl" path="res://Scripts/AnimarBoton.gd" id="4_6whob"]
+[ext_resource type="Texture2D" uid="uid://j2dxdwnp1ffp" path="res://Sprites/icono_banco.png" id="4_u7krg"]
+[ext_resource type="Texture2D" uid="uid://0oth3hda6boc" path="res://Sprites/icono_calendario.png" id="6_tx0tn"]
+[ext_resource type="Texture2D" uid="uid://dti5wml8b4d7u" path="res://Sprites/icono_tienda.png" id="7_wjtap"]
+[ext_resource type="Texture2D" uid="uid://decgfc0aw7w44" path="res://Sprites/icono_inversiones.png" id="8_v7gqg"]
+[ext_resource type="Texture2D" uid="uid://bcynxq41md8ds" path="res://Sprites/icono_moneda.png" id="9_chwn1"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_hh5uf"]
 font = ExtResource("2_v1qfn")
@@ -41,7 +46,7 @@ label_settings = SubResource("LabelSettings_hh5uf")
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Trabajo_boton" type="TextureButton" parent="." unique_id=92870703]
+[node name="boton_trabajo" type="TextureButton" parent="." unique_id=92870703]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.094000004
@@ -57,5 +62,95 @@ pivot_offset = Vector2(10, 10)
 texture_normal = ExtResource("3_6whob")
 script = ExtResource("4_6whob")
 
-[connection signal="mouse_entered" from="Trabajo_boton" to="Trabajo_boton" method="_on_mouse_entered"]
-[connection signal="mouse_exited" from="Trabajo_boton" to="Trabajo_boton" method="_on_mouse_exited"]
+[node name="boton_banco" type="TextureButton" parent="." unique_id=1867377732]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.094000004
+anchor_top = 0.296
+anchor_right = 0.094000004
+anchor_bottom = 0.296
+offset_left = 77.808
+offset_top = -8.872002
+offset_right = 97.808
+offset_bottom = 11.127998
+scale = Vector2(4, 4)
+pivot_offset = Vector2(10, 10)
+texture_normal = ExtResource("4_u7krg")
+script = ExtResource("4_6whob")
+
+[node name="boton_calendario" type="TextureButton" parent="." unique_id=737453140]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.094000004
+anchor_top = 0.296
+anchor_right = 0.094000004
+anchor_bottom = 0.296
+offset_left = -10.192001
+offset_top = 78.128
+offset_right = 9.807999
+offset_bottom = 98.128
+scale = Vector2(4, 4)
+pivot_offset = Vector2(10, 10)
+texture_normal = ExtResource("6_tx0tn")
+script = ExtResource("4_6whob")
+
+[node name="boton_tienda" type="TextureButton" parent="." unique_id=954428047]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.094000004
+anchor_top = 0.296
+anchor_right = 0.094000004
+anchor_bottom = 0.296
+offset_left = 77.808
+offset_top = 81.128
+offset_right = 97.808
+offset_bottom = 101.128
+scale = Vector2(4, 4)
+pivot_offset = Vector2(10, 10)
+texture_normal = ExtResource("7_wjtap")
+script = ExtResource("4_6whob")
+
+[node name="boton_inversiones" type="TextureButton" parent="." unique_id=1993112500]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.094000004
+anchor_top = 0.296
+anchor_right = 0.094000004
+anchor_bottom = 0.296
+offset_left = -10.192001
+offset_top = 169.12799
+offset_right = 9.807999
+offset_bottom = 189.12799
+scale = Vector2(4, 4)
+pivot_offset = Vector2(10, 10)
+texture_normal = ExtResource("8_v7gqg")
+script = ExtResource("4_6whob")
+
+[node name="boton_finanzas" type="TextureButton" parent="." unique_id=885471322]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.094000004
+anchor_top = 0.296
+anchor_right = 0.094000004
+anchor_bottom = 0.296
+offset_left = 77.808
+offset_top = 169.12799
+offset_right = 97.808
+offset_bottom = 189.12799
+scale = Vector2(4, 4)
+pivot_offset = Vector2(10, 10)
+texture_normal = ExtResource("9_chwn1")
+script = ExtResource("4_6whob")
+
+[connection signal="mouse_entered" from="boton_trabajo" to="boton_trabajo" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="boton_trabajo" to="boton_trabajo" method="_on_mouse_exited"]
+[connection signal="mouse_entered" from="boton_banco" to="boton_banco" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="boton_banco" to="boton_banco" method="_on_mouse_exited"]
+[connection signal="mouse_entered" from="boton_calendario" to="boton_calendario" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="boton_calendario" to="boton_calendario" method="_on_mouse_exited"]
+[connection signal="mouse_entered" from="boton_tienda" to="boton_tienda" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="boton_tienda" to="boton_tienda" method="_on_mouse_exited"]
+[connection signal="mouse_entered" from="boton_inversiones" to="boton_inversiones" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="boton_inversiones" to="boton_inversiones" method="_on_mouse_exited"]
+[connection signal="mouse_entered" from="boton_finanzas" to="boton_finanzas" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="boton_finanzas" to="boton_finanzas" method="_on_mouse_exited"]
