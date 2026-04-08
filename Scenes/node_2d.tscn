@@ -1,3 +1,10 @@
 [gd_scene format=3 uid="uid://ctyufk1t8gst4"]
 
-[node name="Node2D" type="Node2D" unique_id=366512778]
+[ext_resource type="Texture2D" uid="uid://chu2khxripgud" path="res://Sprites/interfaz_base.png" id="1_j2wod"]
+
+[node name="Main" type="Node2D" unique_id=366512778]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=242615685]
+position = Vector2(192, 108)
+scale = Vector2(2, 2)
+texture = ExtResource("1_j2wod")
