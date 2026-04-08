@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://j2dxdwnp1ffp"
-path="res://.godot/imported/icono_banco.png-33287fdd6bc80f21c8d2aab0b7e7aa8c.ctex"
+uid="uid://dti5wml8b4d7u"
+path="res://.godot/imported/icono_tienda.png-4371b2ff52ae5447c2712dbae7a982d0.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/icono_banco.png"
-dest_files=["res://.godot/imported/icono_banco.png-33287fdd6bc80f21c8d2aab0b7e7aa8c.ctex"]
+source_file="res://Sprites/icono_tienda.png"
+dest_files=["res://.godot/imported/icono_tienda.png-4371b2ff52ae5447c2712dbae7a982d0.ctex"]
 
 [params]
 

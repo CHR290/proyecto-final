@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://j2dxdwnp1ffp"
-path="res://.godot/imported/icono_banco.png-33287fdd6bc80f21c8d2aab0b7e7aa8c.ctex"
+uid="uid://0oth3hda6boc"
+path="res://.godot/imported/icono_calendario.png-8102c5b4204b31a47f7649486b9a50df.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/icono_banco.png"
-dest_files=["res://.godot/imported/icono_banco.png-33287fdd6bc80f21c8d2aab0b7e7aa8c.ctex"]
+source_file="res://Sprites/icono_calendario.png"
+dest_files=["res://.godot/imported/icono_calendario.png-8102c5b4204b31a47f7649486b9a50df.ctex"]
 
 [params]
 
