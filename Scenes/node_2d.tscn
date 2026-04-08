@@ -1,10 +1,10 @@
 [gd_scene format=3 uid="uid://ctyufk1t8gst4"]
 
-[ext_resource type="Texture2D" uid="uid://4v61pat5ar25" path="res://sprites/fondo_negro.png" id="1_j2wod"]
+[ext_resource type="Texture2D" uid="uid://chu2khxripgud" path="res://Sprites/interfaz_base.png" id="1_j2wod"]
 
-[node name="Node2D" type="Node2D" unique_id=366512778]
+[node name="Main" type="Node2D" unique_id=366512778]
 
-[node name="Sprite2D" type="Sprite2D" parent="." unique_id=717645981]
-position = Vector2(579, 373.49997)
-scale = Vector2(18, 16.234375)
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=242615685]
+position = Vector2(192, 108)
+scale = Vector2(2, 2)
 texture = ExtResource("1_j2wod")
