@@ -1,7 +1,8 @@
 [gd_scene format=3 uid="uid://ctyufk1t8gst4"]
 
 [ext_resource type="Texture2D" uid="uid://chu2khxripgud" path="res://Sprites/interfaz_base.png" id="1_j2wod"]
-[ext_resource type="FontFile" uid="uid://40f5rs1xwmcm" path="res://Fonts/KarmaFuture.ttf" id="2_v1qfn"]
+[ext_resource type="Script" uid="uid://cvj1kiyudb40l" path="res://Scripts/ControlDinero.gd" id="1_p20hg"]
+[ext_resource type="FontFile" uid="uid://p7hn8oq4t1r4" path="res://Fonts/advanced_pixel-7.ttf" id="2_v1qfn"]
 [ext_resource type="Texture2D" uid="uid://cev7ku5vjwm8s" path="res://Sprites/icono_maletin.png" id="3_6whob"]
 [ext_resource type="Script" uid="uid://b7v42cr2uo6fl" path="res://Scripts/AnimarBoton.gd" id="4_6whob"]
 [ext_resource type="Texture2D" uid="uid://j2dxdwnp1ffp" path="res://Sprites/icono_banco.png" id="4_u7krg"]
@@ -9,11 +10,20 @@
 [ext_resource type="Texture2D" uid="uid://dti5wml8b4d7u" path="res://Sprites/icono_tienda.png" id="7_wjtap"]
 [ext_resource type="Texture2D" uid="uid://decgfc0aw7w44" path="res://Sprites/icono_inversiones.png" id="8_v7gqg"]
 [ext_resource type="Texture2D" uid="uid://bcynxq41md8ds" path="res://Sprites/icono_moneda.png" id="9_chwn1"]
+[ext_resource type="Texture2D" uid="uid://cfvsgs4h7u715" path="res://Sprites/icono_dinero.png" id="9_hvaui"]
+[ext_resource type="Script" uid="uid://ciujio5etrp6v" path="res://Scripts/AnimarIcono.gd" id="10_2ooml"]
+[ext_resource type="Script" uid="uid://dhdh0ke6ihe8f" path="res://Scripts/reloj.gd" id="13_c32x4"]
+[ext_resource type="Texture2D" uid="uid://cfexi0n6w1653" path="res://Sprites/numeros_reloj.png" id="14_85gyg"]
+[ext_resource type="Texture2D" uid="uid://3h57qr64kph0" path="res://Sprites/dos_puntos.png" id="15_c32x4"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_hh5uf"]
 font = ExtResource("2_v1qfn")
-font_size = 32
-font_color = Color(0.2599174, 0.6175809, 0.3036589, 1)
+font_size = 60
+font_color = Color(0.40784314, 0.6862745, 0.33333334, 1)
+outline_color = Color(0.28235295, 0.49019608, 0.22745098, 1)
+shadow_size = 0
+shadow_color = Color(0.07066453, 0.14886954, 0.051111363, 0.5921569)
+shadow_offset = Vector2(2, 2)
 
 [node name="Main" type="Control" unique_id=1137798224]
 layout_mode = 3
@@ -22,8 +32,9 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_p20hg")
 
-[node name="TextureRect" type="TextureRect" parent="." unique_id=1053998026]
+[node name="Fondo" type="TextureRect" parent="." unique_id=1053998026]
 layout_mode = 1
 anchors_preset = -1
 anchor_right = 1.0
@@ -32,31 +43,17 @@ grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("1_j2wod")
 
-[node name="Label" type="Label" parent="." unique_id=446906608]
-layout_mode = 1
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = -176.0
-offset_top = 32.0
-offset_right = 176.0
-offset_bottom = 80.0
-grow_horizontal = 2
-label_settings = SubResource("LabelSettings_hh5uf")
-horizontal_alignment = 1
-vertical_alignment = 1
-
 [node name="boton_trabajo" type="TextureButton" parent="." unique_id=92870703]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.094000004
-anchor_top = 0.296
+anchor_top = 0.30100003
 anchor_right = 0.094000004
-anchor_bottom = 0.296
+anchor_bottom = 0.30100003
 offset_left = -10.192001
-offset_top = -7.8720016
+offset_top = -10.032013
 offset_right = 9.807999
-offset_bottom = 12.127998
+offset_bottom = 9.967987
 scale = Vector2(4, 4)
 pivot_offset = Vector2(10, 10)
 texture_normal = ExtResource("3_6whob")
@@ -65,14 +62,14 @@ script = ExtResource("4_6whob")
 [node name="boton_banco" type="TextureButton" parent="." unique_id=1867377732]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.094000004
-anchor_top = 0.296
-anchor_right = 0.094000004
-anchor_bottom = 0.296
-offset_left = 77.808
-offset_top = -8.872002
-offset_right = 97.808
-offset_bottom = 11.127998
+anchor_left = 0.208
+anchor_top = 0.29900002
+anchor_right = 0.208
+anchor_bottom = 0.29900002
+offset_left = -9.744003
+offset_top = -10.168015
+offset_right = 10.255997
+offset_bottom = 9.831985
 scale = Vector2(4, 4)
 pivot_offset = Vector2(10, 10)
 texture_normal = ExtResource("4_u7krg")
@@ -82,13 +79,13 @@ script = ExtResource("4_6whob")
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.094000004
-anchor_top = 0.296
+anchor_top = 0.5
 anchor_right = 0.094000004
-anchor_bottom = 0.296
+anchor_bottom = 0.5
 offset_left = -10.192001
-offset_top = 78.128
+offset_top = -10.0
 offset_right = 9.807999
-offset_bottom = 98.128
+offset_bottom = 10.0
 scale = Vector2(4, 4)
 pivot_offset = Vector2(10, 10)
 texture_normal = ExtResource("6_tx0tn")
@@ -97,14 +94,14 @@ script = ExtResource("4_6whob")
 [node name="boton_tienda" type="TextureButton" parent="." unique_id=954428047]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.094000004
-anchor_top = 0.296
-anchor_right = 0.094000004
-anchor_bottom = 0.296
-offset_left = 77.808
-offset_top = 81.128
-offset_right = 97.808
-offset_bottom = 101.128
+anchor_left = 0.208
+anchor_top = 0.507
+anchor_right = 0.208
+anchor_bottom = 0.507
+offset_left = -9.744003
+offset_top = -10.024017
+offset_right = 10.255997
+offset_bottom = 9.975983
 scale = Vector2(4, 4)
 pivot_offset = Vector2(10, 10)
 texture_normal = ExtResource("7_wjtap")
@@ -114,13 +111,13 @@ script = ExtResource("4_6whob")
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.094000004
-anchor_top = 0.296
+anchor_top = 0.711
 anchor_right = 0.094000004
-anchor_bottom = 0.296
+anchor_bottom = 0.711
 offset_left = -10.192001
-offset_top = 169.12799
+offset_top = -10.152008
 offset_right = 9.807999
-offset_bottom = 189.12799
+offset_bottom = 9.847992
 scale = Vector2(4, 4)
 pivot_offset = Vector2(10, 10)
 texture_normal = ExtResource("8_v7gqg")
@@ -129,18 +126,83 @@ script = ExtResource("4_6whob")
 [node name="boton_finanzas" type="TextureButton" parent="." unique_id=885471322]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.094000004
-anchor_top = 0.296
-anchor_right = 0.094000004
-anchor_bottom = 0.296
-offset_left = 77.808
-offset_top = 169.12799
-offset_right = 97.808
-offset_bottom = 189.12799
+anchor_left = 0.208
+anchor_top = 0.711
+anchor_right = 0.208
+anchor_bottom = 0.711
+offset_left = -9.744003
+offset_top = -10.152008
+offset_right = 10.255997
+offset_bottom = 9.847992
 scale = Vector2(4, 4)
 pivot_offset = Vector2(10, 10)
 texture_normal = ExtResource("9_chwn1")
 script = ExtResource("4_6whob")
+
+[node name="contador_efectivo" type="HBoxContainer" parent="." unique_id=999322556]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -166.5
+offset_top = 24.0
+offset_right = 153.5
+offset_bottom = 84.0
+grow_horizontal = 2
+alignment = 1
+
+[node name="Simbolo_dinero" type="TextureRect" parent="contador_efectivo" unique_id=125754393]
+layout_mode = 2
+size_flags_horizontal = 10
+texture = ExtResource("9_hvaui")
+stretch_mode = 5
+script = ExtResource("10_2ooml")
+
+[node name="cantidad_dinero" type="Label" parent="contador_efectivo" unique_id=446906608]
+layout_mode = 2
+size_flags_horizontal = 2
+size_flags_vertical = 1
+text = "0"
+label_settings = SubResource("LabelSettings_hh5uf")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Reloj" type="HBoxContainer" parent="." unique_id=1292617861]
+layout_mode = 0
+offset_left = 588.0
+offset_top = 100.0
+offset_right = 716.0
+offset_bottom = 148.0
+theme_override_constants/separation = 4
+alignment = 1
+script = ExtResource("13_c32x4")
+spritesheet = ExtResource("14_85gyg")
+
+[node name="decena_hora" type="TextureRect" parent="Reloj" unique_id=1240944320]
+custom_minimum_size = Vector2(24, 48)
+layout_mode = 2
+
+[node name="unidad_hora" type="TextureRect" parent="Reloj" unique_id=2115754585]
+custom_minimum_size = Vector2(24, 48)
+layout_mode = 2
+
+[node name="dos_puntos" type="TextureRect" parent="Reloj" unique_id=874547517]
+custom_minimum_size = Vector2(4, 48)
+layout_mode = 2
+texture = ExtResource("15_c32x4")
+expand_mode = 3
+stretch_mode = 5
+
+[node name="decena_minuto" type="TextureRect" parent="Reloj" unique_id=1518898515]
+custom_minimum_size = Vector2(24, 48)
+layout_mode = 2
+
+[node name="unidad_minuto" type="TextureRect" parent="Reloj" unique_id=1023188571]
+custom_minimum_size = Vector2(24, 48)
+layout_mode = 2
+
+[node name="Timer" type="Timer" parent="Reloj" unique_id=1010029848]
+autostart = true
 
 [connection signal="mouse_entered" from="boton_trabajo" to="boton_trabajo" method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="boton_trabajo" to="boton_trabajo" method="_on_mouse_exited"]
