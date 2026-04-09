@@ -25,7 +25,7 @@ shadow_size = 0
 shadow_color = Color(0.07066453, 0.14886954, 0.051111363, 0.5921569)
 shadow_offset = Vector2(2, 2)
 
-[node name="Main" type="Control" unique_id=1137798224]
+[node name="InterfazPrincipal" type="Control" unique_id=1137798224]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -144,9 +144,9 @@ layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = -166.5
+offset_left = -39.0
 offset_top = 24.0
-offset_right = 153.5
+offset_right = 41.0
 offset_bottom = 84.0
 grow_horizontal = 2
 alignment = 1
@@ -203,6 +203,21 @@ layout_mode = 2
 
 [node name="Timer" type="Timer" parent="Reloj" unique_id=1010029848]
 autostart = true
+
+[node name="calendario" type="HBoxContainer" parent="." unique_id=307422826]
+layout_mode = 0
+offset_left = 624.0
+offset_top = 220.0
+offset_right = 684.0
+offset_bottom = 260.0
+
+[node name="decena_dia" type="TextureRect" parent="calendario" unique_id=1948003435]
+custom_minimum_size = Vector2(24, 48)
+layout_mode = 2
+
+[node name="unidad_dia" type="TextureRect" parent="calendario" unique_id=1846483894]
+custom_minimum_size = Vector2(24, 48)
+layout_mode = 2
 
 [connection signal="mouse_entered" from="boton_trabajo" to="boton_trabajo" method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="boton_trabajo" to="boton_trabajo" method="_on_mouse_exited"]
