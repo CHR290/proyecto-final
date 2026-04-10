@@ -1,5 +1,5 @@
 extends Control
-var money: int = 5000
+var money: int = 999999999999
 
 func _ready():
 	update_money_display()

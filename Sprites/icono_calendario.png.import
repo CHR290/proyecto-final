@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://0oth3hda6boc"
-path="res://.godot/imported/icono_calendario.png-8102c5b4204b31a47f7649486b9a50df.ctex"
+path="res://.godot/imported/icono_calendario.png-c31a3cfcc331721329d3c196cb03ab9d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/icono_calendario.png"
-dest_files=["res://.godot/imported/icono_calendario.png-8102c5b4204b31a47f7649486b9a50df.ctex"]
+source_file="res://sprites/icono_calendario.png"
+dest_files=["res://.godot/imported/icono_calendario.png-c31a3cfcc331721329d3c196cb03ab9d.ctex"]
 
 [params]
 
