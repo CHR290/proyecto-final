@@ -145,19 +145,28 @@ layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = -176.0
-offset_top = 28.0
-offset_right = 168.0
+offset_left = -39.0
+offset_top = 24.0
+offset_right = 41.0
 offset_bottom = 84.0
 grow_horizontal = 2
 alignment = 1
 
 [node name="Simbolo_dinero" type="TextureRect" parent="contador_efectivo" unique_id=125754393]
 layout_mode = 2
-size_flags_horizontal = 6
+size_flags_horizontal = 10
 texture = ExtResource("9_hvaui")
 stretch_mode = 5
 script = ExtResource("10_2ooml")
+
+[node name="cantidad_dinero" type="Label" parent="contador_efectivo" unique_id=446906608]
+layout_mode = 2
+size_flags_horizontal = 2
+size_flags_vertical = 1
+text = "0"
+label_settings = SubResource("LabelSettings_hh5uf")
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="Reloj" type="HBoxContainer" parent="." unique_id=1292617861]
 modulate = Color(0.36078432, 0.2901961, 0.24313726, 1)
@@ -238,23 +247,6 @@ layout_mode = 2
 [node name="unidad_dia" type="TextureRect" parent="Calendario/dia" unique_id=1846483894]
 custom_minimum_size = Vector2(24, 48)
 layout_mode = 2
-
-[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1880849465]
-layout_mode = 0
-offset_left = 720.0
-offset_top = 168.0
-offset_right = 732.0
-offset_bottom = 276.0
-
-[node name="indicador_semana" type="TextureRect" parent="." unique_id=1090859584]
-modulate = Color(0.36078432, 0.2901961, 0.24313726, 1)
-layout_mode = 0
-offset_left = 720.0
-offset_top = 168.0
-offset_right = 732.0
-offset_bottom = 180.0
-texture = SubResource("CanvasTexture_gwne5")
-script = ExtResource("17_gwne5")
 
 [connection signal="mouse_entered" from="boton_trabajo" to="boton_trabajo" method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="boton_trabajo" to="boton_trabajo" method="_on_mouse_exited"]

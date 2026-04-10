@@ -17,7 +17,7 @@ var minutes: int = 00
 var day: int = 1
 var month: int = 1
 var year: int = 2025
-var weekday: int = 0 
+var weekday: int = 1 
 var time_accumulator: float = 0.0
 # Función para obtener la imagen de una letra
 func get_char_texture(character: String) -> AtlasTexture:
@@ -67,10 +67,9 @@ func advance_time(mo: int, d: int, h: int, m: int):
 		hours -= 24
 		day += 1
 		weekday += 1
-		if weekday > 6:
-			weekday = 0
+		if weekday > 7:
+			weekday = 1
 	day += d
-	$"/root/InterfazPrincipal/indicador_semana".move_to_day(weekday)
 	if month == 2:
 		while day > 28:
 			day -= 28
@@ -113,3 +112,4 @@ func update_clock_ui():
 	$"/root/InterfazPrincipal/Calendario/mes/letra_uno".texture = get_char_texture(month_name[0])
 	$"/root/InterfazPrincipal/Calendario/mes/letra_dos".texture = get_char_texture(month_name[1])
 	$"/root/InterfazPrincipal/Calendario/mes/letra_tres".texture = get_char_texture(month_name[2])
+
