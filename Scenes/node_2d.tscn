@@ -1,23 +1,30 @@
 [gd_scene format=3 uid="uid://ctyufk1t8gst4"]
 
-[ext_resource type="Texture2D" uid="uid://chu2khxripgud" path="res://Sprites/interfaz_base.png" id="1_j2wod"]
+[ext_resource type="Texture2D" uid="uid://chu2khxripgud" path="res://sprites/interfaz_base.png" id="1_j2wod"]
 [ext_resource type="Script" uid="uid://cvj1kiyudb40l" path="res://Scripts/ControlDinero.gd" id="1_p20hg"]
+[ext_resource type="FontFile" uid="uid://p7hn8oq4t1r4" path="res://Fonts/advanced_pixel-7.ttf" id="2_v1qfn"]
 [ext_resource type="Texture2D" uid="uid://cev7ku5vjwm8s" path="res://Sprites/icono_maletin.png" id="3_6whob"]
 [ext_resource type="Script" uid="uid://b7v42cr2uo6fl" path="res://Scripts/AnimarBoton.gd" id="4_6whob"]
-[ext_resource type="Texture2D" uid="uid://j2dxdwnp1ffp" path="res://Sprites/icono_banco.png" id="4_u7krg"]
-[ext_resource type="Texture2D" uid="uid://0oth3hda6boc" path="res://Sprites/icono_calendario.png" id="6_tx0tn"]
-[ext_resource type="Texture2D" uid="uid://dti5wml8b4d7u" path="res://Sprites/icono_tienda.png" id="7_wjtap"]
-[ext_resource type="Texture2D" uid="uid://decgfc0aw7w44" path="res://Sprites/icono_inversiones.png" id="8_v7gqg"]
-[ext_resource type="Texture2D" uid="uid://bcynxq41md8ds" path="res://Sprites/icono_moneda.png" id="9_chwn1"]
-[ext_resource type="Texture2D" uid="uid://cfvsgs4h7u715" path="res://Sprites/icono_dinero.png" id="9_hvaui"]
+[ext_resource type="Texture2D" uid="uid://j2dxdwnp1ffp" path="res://sprites/icono_banco.png" id="4_u7krg"]
+[ext_resource type="Texture2D" uid="uid://0oth3hda6boc" path="res://sprites/icono_calendario.png" id="6_tx0tn"]
+[ext_resource type="Texture2D" uid="uid://dti5wml8b4d7u" path="res://sprites/icono_tienda.png" id="7_wjtap"]
+[ext_resource type="Texture2D" uid="uid://decgfc0aw7w44" path="res://sprites/icono_inversiones.png" id="8_v7gqg"]
+[ext_resource type="Texture2D" uid="uid://bcynxq41md8ds" path="res://sprites/icono_moneda.png" id="9_chwn1"]
+[ext_resource type="Texture2D" uid="uid://cfvsgs4h7u715" path="res://sprites/icono_dinero.png" id="9_hvaui"]
 [ext_resource type="Script" uid="uid://ciujio5etrp6v" path="res://Scripts/AnimarIcono.gd" id="10_2ooml"]
 [ext_resource type="Script" uid="uid://dhdh0ke6ihe8f" path="res://Scripts/reloj.gd" id="13_c32x4"]
 [ext_resource type="Texture2D" uid="uid://cfexi0n6w1653" path="res://Sprites/numeros_reloj.png" id="14_85gyg"]
 [ext_resource type="Texture2D" uid="uid://3h57qr64kph0" path="res://Sprites/dos_puntos.png" id="15_c32x4"]
 [ext_resource type="Texture2D" uid="uid://c03sc1k7ntdrx" path="res://Sprites/abecedario.png" id="15_fg7i4"]
-[ext_resource type="Script" uid="uid://ckqfhulxdf5eu" path="res://Scripts/indicador_semana.gd" id="17_gwne5"]
 
-[sub_resource type="CanvasTexture" id="CanvasTexture_gwne5"]
+[sub_resource type="LabelSettings" id="LabelSettings_hh5uf"]
+font = ExtResource("2_v1qfn")
+font_size = 60
+font_color = Color(0.40784314, 0.6862745, 0.33333334, 1)
+outline_color = Color(0.28235295, 0.49019608, 0.22745098, 1)
+shadow_size = 0
+shadow_color = Color(0.07066453, 0.14886954, 0.051111363, 0.5921569)
+shadow_offset = Vector2(2, 2)
 
 [node name="InterfazPrincipal" type="Control" unique_id=1137798224]
 layout_mode = 3
@@ -162,7 +169,7 @@ offset_bottom = 148.0
 theme_override_constants/separation = 4
 alignment = 1
 script = ExtResource("13_c32x4")
-speed = 3
+speed = 0
 spritesheet = ExtResource("14_85gyg")
 alphabet_spritesheet = ExtResource("15_fg7i4")
 
