@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://decgfc0aw7w44"
-path="res://.godot/imported/icono_inversiones.png-ef4ceb7eb65d1476528e31c19dbd047c.ctex"
+path="res://.godot/imported/icono_inversiones.png-1b458776b483489c74042b01d9cd7dd7.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/icono_inversiones.png"
-dest_files=["res://.godot/imported/icono_inversiones.png-ef4ceb7eb65d1476528e31c19dbd047c.ctex"]
+source_file="res://Sprites/icono_inversiones.png"
+dest_files=["res://.godot/imported/icono_inversiones.png-1b458776b483489c74042b01d9cd7dd7.ctex"]
 
 [params]
 

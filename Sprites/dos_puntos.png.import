@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://3h57qr64kph0"
-path="res://.godot/imported/dos_puntos.png-5aad6a09f6808c8e711d47be1fc5dfe9.ctex"
+path="res://.godot/imported/dos_puntos.png-0933e638ba68ba2083c10faf65325b35.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/dos_puntos.png"
-dest_files=["res://.godot/imported/dos_puntos.png-5aad6a09f6808c8e711d47be1fc5dfe9.ctex"]
+source_file="res://Sprites/dos_puntos.png"
+dest_files=["res://.godot/imported/dos_puntos.png-0933e638ba68ba2083c10faf65325b35.ctex"]
 
 [params]
 
