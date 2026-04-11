@@ -1,14 +1,53 @@
-extends Control
-var money: int = 999999999999
+extends HBoxContainer
 
+@export var digit_spritesheet: Texture2D
+@export var money: int = 3000
+@onready var contenedor_sombras = $Control/sombras
+@onready var contenedor_digitos = $digitos
+var digit_w: int = 6
+var digit_h: int = 12
+var color_sombra: Color = Color(0, 0, 0, 0.6) 
+var desplazamiento_sombra: Vector2 = Vector2(8, 4) 
 func _ready():
-	update_money_display()
+	contenedor_sombras.modulate = color_sombra
+	contenedor_sombras.position = desplazamiento_sombra
+	update_money_display(money)
 
-# Esta función actualiza el texto en pantalla
-func update_money_display():
-	$contador_efectivo/cantidad_dinero.text = str(money)
+func update_money_display(amount: int):
+	
+	for child in contenedor_digitos.get_children():
+		child.queue_free()	
+	for child in contenedor_sombras.get_children():
+		child.queue_free()	
+	# Convertimos el número a texto para recorrer cada dígito
+	var money_string = str(amount)
 
-# Llama a esta función cada vez que el jugador gane dinero
-func change_money(amount: int):
-	money += amount
-	update_money_display()
+	
+	#Creamos un TextureRect por cada número
+	for char_digit in money_string:
+		var digit_val = int(char_digit)
+		var texture_recortada = get_digit_texture(digit_val)
+		
+		var rect_sombra = _create_rect_digit(texture_recortada)
+		contenedor_sombras.add_child(rect_sombra)
+		
+		var rect_real = _create_rect_digit(texture_recortada)
+		contenedor_digitos.add_child(rect_real)
+	queue_sort()
+func _create_rect_digit(tex: Texture2D) -> TextureRect:
+	var rect = TextureRect.new()
+	rect.texture = tex
+	# Configuraciones para Pixel Art
+	rect.texture_filter = CanvasItem.TEXTURE_FILTER_NEAREST
+	rect.stretch_mode = TextureRect.STRETCH_KEEP_ASPECT_CENTERED
+	# Aplicamos la escala
+	rect.custom_minimum_size = Vector2(digit_w * 4, digit_h * 4)
+	return rect
+func get_digit_texture(digit: int) -> AtlasTexture:
+	var atlas = AtlasTexture.new()
+	atlas.atlas = digit_spritesheet
+	atlas.region = Rect2(digit * digit_w, 0, digit_w, digit_h)
+	return atlas
+func add_money(value):
+	money += value
+	update_money_display(money)

@@ -1,6 +1,6 @@
 extends HBoxContainer
 @export_group("velocidad del tiempo")
-@export_range(0, 4) var speed: int = 1:
+var speed: int = 0:
 	set(value):
 		speed = value
 @export_group("Configuración numeros")
@@ -11,13 +11,14 @@ extends HBoxContainer
 @export var alphabet_spritesheet: Texture2D# La imagen que contiene las letras del abecedario
 @export var char_width_month: int = 7
 @export var char_height_month: int = 7
+@export var indicador: TextureRect
 const MONTHS = ["ENE", "FEB", "MAR", "ABR", "MAY", "JUN", "JUL", "AGO", "SEP", "OCT", "NOV", "DIC"]
 var hours: int = 12
 var minutes: int = 00
 var day: int = 1
-var month: int = 1
+var month: int = 10
 var year: int = 2025
-var weekday: int = 1 
+var weekday: int = 3
 var time_accumulator: float = 0.0
 # Función para obtener la imagen de una letra
 func get_char_texture(character: String) -> AtlasTexture:
@@ -28,6 +29,8 @@ func get_char_texture(character: String) -> AtlasTexture:
 	atlas.region = Rect2(index * char_width_month, 0, char_width_month, char_height_month)
 	return atlas
 func _ready():
+	var y_inicial = indicador.posiciones[weekday - 1]
+	indicador.position.y = y_inicial
 	update_clock_ui()
 # Función para obtener la imagen de un número
 func get_digit_texture(digit: int) -> AtlasTexture:
@@ -44,6 +47,7 @@ func _process(delta):
 	# Definimos cuántos minutos de juego pasan por cada segundo real
 	var minutes_per_second: float = 0.0
 	match speed:
+		0: minutes_per_second = 0.0     # Pausado
 		1: minutes_per_second = 1.0     # 1 min/seg
 		2: minutes_per_second = 10.0    # 10 min/seg
 		3: minutes_per_second = 60.0    # 1 hora/seg
@@ -69,6 +73,7 @@ func advance_time(mo: int, d: int, h: int, m: int):
 		weekday += 1
 		if weekday > 7:
 			weekday = 1
+		indicador.mover_indicador(weekday - 1)
 	day += d
 	if month == 2:
 		while day > 28:
@@ -112,4 +117,3 @@ func update_clock_ui():
 	$"/root/InterfazPrincipal/Calendario/mes/letra_uno".texture = get_char_texture(month_name[0])
 	$"/root/InterfazPrincipal/Calendario/mes/letra_dos".texture = get_char_texture(month_name[1])
 	$"/root/InterfazPrincipal/Calendario/mes/letra_tres".texture = get_char_texture(month_name[2])
-

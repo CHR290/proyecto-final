@@ -1,30 +1,25 @@
 [gd_scene format=3 uid="uid://ctyufk1t8gst4"]
 
-[ext_resource type="Texture2D" uid="uid://chu2khxripgud" path="res://sprites/interfaz_base.png" id="1_j2wod"]
+[ext_resource type="Texture2D" uid="uid://chu2khxripgud" path="res://Sprites/interfaz_base.png" id="1_j2wod"]
 [ext_resource type="Script" uid="uid://cvj1kiyudb40l" path="res://Scripts/ControlDinero.gd" id="1_p20hg"]
-[ext_resource type="FontFile" uid="uid://p7hn8oq4t1r4" path="res://Fonts/advanced_pixel-7.ttf" id="2_v1qfn"]
 [ext_resource type="Texture2D" uid="uid://cev7ku5vjwm8s" path="res://Sprites/icono_maletin.png" id="3_6whob"]
 [ext_resource type="Script" uid="uid://b7v42cr2uo6fl" path="res://Scripts/AnimarBoton.gd" id="4_6whob"]
-[ext_resource type="Texture2D" uid="uid://j2dxdwnp1ffp" path="res://sprites/icono_banco.png" id="4_u7krg"]
-[ext_resource type="Texture2D" uid="uid://0oth3hda6boc" path="res://sprites/icono_calendario.png" id="6_tx0tn"]
-[ext_resource type="Texture2D" uid="uid://dti5wml8b4d7u" path="res://sprites/icono_tienda.png" id="7_wjtap"]
-[ext_resource type="Texture2D" uid="uid://decgfc0aw7w44" path="res://sprites/icono_inversiones.png" id="8_v7gqg"]
-[ext_resource type="Texture2D" uid="uid://bcynxq41md8ds" path="res://sprites/icono_moneda.png" id="9_chwn1"]
-[ext_resource type="Texture2D" uid="uid://cfvsgs4h7u715" path="res://sprites/icono_dinero.png" id="9_hvaui"]
+[ext_resource type="Texture2D" uid="uid://j2dxdwnp1ffp" path="res://Sprites/icono_banco.png" id="4_u7krg"]
+[ext_resource type="Texture2D" uid="uid://0oth3hda6boc" path="res://Sprites/icono_calendario.png" id="6_tx0tn"]
+[ext_resource type="Texture2D" uid="uid://dti5wml8b4d7u" path="res://Sprites/icono_tienda.png" id="7_wjtap"]
+[ext_resource type="Texture2D" uid="uid://decgfc0aw7w44" path="res://Sprites/icono_inversiones.png" id="8_v7gqg"]
+[ext_resource type="Texture2D" uid="uid://bcynxq41md8ds" path="res://Sprites/icono_moneda.png" id="9_chwn1"]
+[ext_resource type="Texture2D" uid="uid://cfvsgs4h7u715" path="res://Sprites/icono_dinero.png" id="9_hvaui"]
 [ext_resource type="Script" uid="uid://ciujio5etrp6v" path="res://Scripts/AnimarIcono.gd" id="10_2ooml"]
 [ext_resource type="Script" uid="uid://dhdh0ke6ihe8f" path="res://Scripts/reloj.gd" id="13_c32x4"]
-[ext_resource type="Texture2D" uid="uid://cfexi0n6w1653" path="res://Sprites/numeros_reloj.png" id="14_85gyg"]
+[ext_resource type="Texture2D" uid="uid://cfexi0n6w1653" path="res://Sprites/numeros.png" id="14_85gyg"]
 [ext_resource type="Texture2D" uid="uid://3h57qr64kph0" path="res://Sprites/dos_puntos.png" id="15_c32x4"]
 [ext_resource type="Texture2D" uid="uid://c03sc1k7ntdrx" path="res://Sprites/abecedario.png" id="15_fg7i4"]
+[ext_resource type="Script" uid="uid://ypvfag1wwjsm" path="res://Scripts/indicador_semana.gd" id="16_fg7i4"]
+[ext_resource type="Texture2D" uid="uid://bptwj5pkj61cd" path="res://Sprites/indicador.png" id="17_hpu6p"]
+[ext_resource type="Script" uid="uid://b1aqmq4dhovvv" path="res://Scripts/control_velocidad.gd" id="18_op2xg"]
 
-[sub_resource type="LabelSettings" id="LabelSettings_hh5uf"]
-font = ExtResource("2_v1qfn")
-font_size = 60
-font_color = Color(0.40784314, 0.6862745, 0.33333334, 1)
-outline_color = Color(0.28235295, 0.49019608, 0.22745098, 1)
-shadow_size = 0
-shadow_color = Color(0.07066453, 0.14886954, 0.051111363, 0.5921569)
-shadow_offset = Vector2(2, 2)
+[sub_resource type="CanvasTexture" id="CanvasTexture_c32x4"]
 
 [node name="InterfazPrincipal" type="Control" unique_id=1137798224]
 layout_mode = 3
@@ -33,7 +28,6 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_p20hg")
 
 [node name="Fondo" type="TextureRect" parent="." unique_id=1053998026]
 layout_mode = 1
@@ -145,30 +139,41 @@ layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = -39.0
-offset_top = 24.0
-offset_right = 41.0
-offset_bottom = 84.0
+offset_left = -172.0
+offset_top = 30.0
+offset_right = 172.0
+offset_bottom = 78.0
 grow_horizontal = 2
 alignment = 1
+script = ExtResource("1_p20hg")
+digit_spritesheet = ExtResource("14_85gyg")
+money = 9999999999
 
 [node name="Simbolo_dinero" type="TextureRect" parent="contador_efectivo" unique_id=125754393]
 layout_mode = 2
-size_flags_horizontal = 10
+size_flags_horizontal = 8
 texture = ExtResource("9_hvaui")
 stretch_mode = 5
 script = ExtResource("10_2ooml")
 
-[node name="cantidad_dinero" type="Label" parent="contador_efectivo" unique_id=446906608]
+[node name="Control" type="Control" parent="contador_efectivo" unique_id=1563154779]
 layout_mode = 2
-size_flags_horizontal = 2
-size_flags_vertical = 1
-text = "0"
-label_settings = SubResource("LabelSettings_hh5uf")
-horizontal_alignment = 1
-vertical_alignment = 1
+size_flags_horizontal = 0
+size_flags_vertical = 0
 
-[node name="Reloj" type="HBoxContainer" parent="." unique_id=1292617861]
+[node name="sombras" type="HBoxContainer" parent="contador_efectivo/Control" unique_id=1350253358]
+layout_mode = 0
+offset_left = 4.0
+offset_top = 4.0
+offset_right = 4.0
+offset_bottom = 4.0
+
+[node name="digitos" type="HBoxContainer" parent="contador_efectivo" unique_id=1112976649]
+modulate = Color(0.40784314, 0.6862745, 0.33333334, 1)
+layout_mode = 2
+size_flags_horizontal = 0
+
+[node name="Reloj" type="HBoxContainer" parent="." unique_id=1292617861 node_paths=PackedStringArray("indicador")]
 modulate = Color(0.36078432, 0.2901961, 0.24313726, 1)
 layout_mode = 0
 offset_left = 588.0
@@ -178,9 +183,9 @@ offset_bottom = 148.0
 theme_override_constants/separation = 4
 alignment = 1
 script = ExtResource("13_c32x4")
-speed = 0
 spritesheet = ExtResource("14_85gyg")
 alphabet_spritesheet = ExtResource("15_fg7i4")
+indicador = NodePath("../indicador_semana")
 
 [node name="decena_hora" type="TextureRect" parent="Reloj" unique_id=1240944320]
 custom_minimum_size = Vector2(24, 48)
@@ -248,15 +253,27 @@ layout_mode = 2
 custom_minimum_size = Vector2(24, 48)
 layout_mode = 2
 
-[connection signal="mouse_entered" from="boton_trabajo" to="boton_trabajo" method="_on_mouse_entered"]
-[connection signal="mouse_exited" from="boton_trabajo" to="boton_trabajo" method="_on_mouse_exited"]
-[connection signal="mouse_entered" from="boton_banco" to="boton_banco" method="_on_mouse_entered"]
-[connection signal="mouse_exited" from="boton_banco" to="boton_banco" method="_on_mouse_exited"]
-[connection signal="mouse_entered" from="boton_calendario" to="boton_calendario" method="_on_mouse_entered"]
-[connection signal="mouse_exited" from="boton_calendario" to="boton_calendario" method="_on_mouse_exited"]
-[connection signal="mouse_entered" from="boton_tienda" to="boton_tienda" method="_on_mouse_entered"]
-[connection signal="mouse_exited" from="boton_tienda" to="boton_tienda" method="_on_mouse_exited"]
-[connection signal="mouse_entered" from="boton_inversiones" to="boton_inversiones" method="_on_mouse_entered"]
-[connection signal="mouse_exited" from="boton_inversiones" to="boton_inversiones" method="_on_mouse_exited"]
-[connection signal="mouse_entered" from="boton_finanzas" to="boton_finanzas" method="_on_mouse_entered"]
-[connection signal="mouse_exited" from="boton_finanzas" to="boton_finanzas" method="_on_mouse_exited"]
+[node name="indicador_semana" type="TextureRect" parent="." unique_id=196474091]
+modulate = Color(0.36078432, 0.2901961, 0.24313726, 1)
+layout_mode = 0
+offset_left = 720.0
+offset_top = 168.0
+offset_right = 732.0
+offset_bottom = 180.0
+texture = SubResource("CanvasTexture_c32x4")
+script = ExtResource("16_fg7i4")
+
+[node name="control_velocidad" type="Control" parent="." unique_id=1423821436]
+anchors_preset = 0
+offset_left = 572.0
+offset_top = 62.0
+offset_right = 732.0
+offset_bottom = 62.0
+
+[node name="indicador" type="TextureRect" parent="control_velocidad" unique_id=877580066]
+layout_mode = 0
+offset_top = -14.0
+offset_right = 16.0
+offset_bottom = 14.0
+texture = ExtResource("17_hpu6p")
+script = ExtResource("18_op2xg")

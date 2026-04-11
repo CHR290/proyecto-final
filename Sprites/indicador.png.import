@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cfexi0n6w1653"
-path="res://.godot/imported/numeros_reloj.png-289b55913e33337e335e21bca8d6da5e.ctex"
+uid="uid://bptwj5pkj61cd"
+path="res://.godot/imported/indicador.png-b4a19364ca463add3be04720effde93f.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/numeros_reloj.png"
-dest_files=["res://.godot/imported/numeros_reloj.png-289b55913e33337e335e21bca8d6da5e.ctex"]
+source_file="res://Sprites/indicador.png"
+dest_files=["res://.godot/imported/indicador.png-b4a19364ca463add3be04720effde93f.ctex"]
 
 [params]
 
