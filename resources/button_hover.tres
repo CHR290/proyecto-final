@@ -1,0 +1,7 @@
+[gd_resource type="StyleBoxTexture" format=3 uid="uid://bifcbhrm1ax0a"]
+
+[ext_resource type="Texture2D" uid="uid://dvrg0hh2nmjxr" path="res://Sprites/interfaz/button_hover.png" id="1_yyl7x"]
+
+[resource]
+texture = ExtResource("1_yyl7x")
+region_rect = Rect2(0, 0, 156, 44)

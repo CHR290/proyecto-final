@@ -1,0 +1,304 @@
+[gd_scene format=3 uid="uid://ctyufk1t8gst4"]
+
+[ext_resource type="Script" uid="uid://cvyw2j7yeslom" path="res://Scripts/interfazPrincipal.gd" id="1_5jhjj"]
+[ext_resource type="Texture2D" uid="uid://chu2khxripgud" path="res://Sprites/interfaz/interfaz_base.png" id="1_vmjln"]
+[ext_resource type="Texture2D" uid="uid://cev7ku5vjwm8s" path="res://Sprites/interfaz/icono_maletin.png" id="2_5jhjj"]
+[ext_resource type="Script" uid="uid://b7v42cr2uo6fl" path="res://Scripts/AnimarBoton.gd" id="3_pdv2c"]
+[ext_resource type="Texture2D" uid="uid://j2dxdwnp1ffp" path="res://Sprites/interfaz/icono_banco.png" id="4_px3cy"]
+[ext_resource type="Texture2D" uid="uid://0oth3hda6boc" path="res://Sprites/interfaz/icono_calendario.png" id="5_fhsir"]
+[ext_resource type="Texture2D" uid="uid://dti5wml8b4d7u" path="res://Sprites/interfaz/icono_tienda.png" id="6_47irw"]
+[ext_resource type="Texture2D" uid="uid://decgfc0aw7w44" path="res://Sprites/interfaz/icono_inversiones.png" id="7_wbk2n"]
+[ext_resource type="Texture2D" uid="uid://bcynxq41md8ds" path="res://Sprites/interfaz/icono_moneda.png" id="8_x1nb3"]
+[ext_resource type="Script" uid="uid://cvj1kiyudb40l" path="res://Scripts/ControlDinero.gd" id="9_dxuy8"]
+[ext_resource type="Texture2D" uid="uid://cfexi0n6w1653" path="res://Sprites/extras/numeros.png" id="10_xooom"]
+[ext_resource type="Texture2D" uid="uid://cfvsgs4h7u715" path="res://Sprites/interfaz/icono_dinero.png" id="11_sdey8"]
+[ext_resource type="Script" uid="uid://ciujio5etrp6v" path="res://Scripts/AnimarIcono.gd" id="12_44adm"]
+[ext_resource type="Script" uid="uid://dhdh0ke6ihe8f" path="res://Scripts/reloj.gd" id="13_s3xe3"]
+[ext_resource type="Texture2D" uid="uid://c03sc1k7ntdrx" path="res://Sprites/extras/abecedario.png" id="14_ebxty"]
+[ext_resource type="Texture2D" uid="uid://3h57qr64kph0" path="res://Sprites/extras/dos_puntos.png" id="15_lficq"]
+[ext_resource type="Script" uid="uid://ypvfag1wwjsm" path="res://Scripts/indicador_semana.gd" id="16_6vngg"]
+[ext_resource type="Texture2D" uid="uid://bptwj5pkj61cd" path="res://Sprites/interfaz/indicador.png" id="17_l5sm6"]
+[ext_resource type="Script" uid="uid://b1aqmq4dhovvv" path="res://Scripts/control_velocidad.gd" id="18_h1aem"]
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_c32x4"]
+
+[node name="InterfazPrincipal" type="Control" unique_id=1137798224]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 1
+script = ExtResource("1_5jhjj")
+
+[node name="Fondo" type="TextureRect" parent="." unique_id=1053998026]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_vmjln")
+
+[node name="boton_trabajo" type="TextureButton" parent="." unique_id=92870703]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.094000004
+anchor_top = 0.296
+anchor_right = 0.094000004
+anchor_bottom = 0.296
+offset_left = -8.192001
+offset_top = -7.8720016
+offset_right = 7.8079987
+offset_bottom = 8.127998
+scale = Vector2(4, 4)
+pivot_offset = Vector2(8, 8)
+texture_normal = ExtResource("2_5jhjj")
+script = ExtResource("3_pdv2c")
+
+[node name="boton_banco" type="TextureButton" parent="." unique_id=1867377732]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.208
+anchor_top = 0.296
+anchor_right = 0.208
+anchor_bottom = 0.296
+offset_left = -7.7440033
+offset_top = -7.8720016
+offset_right = 8.255997
+offset_bottom = 8.127998
+scale = Vector2(4, 4)
+pivot_offset = Vector2(8, 8)
+texture_normal = ExtResource("4_px3cy")
+script = ExtResource("3_pdv2c")
+
+[node name="boton_calendario" type="TextureButton" parent="." unique_id=737453140]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.094000004
+anchor_top = 0.5
+anchor_right = 0.094000004
+anchor_bottom = 0.5
+offset_left = -8.192001
+offset_top = -8.0
+offset_right = 7.8079987
+offset_bottom = 8.0
+scale = Vector2(4, 4)
+pivot_offset = Vector2(8, 8)
+texture_normal = ExtResource("5_fhsir")
+script = ExtResource("3_pdv2c")
+
+[node name="boton_tienda" type="TextureButton" parent="." unique_id=954428047]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.208
+anchor_top = 0.5
+anchor_right = 0.208
+anchor_bottom = 0.5
+offset_left = -7.7440033
+offset_top = -8.0
+offset_right = 8.255997
+offset_bottom = 8.0
+scale = Vector2(4, 4)
+pivot_offset = Vector2(8, 8)
+texture_normal = ExtResource("6_47irw")
+script = ExtResource("3_pdv2c")
+
+[node name="boton_inversiones" type="TextureButton" parent="." unique_id=1993112500]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.094000004
+anchor_top = 0.70400006
+anchor_right = 0.094000004
+anchor_bottom = 0.70400006
+offset_left = -8.192001
+offset_top = -8.128021
+offset_right = 7.8079987
+offset_bottom = 7.8719788
+scale = Vector2(4, 4)
+pivot_offset = Vector2(8, 8)
+texture_normal = ExtResource("7_wbk2n")
+script = ExtResource("3_pdv2c")
+
+[node name="boton_finanzas" type="TextureButton" parent="." unique_id=885471322]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.208
+anchor_top = 0.70400006
+anchor_right = 0.208
+anchor_bottom = 0.70400006
+offset_left = -7.7440033
+offset_top = -8.128021
+offset_right = 8.255997
+offset_bottom = 7.8719788
+scale = Vector2(4, 4)
+pivot_offset = Vector2(8, 8)
+texture_normal = ExtResource("8_x1nb3")
+script = ExtResource("3_pdv2c")
+
+[node name="contador_efectivo" type="HBoxContainer" parent="." unique_id=999322556]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -172.0
+offset_top = 30.0
+offset_right = 172.0
+offset_bottom = 78.0
+grow_horizontal = 2
+alignment = 1
+script = ExtResource("9_dxuy8")
+digit_spritesheet = ExtResource("10_xooom")
+money = 9999999999
+
+[node name="Simbolo_dinero" type="TextureRect" parent="contador_efectivo" unique_id=125754393]
+layout_mode = 2
+size_flags_horizontal = 8
+texture = ExtResource("11_sdey8")
+stretch_mode = 5
+script = ExtResource("12_44adm")
+
+[node name="Control" type="Control" parent="contador_efectivo" unique_id=1563154779]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+
+[node name="sombras" type="HBoxContainer" parent="contador_efectivo/Control" unique_id=1350253358]
+layout_mode = 0
+offset_left = 4.0
+offset_top = 4.0
+offset_right = 4.0
+offset_bottom = 4.0
+
+[node name="digitos" type="HBoxContainer" parent="contador_efectivo" unique_id=1112976649]
+modulate = Color(0.40784314, 0.6862745, 0.33333334, 1)
+layout_mode = 2
+size_flags_horizontal = 0
+
+[node name="Reloj" type="HBoxContainer" parent="." unique_id=1292617861 node_paths=PackedStringArray("indicador")]
+modulate = Color(0.36078432, 0.2901961, 0.24313726, 1)
+layout_mode = 0
+offset_left = 588.0
+offset_top = 100.0
+offset_right = 716.0
+offset_bottom = 148.0
+theme_override_constants/separation = 4
+alignment = 1
+script = ExtResource("13_s3xe3")
+spritesheet = ExtResource("10_xooom")
+alphabet_spritesheet = ExtResource("14_ebxty")
+indicador = NodePath("../indicador_semana")
+
+[node name="decena_hora" type="TextureRect" parent="Reloj" unique_id=1240944320]
+custom_minimum_size = Vector2(24, 48)
+layout_mode = 2
+
+[node name="unidad_hora" type="TextureRect" parent="Reloj" unique_id=2115754585]
+custom_minimum_size = Vector2(24, 48)
+layout_mode = 2
+
+[node name="dos_puntos" type="TextureRect" parent="Reloj" unique_id=874547517]
+custom_minimum_size = Vector2(4, 48)
+layout_mode = 2
+texture = ExtResource("15_lficq")
+expand_mode = 3
+stretch_mode = 5
+
+[node name="decena_minuto" type="TextureRect" parent="Reloj" unique_id=1518898515]
+custom_minimum_size = Vector2(24, 48)
+layout_mode = 2
+
+[node name="unidad_minuto" type="TextureRect" parent="Reloj" unique_id=1023188571]
+custom_minimum_size = Vector2(24, 48)
+layout_mode = 2
+
+[node name="Timer" type="Timer" parent="Reloj" unique_id=1010029848]
+autostart = true
+
+[node name="Calendario" type="VBoxContainer" parent="." unique_id=1745363061]
+layout_mode = 0
+offset_left = 596.0
+offset_top = 176.0
+offset_right = 712.0
+offset_bottom = 284.0
+theme_override_constants/separation = 16
+
+[node name="mes" type="HBoxContainer" parent="Calendario" unique_id=1102541995]
+modulate = Color(0.5294118, 0.20392157, 0.16862746, 1)
+self_modulate = Color(0.5294118, 0.20392157, 0.16862746, 1)
+layout_mode = 2
+alignment = 1
+
+[node name="letra_uno" type="TextureRect" parent="Calendario/mes" unique_id=698633726]
+custom_minimum_size = Vector2(28, 28)
+layout_mode = 2
+
+[node name="letra_dos" type="TextureRect" parent="Calendario/mes" unique_id=311391663]
+custom_minimum_size = Vector2(28, 28)
+layout_mode = 2
+
+[node name="letra_tres" type="TextureRect" parent="Calendario/mes" unique_id=1762427196]
+custom_minimum_size = Vector2(28, 28)
+layout_mode = 2
+
+[node name="dia" type="HBoxContainer" parent="Calendario" unique_id=307422826]
+modulate = Color(0.627451, 0.58431375, 0.54901963, 1)
+layout_mode = 2
+theme_override_constants/separation = 12
+alignment = 1
+
+[node name="decena_dia" type="TextureRect" parent="Calendario/dia" unique_id=1948003435]
+custom_minimum_size = Vector2(24, 48)
+layout_mode = 2
+
+[node name="unidad_dia" type="TextureRect" parent="Calendario/dia" unique_id=1846483894]
+custom_minimum_size = Vector2(24, 48)
+layout_mode = 2
+
+[node name="indicador_semana" type="TextureRect" parent="." unique_id=196474091]
+modulate = Color(0.36078432, 0.2901961, 0.24313726, 1)
+layout_mode = 0
+offset_left = 720.0
+offset_top = 168.0
+offset_right = 732.0
+offset_bottom = 180.0
+texture = SubResource("CanvasTexture_c32x4")
+script = ExtResource("16_6vngg")
+
+[node name="control_velocidad" type="Control" parent="." unique_id=1423821436]
+anchors_preset = 0
+offset_left = 572.0
+offset_top = 62.0
+offset_right = 732.0
+offset_bottom = 62.0
+
+[node name="indicador" type="TextureRect" parent="control_velocidad" unique_id=877580066]
+layout_mode = 0
+offset_top = -14.0
+offset_right = 16.0
+offset_bottom = 14.0
+texture = ExtResource("17_l5sm6")
+script = ExtResource("18_h1aem")
+
+[node name="Contenido" type="Control" parent="." unique_id=1286286514]
+anchors_preset = 0
+offset_left = 224.0
+offset_top = 104.0
+offset_right = 544.0
+offset_bottom = 404.0
+mouse_filter = 1
+
+[node name="Fondo" type="AnimatedSprite2D" parent="Contenido" unique_id=30122337]
+
+[node name="Eventos" type="Control" parent="Contenido" unique_id=587460445]
+anchors_preset = 0
+offset_right = 320.0
+offset_bottom = 296.0
+mouse_filter = 1
+
+[node name="menus" type="Control" parent="Contenido" unique_id=150458602]
+anchors_preset = 0
+offset_right = 320.0
+offset_bottom = 168.0
+mouse_filter = 2

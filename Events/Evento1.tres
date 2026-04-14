@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="EventResource" format=3 uid="uid://c8jre65lmvije"]
+
+[ext_resource type="Texture2D" uid="uid://crjbfhkiurl4s" path="res://Sprites/Eventos/prueba_1.png" id="1_6oeef"]
+[ext_resource type="Script" uid="uid://bgock86usd1r5" path="res://Scripts/EventResource.gd" id="2_c1tnx"]
+
+[resource]
+script = ExtResource("2_c1tnx")
+titulo = "prueba_1"
+texto = "eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee"
+imagen = ExtResource("1_6oeef")
+opciones = Array[String](["Opción 1", "opcion 2"])
+metadata/_custom_type_script = "uid://bgock86usd1r5"

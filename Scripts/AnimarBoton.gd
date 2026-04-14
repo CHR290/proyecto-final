@@ -25,7 +25,8 @@ func _on_mouse_entered():
 func _on_mouse_exited():
 	create_tween().tween_property(self, "scale", original_scale, 0.1)
 func _on_button_down():
-	create_tween().tween_property(self, "scale", original_scale * 0.9, 0.05)
+	create_tween().tween_property(self, "scale", original_scale * 0.93, 0.05)
 func _on_button_up():
 	var target_scale = original_scale * 1.1 if is_hovered() else original_scale
 	create_tween().tween_property(self, "scale", target_scale, 0.05)
+	$"/root/InterfazPrincipal".lanzar_evento("res://Events/Evento3.tres")
