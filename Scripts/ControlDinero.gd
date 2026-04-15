@@ -9,11 +9,12 @@ var digit_h: int = 12
 var color_sombra: Color = Color(0, 0, 0, 0.6) 
 var desplazamiento_sombra: Vector2 = Vector2(8, 4) 
 func _ready():
+	Global.money_changed.connect(_update_money_display)
 	contenedor_sombras.modulate = color_sombra
 	contenedor_sombras.position = desplazamiento_sombra
-	update_money_display(money)
+	_update_money_display(Global.money)
 
-func update_money_display(amount: int):
+func _update_money_display(amount: int):
 	
 	for child in contenedor_digitos.get_children():
 		child.queue_free()	
@@ -48,6 +49,4 @@ func get_digit_texture(digit: int) -> AtlasTexture:
 	atlas.atlas = digit_spritesheet
 	atlas.region = Rect2(digit * digit_w, 0, digit_w, digit_h)
 	return atlas
-func add_money(value):
-	money += value
-	update_money_display(money)
+

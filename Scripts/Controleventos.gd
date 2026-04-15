@@ -1,4 +1,5 @@
 extends Control
+var recurso: EventResource
 # Referencias a los nodos de UI
 @onready var label_titulo = $Titulo
 @onready var label_text = $Texto
@@ -7,7 +8,8 @@ extends Control
 @onready var contenedor_slider = $Zona_interaccion/Slider
 @onready var slider_cantidad = $Zona_interaccion/Slider/HSlider
 @onready var label_slider = $Zona_interaccion/Slider/valor/Label
-func configurar_evento(recurso: EventResource):
+func configurar_evento(p_recurso: EventResource):
+	recurso = p_recurso
 	label_titulo.text = recurso.titulo
 	label_text.text = recurso.texto
 	rect_imagen.texture = recurso.imagen
@@ -21,7 +23,8 @@ func configurar_evento(recurso: EventResource):
 		slider_cantidad.value_changed.connect(func(v): label_slider.text = "$" + str(v))
 	_crear_botones(recurso)
 
-func _crear_botones(recurso: EventResource):
+func _crear_botones(p_recurso: EventResource):
+	recurso = p_recurso
 	for child in contenedor_botones.get_children():
 		child.queue_free()	
 	for i in range(recurso.opciones.size()):
@@ -30,9 +33,28 @@ func _crear_botones(recurso: EventResource):
 		button.size_flags_horizontal = Control.SIZE_SHRINK_CENTER
 		button.size_flags_vertical = Control.SIZE_SHRINK_CENTER	
 		button.custom_minimum_size = Vector2(156, 44) 
-		button.pressed.connect(_on_opcion_seleccionada.bind(i, slider_cantidad.value))
+		button.pressed.connect(_on_opcion_seleccionada.bind(i))
 		contenedor_botones.add_child(button)
-
-func _on_opcion_seleccionada(indice: int, valor_slider: float):
-	print("Opción elegida: ", indice, " con valor: ", valor_slider)
-	queue_free() 
+		
+func _on_opcion_seleccionada(indice: int):
+	var consecuencia: String
+	var valor_slider = slider_cantidad.value
+	var value = recurso.valores[indice]
+	consecuencia = recurso.ids_consecuencia[indice]
+	match consecuencia:
+		"nada":
+			pass
+		"quitar dinero":
+			Global.change_money(-value)
+		"ganar dinero":
+			Global.change_money(value)
+		"quitar dinero slider":
+			Global.change_money(-valor_slider)
+		"ganar dinero slider":
+			Global.change_money(valor_slider)
+		"avanzar tiempo":
+			Global.advance_time(0, 0, 0, value)
+		"lanzar evento":
+			#Ejemplo de lanzar otro evento desde la consecuencia
+			Global.lanzar_evento(Global.id_eventos[value])
+	queue_free()

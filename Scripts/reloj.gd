@@ -29,6 +29,7 @@ func get_char_texture(character: String) -> AtlasTexture:
 	atlas.region = Rect2(index * char_width_month, 0, char_width_month, char_height_month)
 	return atlas
 func _ready():
+	Global.time_changed.connect(update_clock_ui)
 	var y_inicial = indicador.posiciones[weekday - 1]
 	indicador.position.y = y_inicial
 	update_clock_ui()
@@ -41,12 +42,10 @@ func get_digit_texture(digit: int) -> AtlasTexture:
 	return atlas
 # Avanza 1 minuto de juego
 func _process(delta):
-	if speed == 0:
-		return
 	
 	# Definimos cuántos minutos de juego pasan por cada segundo real
 	var minutes_per_second: float = 0.0
-	match speed:
+	match Global.speed:
 		0: minutes_per_second = 0.0     # Pausado
 		1: minutes_per_second = 1.0     # 1 min/seg
 		2: minutes_per_second = 10.0    # 10 min/seg
@@ -58,55 +57,21 @@ func _process(delta):
 	
 	# Mientras el acumulador tenga al menos 1 minuto entero...
 	while time_accumulator >= 1.0:
-		advance_time(0, 0, 0, 1) # Avanzamos de 1 en 1 minuto
+		Global.advance_time(0, 0, 0, 1) # Avanzamos de 1 en 1 minuto
 		time_accumulator -= 1.0
-
-func advance_time(mo: int, d: int, h: int, m: int):
-	minutes += m
-	while minutes >= 60:
-		minutes -= 60
-		hours += 1
-	hours += h
-	while hours >= 24:
-		hours -= 24
-		day += 1
-		weekday += 1
-		if weekday > 7:
-			weekday = 1
-		indicador.mover_indicador(weekday - 1)
-	day += d
-	if month == 2:
-		while day > 28:
-			day -= 28
-			month += 1
-	elif month in [4, 6, 9, 11]:
-		while day > 30:
-			day -= 30
-			month += 1
-			print(month)
-	else:		
-		while day > 31:
-			day -= 31
-			month += 1	
-	
-	month += mo
-	while month > 12:
-		month -= 12
-		year += 1
-
-	update_clock_ui()
 
 func update_clock_ui():
 	# Esto extrae los dígitos
 	var digits = [
-		int(hours / 10.0),
-		hours % 10,
-		int(minutes / 10.0),
-		minutes % 10,
-		int(day / 10.0),
-		day % 10
+		int(Global.hours / 10.0),
+		Global.hours % 10,
+		int(Global.minutes / 10.0),
+		Global.minutes % 10,
+		int(Global.day / 10.0),
+		Global.day % 10
 	]
-	var month_name = MONTHS[month - 1]	
+	$"/root/InterfazPrincipal/indicador_semana".mover_indicador(Global.weekday - 1)
+	var month_name = MONTHS[Global.month - 1]	
 	# Asignamos las texturas a los TextureRects
 	$decena_hora.texture = get_digit_texture(digits[0])
 	$unidad_hora.texture = get_digit_texture(digits[1])

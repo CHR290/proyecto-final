@@ -10,6 +10,71 @@
 font = ExtResource("3_sre5a")
 font_size = 40
 
+[sub_resource type="ImageTexture" id="ImageTexture_5c3cn"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2kss1"]
+content_margin_left = 4.0
+content_margin_top = 4.0
+content_margin_right = 4.0
+content_margin_bottom = 4.0
+bg_color = Color(1, 1, 1, 0.4)
+corner_detail = 6
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0gsok"]
+content_margin_left = 4.0
+content_margin_top = 4.0
+content_margin_right = 4.0
+content_margin_bottom = 4.0
+bg_color = Color(1, 1, 1, 0.75)
+corner_detail = 6
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_b3l2l"]
+content_margin_left = 4.0
+content_margin_top = 4.0
+content_margin_right = 4.0
+content_margin_bottom = 4.0
+bg_color = Color(0.75, 0.75, 0.75, 0.75)
+corner_detail = 6
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_q4u2s"]
+content_margin_left = 4.0
+content_margin_top = 0.0
+content_margin_right = 4.0
+content_margin_bottom = 0.0
+bg_color = Color(0.1, 0.1, 0.1, 0.6)
+corner_detail = 6
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wbrac"]
+content_margin_left = 4.0
+content_margin_top = 4.0
+content_margin_right = 4.0
+content_margin_bottom = 4.0
+bg_color = Color(1, 1, 1, 0.75)
+draw_center = false
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+corner_radius_bottom_right = 3
+corner_detail = 5
+expand_margin_left = 2.0
+expand_margin_top = 2.0
+expand_margin_right = 2.0
+expand_margin_bottom = 2.0
+
+[sub_resource type="Theme" id="Theme_3hvj4"]
+VScrollBar/icons/decrement = SubResource("ImageTexture_5c3cn")
+VScrollBar/icons/decrement_highlight = SubResource("ImageTexture_5c3cn")
+VScrollBar/icons/decrement_pressed = SubResource("ImageTexture_5c3cn")
+VScrollBar/icons/increment = SubResource("ImageTexture_5c3cn")
+VScrollBar/icons/increment_highlight = SubResource("ImageTexture_5c3cn")
+VScrollBar/icons/increment_pressed = SubResource("ImageTexture_5c3cn")
+VScrollBar/styles/grabber = SubResource("StyleBoxFlat_2kss1")
+VScrollBar/styles/grabber_highlight = SubResource("StyleBoxFlat_0gsok")
+VScrollBar/styles/grabber_pressed = SubResource("StyleBoxFlat_b3l2l")
+VScrollBar/styles/scroll = SubResource("StyleBoxFlat_q4u2s")
+VScrollBar/styles/scroll_focus = SubResource("StyleBoxFlat_wbrac")
+
 [sub_resource type="LabelSettings" id="LabelSettings_5c3cn"]
 font = ExtResource("3_sre5a")
 font_size = 40
@@ -26,7 +91,7 @@ bg_color = Color(0.28235295, 0.49019608, 0.22745098, 1)
 content_margin_top = 8.0
 bg_color = Color(0.40784314, 0.6862745, 0.33333334, 1)
 
-[node name="Control" type="Control" unique_id=159265201]
+[node name="Interfaz_eventos" type="Control" unique_id=159265201]
 layout_mode = 3
 anchor_left = 0.29200003
 anchor_top = 0.24100001
@@ -68,10 +133,10 @@ horizontal_alignment = 1
 [node name="TextureRect" type="TextureRect" parent="." unique_id=496015299]
 modulate = Color(1, 1, 1, 0.32941177)
 layout_mode = 0
-offset_left = 8.0
-offset_top = 119.0
-offset_right = 312.0
-offset_bottom = 155.0
+offset_left = 12.0
+offset_top = 123.0
+offset_right = 316.0
+offset_bottom = 159.0
 texture = ExtResource("5_5c3cn")
 stretch_mode = 4
 
@@ -80,12 +145,13 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 16.0
-offset_top = 122.0
-offset_right = -16.0
-offset_bottom = -148.0
+offset_left = 20.0
+offset_top = 127.0
+offset_right = -20.0
+offset_bottom = -141.0
 grow_horizontal = 2
 grow_vertical = 2
+theme = SubResource("Theme_3hvj4")
 theme_override_constants/line_separation = -4
 theme_override_fonts/normal_font = ExtResource("3_sre5a")
 theme_override_font_sizes/normal_font_size = 20

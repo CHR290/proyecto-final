@@ -29,4 +29,4 @@ func _on_button_down():
 func _on_button_up():
 	var target_scale = original_scale * 1.1 if is_hovered() else original_scale
 	create_tween().tween_property(self, "scale", target_scale, 0.05)
-	$"/root/InterfazPrincipal".lanzar_evento("res://Events/Evento3.tres")
+	Global.lanzar_evento(Global.id_eventos[1003])

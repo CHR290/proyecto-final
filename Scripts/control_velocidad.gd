@@ -34,4 +34,4 @@ func actualizar_posicion(target_x: float):
 	position.x = posiciones[mejor_indice]
 	
 
-	get_node("/root/InterfazPrincipal/Reloj").speed = mejor_indice
+	Global.speed = mejor_indice
