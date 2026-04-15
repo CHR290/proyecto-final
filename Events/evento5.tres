@@ -9,4 +9,5 @@ titulo = "Prueba_5"
 texto = "457ruifkjrs578uitjfkvn67853ui4rjfh"
 imagen = ExtResource("1_aw28o")
 cantidad_max = 100.0
+probabilidad = 0.5
 metadata/_custom_type_script = "uid://bgock86usd1r5"

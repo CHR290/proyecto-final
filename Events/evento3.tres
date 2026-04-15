@@ -13,4 +13,5 @@ cantidad_max = 5000.0
 cantidad_por_defecto = 2000.0
 ids_consecuencia = Array[String](["ganar dinero", "quitar dinero", "avanzar tiempo", "lanzar evento"])
 valores = Array[int]([500, 100, 30, 1004])
+probabilidad = 0.5
 metadata/_custom_type_script = "uid://bgock86usd1r5"

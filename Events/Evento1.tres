@@ -9,4 +9,5 @@ titulo = "prueba_1"
 texto = "eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee"
 imagen = ExtResource("1_6oeef")
 opciones = Array[String](["Opción 1", "opcion 2"])
+probabilidad = 0.5
 metadata/_custom_type_script = "uid://bgock86usd1r5"
