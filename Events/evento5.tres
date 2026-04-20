@@ -1,6 +1,6 @@
 [gd_resource type="Resource" script_class="EventResource" format=3 uid="uid://cmo71b35dc6af"]
 
-[ext_resource type="Script" uid="uid://bgock86usd1r5" path="res://Scripts/EventResource.gd" id="1_as6iu"]
+[ext_resource type="Script" uid="uid://bgock86usd1r5" path="res://Scripts/ResourceEvento.gd" id="1_as6iu"]
 [ext_resource type="Texture2D" uid="uid://cwe6rgtwmn1a8" path="res://Sprites/Eventos/prueba_5.png" id="1_aw28o"]
 
 [resource]
@@ -9,5 +9,6 @@ titulo = "Prueba_5"
 texto = "457ruifkjrs578uitjfkvn67853ui4rjfh"
 imagen = ExtResource("1_aw28o")
 cantidad_max = 100.0
+limite_diario = 1
 probabilidad = 0.5
 metadata/_custom_type_script = "uid://bgock86usd1r5"

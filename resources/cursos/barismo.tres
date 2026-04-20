@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="ResourceCurso" format=3 uid="uid://vwao1r1bny47"]
+
+[ext_resource type="Script" uid="uid://7do166ojig01" path="res://Scripts/ResourceCurso.gd" id="1_j2mf1"]
+
+[resource]
+script = ExtResource("1_j2mf1")
+nombre = "Barismo"
+duracion_meses = 2
+horario = Array[int]([14, 16])
+dias_semana = Array[int]([6, 7])
+metadata/_custom_type_script = "uid://7do166ojig01"

@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="ResourceCurso" format=3 uid="uid://bjxiv4wfjsky7"]
+
+[ext_resource type="Script" uid="uid://7do166ojig01" path="res://Scripts/ResourceCurso.gd" id="1_dsyk1"]
+
+[resource]
+script = ExtResource("1_dsyk1")
+nombre = "Peluqueria"
+duracion_meses = 6
+horario = Array[int]([7, 11])
+dias_semana = Array[int]([3, 5])
+costo_semestre = 500000
+metadata/_custom_type_script = "uid://7do166ojig01"

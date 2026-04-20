@@ -1,18 +1,17 @@
 extends TextureButton
 class_name BotonAnimado # Esto permite que otros scripts hereden de este
-
+@export var menu: int = 0
 @onready var original_scale = scale
 @onready var original_pos = position
 
 func _ready():
 	pivot_offset = size / 2
 	# Se conectan las señales de entrada al Script
-	if not mouse_entered.is_connected(_on_mouse_entered):
-		self.mouse_entered.connect(_on_mouse_entered)	
-	if not mouse_exited.is_connected(_on_mouse_exited):
-		self.mouse_exited.connect(_on_mouse_exited)
+	self.mouse_entered.connect(_on_mouse_entered)	
+	self.mouse_exited.connect(_on_mouse_exited)
 	self.button_down.connect(_on_button_down)
 	self.button_up.connect(_on_button_up)
+	self.pressed.connect(_on_pressed)
 	animar_flotado()
 # Esta función hace que el botón flote suavemente
 func animar_flotado():
@@ -29,4 +28,5 @@ func _on_button_down():
 func _on_button_up():
 	var target_scale = original_scale * 1.1 if is_hovered() else original_scale
 	create_tween().tween_property(self, "scale", target_scale, 0.05)
-	Global.lanzar_evento(Global.id_eventos[1003])
+func _on_pressed():
+	Global.gestionar_menu(menu)

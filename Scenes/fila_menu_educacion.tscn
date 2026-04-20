@@ -1,0 +1,111 @@
+[gd_scene format=3 uid="uid://b1cyaruehh8gt"]
+
+[ext_resource type="Script" uid="uid://xyja6tfvihdk" path="res://Scripts/fila_menu_educacion.gd" id="1_ot7cl"]
+[ext_resource type="FontFile" uid="uid://p7hn8oq4t1r4" path="res://Fonts/advanced_pixel-7.ttf" id="2_skf6e"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_ku3dm"]
+font = ExtResource("2_skf6e")
+font_size = 20
+
+[sub_resource type="LabelSettings" id="LabelSettings_ot7cl"]
+font = ExtResource("2_skf6e")
+font_size = 20
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ot7cl"]
+bg_color = Color(0.14509805, 0.14509805, 0.14509805, 0.3372549)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_skf6e"]
+bg_color = Color(1, 1, 1, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_b1ct3"]
+font = ExtResource("2_skf6e")
+font_size = 20
+
+[sub_resource type="LabelSettings" id="LabelSettings_o3ke4"]
+font = ExtResource("2_skf6e")
+font_size = 20
+
+[sub_resource type="LabelSettings" id="LabelSettings_nn8qb"]
+font = ExtResource("2_skf6e")
+font_size = 20
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_knvwl"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ku3dm"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_knvwl"]
+bg_color = Color(11.708403, 11.708403, 11.708403, 0.25490198)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ku3dm"]
+bg_color = Color(0.08538722, 0.08538722, 0.08538722, 0.3372549)
+
+[node name="Fila" type="Control" unique_id=682267593]
+custom_minimum_size = Vector2(0, 32)
+layout_mode = 3
+anchors_preset = 0
+offset_left = 232.0
+offset_top = 128.0
+offset_right = 536.0
+offset_bottom = 160.0
+script = ExtResource("1_ot7cl")
+
+[node name="info" type="HBoxContainer" parent="." unique_id=851961825]
+layout_mode = 0
+offset_right = 304.0
+offset_bottom = 32.0
+
+[node name="nombre" type="Label" parent="info" unique_id=230659915]
+custom_minimum_size = Vector2(68, 32)
+layout_mode = 2
+label_settings = SubResource("LabelSettings_ku3dm")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="meses" type="Label" parent="info" unique_id=1460570623]
+custom_minimum_size = Vector2(40, 32)
+layout_mode = 2
+label_settings = SubResource("LabelSettings_ot7cl")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="progreso" type="ProgressBar" parent="info/meses" unique_id=1288328018]
+layout_mode = 0
+offset_left = 4.0
+offset_top = 24.0
+offset_right = 36.0
+offset_bottom = 28.0
+theme_override_fonts/font = ExtResource("2_skf6e")
+theme_override_styles/background = SubResource("StyleBoxFlat_ot7cl")
+theme_override_styles/fill = SubResource("StyleBoxFlat_skf6e")
+step = 1.0
+show_percentage = false
+
+[node name="horario" type="Label" parent="info" unique_id=664164002]
+custom_minimum_size = Vector2(76, 32)
+layout_mode = 2
+label_settings = SubResource("LabelSettings_b1ct3")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="dias" type="Label" parent="info" unique_id=1049373027]
+custom_minimum_size = Vector2(48, 32)
+layout_mode = 2
+label_settings = SubResource("LabelSettings_o3ke4")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="costo" type="Label" parent="info" unique_id=1546193473]
+custom_minimum_size = Vector2(56, 32)
+layout_mode = 2
+label_settings = SubResource("LabelSettings_nn8qb")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Button" type="Button" parent="." unique_id=658191573]
+layout_mode = 0
+offset_right = 304.0
+offset_bottom = 32.0
+theme_override_styles/normal = SubResource("StyleBoxEmpty_knvwl")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_ku3dm")
+theme_override_styles/hover = SubResource("StyleBoxFlat_knvwl")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_ku3dm")

@@ -19,8 +19,88 @@
 [ext_resource type="Script" uid="uid://ypvfag1wwjsm" path="res://Scripts/indicador_semana.gd" id="16_6vngg"]
 [ext_resource type="Texture2D" uid="uid://bptwj5pkj61cd" path="res://Sprites/interfaz/indicador.png" id="17_l5sm6"]
 [ext_resource type="Script" uid="uid://b1aqmq4dhovvv" path="res://Scripts/control_velocidad.gd" id="18_h1aem"]
+[ext_resource type="Texture2D" uid="uid://5ldx3od72kw4" path="res://Sprites/interfaz/calendario_pressed.png" id="18_px3cy"]
+[ext_resource type="Texture2D" uid="uid://bsiclknlmss2l" path="res://Sprites/interfaz/calendario_hover.png" id="19_fhsir"]
+[ext_resource type="Texture2D" uid="uid://b87sa18lxusll" path="res://Sprites/interfaz/calendario.png" id="20_pdv2c"]
+[ext_resource type="Texture2D" uid="uid://b1ttwlwxj86ne" path="res://Sprites/fondos/habitacion.png" id="23_47irw"]
+[ext_resource type="Texture2D" uid="uid://d2uhdfru2nln" path="res://Sprites/fondos/mesero.png" id="24_wbk2n"]
 
 [sub_resource type="CanvasTexture" id="CanvasTexture_c32x4"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wbk2n"]
+atlas = ExtResource("23_47irw")
+region = Rect2(0, 0, 80, 42)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_x1nb3"]
+atlas = ExtResource("23_47irw")
+region = Rect2(0, 42, 80, 42)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dxuy8"]
+atlas = ExtResource("23_47irw")
+region = Rect2(0, 84, 80, 42)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xooom"]
+atlas = ExtResource("24_wbk2n")
+region = Rect2(0, 0, 80, 42)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sdey8"]
+atlas = ExtResource("24_wbk2n")
+region = Rect2(0, 42, 80, 42)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_44adm"]
+atlas = ExtResource("24_wbk2n")
+region = Rect2(0, 84, 80, 42)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_fhsir"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wbk2n")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_x1nb3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dxuy8")
+}],
+"loop": true,
+"name": &"default",
+"speed": 3.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xooom")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sdey8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_44adm")
+}],
+"loop": true,
+"name": &"mesero",
+"speed": 5.0
+}, {
+"frames": [],
+"loop": true,
+"name": &"new_animation_1",
+"speed": 5.0
+}, {
+"frames": [],
+"loop": true,
+"name": &"new_animation_2",
+"speed": 5.0
+}, {
+"frames": [],
+"loop": true,
+"name": &"new_animation_3",
+"speed": 5.0
+}, {
+"frames": [],
+"loop": true,
+"name": &"new_animation_4",
+"speed": 5.0
+}]
 
 [node name="InterfazPrincipal" type="Control" unique_id=1137798224]
 layout_mode = 3
@@ -56,6 +136,7 @@ scale = Vector2(4, 4)
 pivot_offset = Vector2(8, 8)
 texture_normal = ExtResource("2_5jhjj")
 script = ExtResource("3_pdv2c")
+menu = 1
 
 [node name="boton_banco" type="TextureButton" parent="." unique_id=1867377732]
 layout_mode = 1
@@ -72,8 +153,9 @@ scale = Vector2(4, 4)
 pivot_offset = Vector2(8, 8)
 texture_normal = ExtResource("4_px3cy")
 script = ExtResource("3_pdv2c")
+menu = 2
 
-[node name="boton_calendario" type="TextureButton" parent="." unique_id=737453140]
+[node name="boton_educacion" type="TextureButton" parent="." unique_id=737453140]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.094000004
@@ -88,6 +170,7 @@ scale = Vector2(4, 4)
 pivot_offset = Vector2(8, 8)
 texture_normal = ExtResource("5_fhsir")
 script = ExtResource("3_pdv2c")
+menu = 3
 
 [node name="boton_tienda" type="TextureButton" parent="." unique_id=954428047]
 layout_mode = 1
@@ -104,6 +187,7 @@ scale = Vector2(4, 4)
 pivot_offset = Vector2(8, 8)
 texture_normal = ExtResource("6_47irw")
 script = ExtResource("3_pdv2c")
+menu = 4
 
 [node name="boton_inversiones" type="TextureButton" parent="." unique_id=1993112500]
 layout_mode = 1
@@ -120,6 +204,7 @@ scale = Vector2(4, 4)
 pivot_offset = Vector2(8, 8)
 texture_normal = ExtResource("7_wbk2n")
 script = ExtResource("3_pdv2c")
+menu = 5
 
 [node name="boton_finanzas" type="TextureButton" parent="." unique_id=885471322]
 layout_mode = 1
@@ -136,6 +221,7 @@ scale = Vector2(4, 4)
 pivot_offset = Vector2(8, 8)
 texture_normal = ExtResource("8_x1nb3")
 script = ExtResource("3_pdv2c")
+menu = 6
 
 [node name="contador_efectivo" type="HBoxContainer" parent="." unique_id=999322556]
 layout_mode = 1
@@ -216,45 +302,64 @@ layout_mode = 2
 [node name="Timer" type="Timer" parent="Reloj" unique_id=1010029848]
 autostart = true
 
+[node name="boton_calendario" type="TextureButton" parent="." unique_id=1562042480]
+layout_mode = 0
+offset_left = 596.0
+offset_top = 164.0
+offset_right = 712.0
+offset_bottom = 284.0
+texture_normal = ExtResource("20_pdv2c")
+texture_pressed = ExtResource("18_px3cy")
+texture_hover = ExtResource("19_fhsir")
+stretch_mode = 0
+
 [node name="Calendario" type="VBoxContainer" parent="." unique_id=1745363061]
 layout_mode = 0
 offset_left = 596.0
 offset_top = 176.0
 offset_right = 712.0
 offset_bottom = 284.0
+mouse_filter = 2
 theme_override_constants/separation = 16
 
 [node name="mes" type="HBoxContainer" parent="Calendario" unique_id=1102541995]
 modulate = Color(0.5294118, 0.20392157, 0.16862746, 1)
 self_modulate = Color(0.5294118, 0.20392157, 0.16862746, 1)
 layout_mode = 2
+mouse_filter = 2
 alignment = 1
 
 [node name="letra_uno" type="TextureRect" parent="Calendario/mes" unique_id=698633726]
 custom_minimum_size = Vector2(28, 28)
 layout_mode = 2
+mouse_filter = 2
 
 [node name="letra_dos" type="TextureRect" parent="Calendario/mes" unique_id=311391663]
 custom_minimum_size = Vector2(28, 28)
 layout_mode = 2
+mouse_filter = 2
 
 [node name="letra_tres" type="TextureRect" parent="Calendario/mes" unique_id=1762427196]
 custom_minimum_size = Vector2(28, 28)
 layout_mode = 2
+mouse_filter = 2
 
 [node name="dia" type="HBoxContainer" parent="Calendario" unique_id=307422826]
 modulate = Color(0.627451, 0.58431375, 0.54901963, 1)
 layout_mode = 2
+mouse_filter = 2
 theme_override_constants/separation = 12
 alignment = 1
 
 [node name="decena_dia" type="TextureRect" parent="Calendario/dia" unique_id=1948003435]
 custom_minimum_size = Vector2(24, 48)
 layout_mode = 2
+mouse_filter = 2
 
 [node name="unidad_dia" type="TextureRect" parent="Calendario/dia" unique_id=1846483894]
 custom_minimum_size = Vector2(24, 48)
 layout_mode = 2
+mouse_filter = 2
 
 [node name="indicador_semana" type="TextureRect" parent="." unique_id=196474091]
 modulate = Color(0.36078432, 0.2901961, 0.24313726, 1)
@@ -290,6 +395,10 @@ offset_bottom = 404.0
 mouse_filter = 1
 
 [node name="Fondo" type="AnimatedSprite2D" parent="Contenido" unique_id=30122337]
+position = Vector2(160, 84)
+scale = Vector2(4, 3.9999998)
+sprite_frames = SubResource("SpriteFrames_fhsir")
+frame_progress = 0.38997597
 
 [node name="Eventos" type="Control" parent="Contenido" unique_id=587460445]
 anchors_preset = 0

@@ -55,10 +55,12 @@ func _on_opcion_seleccionada(indice: int):
 		"avanzar tiempo":
 			Global.advance_time(0, 0, 0, value)
 		"lanzar evento":
+			var ruta_evento = Global.id_eventos[value]
+			var recurso_evento = load(ruta_evento)
 			Global.hay_evento_activo = false
 			queue_free()
 			Global.event_finished.emit()
-			Global.lanzar_evento(Global.id_eventos[value])
+			Global.lanzar_evento(recurso_evento)
 			return
 	Global.hay_evento_activo = false
 	queue_free()

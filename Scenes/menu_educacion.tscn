@@ -1,0 +1,87 @@
+[gd_scene format=3 uid="uid://8ns5nfov1ovb"]
+
+[ext_resource type="Texture2D" uid="uid://bm5jm44hv53xf" path="res://Sprites/menu_educacion/Fondo.png" id="1_6aevy"]
+[ext_resource type="Script" uid="uid://c23jfvrxlm4vu" path="res://Scripts/menu_educacion.gd" id="1_25eik"]
+[ext_resource type="Texture2D" uid="uid://clrbos4u7tuus" path="res://Sprites/extras/toggle_1.png" id="2_n5xmy"]
+[ext_resource type="PackedScene" uid="uid://b1cyaruehh8gt" path="res://Scenes/fila_menu_educacion.tscn" id="2_vtp4d"]
+[ext_resource type="Texture2D" uid="uid://b7jf1g203qnrl" path="res://Sprites/extras/toggle_2.png" id="3_xhm6l"]
+[ext_resource type="FontFile" uid="uid://p7hn8oq4t1r4" path="res://Fonts/advanced_pixel-7.ttf" id="4_xhm6l"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_25eik"]
+font = ExtResource("4_xhm6l")
+font_size = 20
+
+[node name="menu_educacion" type="Control" unique_id=767167351]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 224.0
+offset_top = 104.0
+offset_right = -224.0
+offset_bottom = -160.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_25eik")
+fila = ExtResource("2_vtp4d")
+
+[node name="fondo" type="TextureRect" parent="." unique_id=1923570526]
+layout_mode = 0
+offset_right = 320.0
+offset_bottom = 168.0
+texture = ExtResource("1_6aevy")
+
+[node name="ScrollContainer" type="ScrollContainer" parent="." unique_id=1149565743]
+layout_mode = 0
+offset_left = 8.0
+offset_top = 24.0
+offset_right = 312.0
+offset_bottom = 164.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ScrollContainer" unique_id=943871019]
+layout_mode = 2
+
+[node name="switch" type="CheckButton" parent="." unique_id=1223922867]
+layout_mode = 0
+offset_left = 25.0
+offset_top = 4.0
+offset_right = 57.0
+offset_bottom = 20.0
+theme_override_icons/checked = ExtResource("2_n5xmy")
+theme_override_icons/unchecked = ExtResource("3_xhm6l")
+theme_override_icons/checked_disabled = ExtResource("2_n5xmy")
+theme_override_icons/unchecked_disabled = ExtResource("3_xhm6l")
+theme_override_icons/checked_mirrored = ExtResource("2_n5xmy")
+theme_override_icons/unchecked_mirrored = ExtResource("2_n5xmy")
+theme_override_icons/checked_disabled_mirrored = ExtResource("3_xhm6l")
+theme_override_icons/unchecked_disabled_mirrored = ExtResource("2_n5xmy")
+
+[node name="Label" type="Label" parent="." unique_id=1088980175]
+layout_mode = 0
+offset_left = 80.0
+offset_right = 121.0
+offset_bottom = 24.0
+text = "meses"
+label_settings = SubResource("LabelSettings_25eik")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label2" type="Label" parent="." unique_id=504458849]
+layout_mode = 0
+offset_left = 124.0
+offset_right = 256.0
+offset_bottom = 24.0
+text = "horario"
+label_settings = SubResource("LabelSettings_25eik")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label3" type="Label" parent="." unique_id=377913286]
+layout_mode = 0
+offset_left = 256.0
+offset_right = 312.0
+offset_bottom = 24.0
+text = "semestre"
+label_settings = SubResource("LabelSettings_25eik")
+horizontal_alignment = 1
+vertical_alignment = 1

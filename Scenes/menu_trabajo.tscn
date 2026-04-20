@@ -1,6 +1,17 @@
 [gd_scene format=3 uid="uid://d2eicr6uxsji7"]
 
-[node name="Control" type="Control" unique_id=1307994224]
+[ext_resource type="Texture2D" uid="uid://cj5vcisib1475" path="res://Sprites/menu_trabajo/Fondo.png" id="1_43wq0"]
+[ext_resource type="Script" uid="uid://djwcjtm7rn3ii" path="res://Scripts/menu_trabajo.gd" id="1_lnedy"]
+[ext_resource type="Texture2D" uid="uid://clrbos4u7tuus" path="res://Sprites/extras/toggle_1.png" id="2_6r3al"]
+[ext_resource type="PackedScene" uid="uid://i54rtoguqsnp" path="res://Scenes/fila_menu_trabajo.tscn" id="2_62pmw"]
+[ext_resource type="Texture2D" uid="uid://b7jf1g203qnrl" path="res://Sprites/extras/toggle_2.png" id="3_lnedy"]
+[ext_resource type="FontFile" uid="uid://p7hn8oq4t1r4" path="res://Fonts/advanced_pixel-7.ttf" id="6_aur21"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_7ne50"]
+font = ExtResource("6_aur21")
+font_size = 20
+
+[node name="menu_trabajo" type="Control" unique_id=1307994224]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -11,8 +22,71 @@ offset_right = -224.0
 offset_bottom = -160.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_lnedy")
+fila = ExtResource("2_62pmw")
 
 [node name="Fondo" type="TextureRect" parent="." unique_id=482808889]
 layout_mode = 0
 offset_right = 320.0
 offset_bottom = 168.0
+texture = ExtResource("1_43wq0")
+
+[node name="ScrollContainer" type="ScrollContainer" parent="." unique_id=1957467450]
+layout_mode = 0
+offset_left = 8.0
+offset_top = 24.0
+offset_right = 312.0
+offset_bottom = 164.0
+mouse_filter = 2
+horizontal_scroll_mode = 0
+vertical_scroll_mode = 3
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ScrollContainer" unique_id=353332515]
+layout_mode = 2
+
+[node name="switch" type="CheckButton" parent="." unique_id=1288528114]
+layout_mode = 0
+offset_left = 10.0
+offset_top = 4.0
+offset_right = 42.0
+offset_bottom = 20.0
+theme_override_icons/checked = ExtResource("2_6r3al")
+theme_override_icons/unchecked = ExtResource("3_lnedy")
+theme_override_icons/checked_disabled = ExtResource("2_6r3al")
+theme_override_icons/unchecked_disabled = ExtResource("3_lnedy")
+theme_override_icons/checked_mirrored = ExtResource("2_6r3al")
+theme_override_icons/unchecked_mirrored = ExtResource("2_6r3al")
+theme_override_icons/checked_disabled_mirrored = ExtResource("3_lnedy")
+theme_override_icons/unchecked_disabled_mirrored = ExtResource("2_6r3al")
+
+[node name="Label" type="Label" parent="." unique_id=333709577]
+layout_mode = 0
+offset_left = 44.0
+offset_right = 112.0
+offset_bottom = 24.0
+text = "trabajo"
+label_settings = SubResource("LabelSettings_7ne50")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label2" type="Label" parent="." unique_id=2103038149]
+layout_mode = 0
+offset_left = 116.0
+offset_right = 252.0
+offset_bottom = 24.0
+text = "Horario"
+label_settings = SubResource("LabelSettings_7ne50")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label3" type="Label" parent="." unique_id=244736152]
+layout_mode = 0
+offset_left = 256.0
+offset_right = 312.0
+offset_bottom = 24.0
+text = "sueldo"
+label_settings = SubResource("LabelSettings_7ne50")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[connection signal="pressed" from="switch" to="." method="_on_switch_pressed"]

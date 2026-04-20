@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="ResourceCurso" format=3 uid="uid://bj00hp8af33s1"]
+
+[ext_resource type="Script" uid="uid://7do166ojig01" path="res://Scripts/ResourceCurso.gd" id="1_7wplu"]
+
+[resource]
+script = ExtResource("1_7wplu")
+nombre = "Secundaria"
+duracion_meses = 10
+horario = Array[int]([7, 14])
+dias_semana = Array[int]([1, 5])
+metadata/_custom_type_script = "uid://7do166ojig01"
