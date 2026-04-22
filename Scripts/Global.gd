@@ -182,13 +182,13 @@ func change_money(value: int):
 
 func advance_time(mo: int, d: int, h: int, m: int):
 	minutes += m
-	#if speed < 4:
-		#try_evento()
+	if speed < 4:
+		try_evento()
 	while minutes >= 60:
 		minutes -= 60
 		hours += 1
-		#if speed == 4:
-			#try_evento()
+		if speed == 4:
+			try_evento()
 	hours += h
 	while hours >= 24:
 		hours -= 24

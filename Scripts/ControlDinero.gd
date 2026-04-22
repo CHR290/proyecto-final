@@ -49,4 +49,3 @@ func get_digit_texture(digit: int) -> AtlasTexture:
 	atlas.atlas = digit_spritesheet
 	atlas.region = Rect2(digit * digit_w, 0, digit_w, digit_h)
 	return atlas
-
