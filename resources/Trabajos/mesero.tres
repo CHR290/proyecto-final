@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="TrabajoResource" format=3 uid="uid://6bgspi65nqhy"]
+[gd_resource type="Resource" script_class="ResourceTrabajo" format=3 uid="uid://6bgspi65nqhy"]
 
 [ext_resource type="Script" uid="uid://do3f68gq3fo87" path="res://Scripts/ResourceTrabajo.gd" id="1_7atfa"]
 [ext_resource type="Texture2D" uid="uid://bb5t58trxn3ow" path="res://Sprites/menu_trabajo/icono_mesero.png" id="1_vs8du"]

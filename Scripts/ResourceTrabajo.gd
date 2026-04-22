@@ -10,4 +10,6 @@ class_name ResourceTrabajo
 @export var experiencia: int
 @export var educacion: Array[String]
 @export var objetos: Array[String]
+@export var gamesates: Array[String]
+
 

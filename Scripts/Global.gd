@@ -10,6 +10,14 @@ var menu_actual: int = 0
 
 var schedule = []
 
+var gamestates = {
+	"vivenda padres": false,
+	"vivienda propia": false,
+	"vehículo": false,
+	"mascota": false,
+	"trabajo con jefe": false
+	}
+
 var hay_evento_activo: bool = false
 
 var id_eventos = {
@@ -30,10 +38,10 @@ var education: Array[String] = []
 var inventory: Array[String] = []
 var lugar_actual: String = ""
 
-var hours: int = 8
+var hours: int = 15
 var minutes: int = 0
-var day: int = 1
-var month: int = 1
+var day: int = 14
+var month: int = 9
 var year: int = 2024
 var weekday: int = 1 
 var speed: int = 0 
@@ -52,8 +60,8 @@ func _ready():
 		for h in range(24):
 			dia.append(0)
 		schedule.append(dia)
-	entrar_curso(load("res://resources/Cursos/Secundaria.tres"))
-	cursos_activos[0].dias_asistidos = 270
+	entrar_curso(load("res://resources/Cursos/Secundaria.tres")) 
+	cursos_activos[0].dias_asistidos = 239
 
 func actualizar_informacion_diaria():
 	registro_eventos.clear()
@@ -155,6 +163,10 @@ func trabajo_cumple_requisitos(trabajo: ResourceTrabajo) -> bool:
 		for obj in trabajo.objetos:
 			if obj not in Global.inventory:
 				return false
+	if trabajo.gamesates.size() > 0:
+		for state in trabajo.gamesates:
+			if gamestates.get(state, false) == false:
+				return false
 	return true
 
 func curso_cumple_requisitos(curso: ResourceCurso) -> bool:
@@ -249,6 +261,10 @@ func _cumple_condiciones(id: int, recurso: EventResource) -> bool:
 		return false
 	if recurso.meses.size() > 0 and month not in recurso.meses:
 		return false
+	if recurso.gamestate.size() > 0:
+		for state in recurso.gamestate:
+			if gamestates.get(state, false) == false:
+				return false
 	var hora_valida = false
 	if recurso.horarios_validos.size() == 0:
 		hora_valida = true

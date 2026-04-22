@@ -24,6 +24,7 @@
 [ext_resource type="Texture2D" uid="uid://b87sa18lxusll" path="res://Sprites/interfaz/calendario.png" id="20_pdv2c"]
 [ext_resource type="Texture2D" uid="uid://b1ttwlwxj86ne" path="res://Sprites/fondos/habitacion.png" id="23_47irw"]
 [ext_resource type="Texture2D" uid="uid://d2uhdfru2nln" path="res://Sprites/fondos/mesero.png" id="24_wbk2n"]
+[ext_resource type="Script" uid="uid://c8m2j017q3ktc" path="res://Scripts/line_edit.gd" id="25_x1nb3"]
 
 [sub_resource type="CanvasTexture" id="CanvasTexture_c32x4"]
 
@@ -411,3 +412,39 @@ anchors_preset = 0
 offset_right = 320.0
 offset_bottom = 168.0
 mouse_filter = 2
+
+[node name="DEBUG_eventos" type="LineEdit" parent="." unique_id=906116441]
+visible = false
+layout_mode = 0
+offset_left = 52.0
+offset_top = 36.0
+offset_right = 192.0
+offset_bottom = 67.0
+placeholder_text = "ID"
+script = ExtResource("25_x1nb3")
+
+[node name="DEBUG_fecha" type="LineEdit" parent="." unique_id=1814845818]
+visible = false
+layout_mode = 0
+offset_left = 52.0
+offset_top = 36.0
+offset_right = 192.0
+offset_bottom = 67.0
+placeholder_text = "fecha"
+script = ExtResource("25_x1nb3")
+tipo = 1
+
+[node name="DEBUG_hora" type="LineEdit" parent="." unique_id=551619984]
+visible = false
+layout_mode = 0
+offset_left = 52.0
+offset_top = 36.0
+offset_right = 192.0
+offset_bottom = 67.0
+placeholder_text = "hora"
+script = ExtResource("25_x1nb3")
+tipo = 2
+
+[connection signal="text_submitted" from="DEBUG_eventos" to="DEBUG_eventos" method="_on_text_submitted"]
+[connection signal="text_submitted" from="DEBUG_fecha" to="DEBUG_fecha" method="_on_text_submitted"]
+[connection signal="text_submitted" from="DEBUG_hora" to="DEBUG_hora" method="_on_text_submitted"]
