@@ -7,6 +7,7 @@ enum TipoControl { OPCIONES, SLIDER }
 @export var titulo: String = ""
 @export_multiline var texto: String = ""
 @export var imagen: Texture2D
+@export var id: int
 @export_group("Botones")
 @export var modo_control: TipoControl = TipoControl.OPCIONES
 @export var opciones: Array[String] = ["Opción 1", "Opción 2"]

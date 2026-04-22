@@ -8,6 +8,7 @@ script = ExtResource("1_as6iu")
 titulo = "Prueba_5"
 texto = "457ruifkjrs578uitjfkvn67853ui4rjfh"
 imagen = ExtResource("1_aw28o")
+id = 1005
 cantidad_max = 100.0
 limite_diario = 1
 probabilidad = 0.5

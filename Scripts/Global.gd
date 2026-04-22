@@ -20,13 +20,7 @@ var gamestates = {
 
 var hay_evento_activo: bool = false
 
-var id_eventos = {
-	1001: "res://Events/Evento1.tres",
-	1002: "res://Events/Evento2.tres",
-	1003: "res://Events/Evento3.tres",
-	1004: "res://Events/Evento4.tres",
-	1005: "res://Events/Evento5.tres"
-	}
+var id_eventos = {}
 
 var registro_eventos = {}
 
@@ -37,6 +31,8 @@ var experience: int = 1
 var education: Array[String] = []
 var inventory: Array[String] = []
 var lugar_actual: String = ""
+var cortisol: int = 30
+var salud: int = 100
 
 var hours: int = 15
 var minutes: int = 0
@@ -55,6 +51,7 @@ var cursos_disponibles: Array[ResourceCurso] = []
 func _ready():
 	cargar_recursos("res://resources/Trabajos")
 	cargar_recursos("res://resources/Cursos")
+	cargar_recursos("res://events")
 	for d in range(7):
 		var dia = []
 		for h in range(24):
@@ -122,7 +119,10 @@ func cargar_recursos(ruta_carpeta: String):
 				if recurso is ResourceCurso:
 					# añadir a la lista
 					if not cursos_disponibles.has(recurso):
-						cursos_disponibles.append(recurso)			
+						cursos_disponibles.append(recurso)		
+				if recurso is EventResource:
+					if not id_eventos.has(recurso):
+						id_eventos[recurso.id] = ruta_completa
 			# siguiente archivo
 			nombre_archivo = dir.get_next()
 	else:
