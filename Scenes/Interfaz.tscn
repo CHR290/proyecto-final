@@ -12,9 +12,14 @@
 [ext_resource type="Script" uid="uid://cvj1kiyudb40l" path="res://Scripts/ControlDinero.gd" id="9_dxuy8"]
 [ext_resource type="Texture2D" uid="uid://cfexi0n6w1653" path="res://Sprites/extras/numeros.png" id="10_xooom"]
 [ext_resource type="Texture2D" uid="uid://cfvsgs4h7u715" path="res://Sprites/interfaz/icono_dinero.png" id="11_sdey8"]
+[ext_resource type="Script" uid="uid://ciflxgra48r31" path="res://Scripts/boton_estado.gd" id="11_xooom"]
 [ext_resource type="Script" uid="uid://ciujio5etrp6v" path="res://Scripts/AnimarIcono.gd" id="12_44adm"]
+[ext_resource type="Texture2D" uid="uid://ehfwjo424yxf" path="res://Sprites/interfaz/estado_1.png" id="12_ebxty"]
+[ext_resource type="Texture2D" uid="uid://bfyckm6gkhi0g" path="res://Sprites/interfaz/estado_2.png" id="13_lficq"]
 [ext_resource type="Script" uid="uid://dhdh0ke6ihe8f" path="res://Scripts/reloj.gd" id="13_s3xe3"]
+[ext_resource type="Texture2D" uid="uid://o762dv0dgea2" path="res://Sprites/interfaz/estado_3.png" id="14_6vngg"]
 [ext_resource type="Texture2D" uid="uid://c03sc1k7ntdrx" path="res://Sprites/extras/abecedario.png" id="14_ebxty"]
+[ext_resource type="Texture2D" uid="uid://bauq128gl8di7" path="res://Sprites/interfaz/estado_4.png" id="15_l5sm6"]
 [ext_resource type="Texture2D" uid="uid://3h57qr64kph0" path="res://Sprites/extras/dos_puntos.png" id="15_lficq"]
 [ext_resource type="Script" uid="uid://ypvfag1wwjsm" path="res://Scripts/indicador_semana.gd" id="16_6vngg"]
 [ext_resource type="Texture2D" uid="uid://bptwj5pkj61cd" path="res://Sprites/interfaz/indicador.png" id="17_l5sm6"]
@@ -25,6 +30,7 @@
 [ext_resource type="Texture2D" uid="uid://b1ttwlwxj86ne" path="res://Sprites/fondos/habitacion.png" id="23_47irw"]
 [ext_resource type="Texture2D" uid="uid://d2uhdfru2nln" path="res://Sprites/fondos/mesero.png" id="24_wbk2n"]
 [ext_resource type="Script" uid="uid://c8m2j017q3ktc" path="res://Scripts/line_edit.gd" id="25_x1nb3"]
+[ext_resource type="Texture2D" uid="uid://bv3whds0b73fn" path="res://Sprites/interfaz/estado_5.png" id="26_dxuy8"]
 
 [sub_resource type="CanvasTexture" id="CanvasTexture_c32x4"]
 
@@ -224,6 +230,32 @@ texture_normal = ExtResource("8_x1nb3")
 script = ExtResource("3_pdv2c")
 menu = 6
 
+[node name="boton_estado" type="TextureButton" parent="." unique_id=766055746]
+layout_mode = 0
+offset_left = 616.0
+offset_top = 304.0
+offset_right = 692.0
+offset_bottom = 380.0
+texture_normal = ExtResource("26_dxuy8")
+stretch_mode = 0
+script = ExtResource("11_xooom")
+estado1 = ExtResource("12_ebxty")
+estado2 = ExtResource("13_lficq")
+estado3 = ExtResource("14_6vngg")
+estado4 = ExtResource("15_l5sm6")
+estado5 = ExtResource("26_dxuy8")
+
+[node name="boton_calendario" type="TextureButton" parent="." unique_id=1562042480]
+layout_mode = 0
+offset_left = 596.0
+offset_top = 164.0
+offset_right = 712.0
+offset_bottom = 284.0
+texture_normal = ExtResource("20_pdv2c")
+texture_pressed = ExtResource("18_px3cy")
+texture_hover = ExtResource("19_fhsir")
+stretch_mode = 0
+
 [node name="contador_efectivo" type="HBoxContainer" parent="." unique_id=999322556]
 layout_mode = 1
 anchors_preset = 5
@@ -302,17 +334,6 @@ layout_mode = 2
 
 [node name="Timer" type="Timer" parent="Reloj" unique_id=1010029848]
 autostart = true
-
-[node name="boton_calendario" type="TextureButton" parent="." unique_id=1562042480]
-layout_mode = 0
-offset_left = 596.0
-offset_top = 164.0
-offset_right = 712.0
-offset_bottom = 284.0
-texture_normal = ExtResource("20_pdv2c")
-texture_pressed = ExtResource("18_px3cy")
-texture_hover = ExtResource("19_fhsir")
-stretch_mode = 0
 
 [node name="Calendario" type="VBoxContainer" parent="." unique_id=1745363061]
 layout_mode = 0
@@ -445,6 +466,18 @@ placeholder_text = "hora"
 script = ExtResource("25_x1nb3")
 tipo = 2
 
+[node name="DEBUG_dinero" type="LineEdit" parent="." unique_id=605340562]
+visible = false
+layout_mode = 0
+offset_left = 52.0
+offset_top = 36.0
+offset_right = 192.0
+offset_bottom = 67.0
+placeholder_text = "cantidad"
+script = ExtResource("25_x1nb3")
+tipo = 3
+
 [connection signal="text_submitted" from="DEBUG_eventos" to="DEBUG_eventos" method="_on_text_submitted"]
 [connection signal="text_submitted" from="DEBUG_fecha" to="DEBUG_fecha" method="_on_text_submitted"]
 [connection signal="text_submitted" from="DEBUG_hora" to="DEBUG_hora" method="_on_text_submitted"]
+[connection signal="text_submitted" from="DEBUG_dinero" to="DEBUG_dinero" method="_on_text_submitted"]

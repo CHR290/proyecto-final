@@ -37,31 +37,33 @@ func _crear_botones(p_recurso: EventResource):
 		contenedor_botones.add_child(button)
 		
 func _on_opcion_seleccionada(indice: int):
-	var consecuencia: String
+	var opcion_elegida: String
 	var valor_slider = slider_cantidad.value
 	var value = recurso.valores[indice]
-	consecuencia = recurso.ids_consecuencia[indice]
-	match consecuencia:
-		"nada":
-			pass
-		"quitar dinero":
-			Global.change_money(-value)
-		"ganar dinero":
-			Global.change_money(value)
-		"quitar dinero slider":
-			Global.change_money(-valor_slider)
-		"ganar dinero slider":
-			Global.change_money(valor_slider)
-		"avanzar tiempo":
-			Global.advance_time(0, 0, 0, value)
-		"lanzar evento":
-			var ruta_evento = Global.id_eventos[value]
-			var recurso_evento = load(ruta_evento)
-			Global.hay_evento_activo = false
-			queue_free()
-			Global.event_finished.emit()
-			Global.lanzar_evento(recurso_evento)
-			return
+	opcion_elegida = recurso.ids_consecuencia[indice]
+	var consecuencias = opcion_elegida.split(",")
+	for consecuencia in consecuencias:
+		match consecuencia:
+			"nada":
+				pass
+			"quitar dinero":
+				Global.change_money(-value)
+			"ganar dinero":
+				Global.change_money(value)
+			"quitar dinero slider":
+				Global.change_money(-valor_slider)
+			"ganar dinero slider":
+				Global.change_money(valor_slider)
+			"avanzar tiempo":
+				Global.advance_time(0, 0, 0, value)
+			"lanzar evento":
+				var ruta_evento = Global.id_eventos[value]
+				var recurso_evento = load(ruta_evento)
+				Global.hay_evento_activo = false
+				queue_free()
+				Global.event_finished.emit()
+				Global.lanzar_evento(recurso_evento)
+				return
 	Global.hay_evento_activo = false
 	queue_free()
 	Global.event_finished.emit()

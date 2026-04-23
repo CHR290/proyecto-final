@@ -12,6 +12,9 @@ func _input(event: InputEvent) -> void:
 		2:
 			if event is InputEventKey and event.pressed and event.keycode == KEY_F3:
 				self.visible = !self.visible
+		3:
+			if event is InputEventKey and event.pressed and event.keycode == KEY_F4:
+				self.visible = !self.visible
 func _on_text_submitted(new_text: String) -> void:
 	match tipo:
 		0:
@@ -24,6 +27,6 @@ func _on_text_submitted(new_text: String) -> void:
 			Global.hours = int(new_text.substr(0, 2))
 			Global.minutes = int(new_text.substr(2, 3))
 			Global.advance_time(0,0,0,0)
-
-
+		3:
+			Global.change_money(int(new_text))
 	line_edit.clear()

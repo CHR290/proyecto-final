@@ -24,15 +24,22 @@ var id_eventos = {}
 
 var registro_eventos = {}
 
+var eventos_activados: bool = false
+
 var evento: String = ""
 
 var money: int = 100000
+var gastos_mensuales = {
+
+}
+
 var experience: int = 1
 var education: Array[String] = []
 var inventory: Array[String] = []
 var lugar_actual: String = ""
 var cortisol: int = 30
 var salud: int = 100
+var estado: int = 50
 
 var hours: int = 15
 var minutes: int = 0
@@ -71,6 +78,10 @@ func actualizar_informacion_diaria():
 			curso.dias_asistidos += 1
 	if day == 2 or day == 16:	
 		quincena()
+
+func actualizar_informacion_mensual():
+	for gasto in gastos_mensuales.values():
+		change_money(-gasto)
 
 func quincena():
 	for trabajo in trabajos_activos:
@@ -202,14 +213,17 @@ func advance_time(mo: int, d: int, h: int, m: int):
 		while day > 28:
 			day -= 28
 			month += 1
+			actualizar_informacion_mensual()
 	elif month in [4, 6, 9, 11]:
 		while day > 30:
 			day -= 30
 			month += 1
+			actualizar_informacion_mensual()
 	else:		
 		while day > 31:
 			day -= 31
 			month += 1	
+			actualizar_informacion_mensual()
 	
 	month += mo
 	while month > 12:
@@ -232,6 +246,8 @@ func lanzar_evento(ruta_recurso: EventResource):
 		speed = 0
 		
 func try_evento():
+	if eventos_activados == false:
+		return
 	var eventos_posibles = []
 	for id in id_eventos.keys():
 		var recurso = load(id_eventos[id])
