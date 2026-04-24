@@ -25,7 +25,7 @@ var id_eventos = {}
 
 var registro_eventos = {}
 
-var eventos_activados: bool = false
+var eventos_activados: bool = true
 
 var evento: String = ""
 

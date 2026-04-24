@@ -49,11 +49,10 @@ func _on_opcion_seleccionada(indice: int):
 				return
 		var partes = consecuencia.split(":")
 		var accion = str(partes[0])
-		var valor
-		if accion == "activar gamestate" or "desactivar gamestate":
-			valor = partes[1]
-		else:
-			valor = int(partes[1])			
+		var valor: int
+		valor = int(partes[1])
+		var valor_str = partes[1]
+		
 		match accion:
 			"quitar dinero":
 				Global.change_money(-valor)
@@ -66,16 +65,14 @@ func _on_opcion_seleccionada(indice: int):
 			"avanzar tiempo":
 				Global.advance_time(0,0,0,valor)
 			"activar gamestate":
-				Global.gamestates[valor] = true
+				Global.gamestates[valor_str] = true
 			"desactivar gamestate":
-				Global.gamestates[valor] = false
+				Global.gamestates[valor_str] = false
 			"lanzar evento":
-				var ruta_evento = Global.id_eventos[valor]
-				var recurso_evento = load(ruta_evento)
 				Global.hay_evento_activo = false
 				queue_free()
 				Global.event_finished.emit()
-				Global.lanzar_evento(recurso_evento)
+				Global.lanzar_evento(load(Global.id_eventos[valor]))
 				return
 	Global.hay_evento_activo = false
 	queue_free()
