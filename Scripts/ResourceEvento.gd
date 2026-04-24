@@ -16,8 +16,7 @@ enum TipoControl { OPCIONES, SLIDER }
 @export var cantidad_max: float = 1000.0
 @export var cantidad_por_defecto: float = 0.0
 @export_group("Consecuencias")
-@export var ids_consecuencia: Array[String] = ["nada", "nada"]
-@export var valores: Array[int] = [0, 0, 0, 0]
+@export var consecuencias: Array[String] = ["nada", "nada"]
 @export_group("condiciones")
 @export var limite_diario: int = 0
 @export var horarios_validos: Array[Array] = [] 

@@ -10,6 +10,7 @@ texto = "iiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiii
 imagen = ExtResource("1_prv5o")
 id = 1002
 opciones = Array[String](["Opción 1", "Opción 2", "opcion 3", "opcion 4"])
+consecuencias = Array[String](["activar gamestate:negocio", "desactivar gamestate:negocio", "nada", "nada"])
 limite_diario = 1
 probabilidad = 0.5
 metadata/_custom_type_script = "uid://bgock86usd1r5"

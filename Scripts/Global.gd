@@ -15,7 +15,8 @@ var gamestates = {
 	"vivienda propia": false,
 	"vehículo": false,
 	"mascota": false,
-	"trabajo con jefe": false
+	"trabajo con jefe": false,
+	"negocio": false
 	}
 
 var hay_evento_activo: bool = false
@@ -36,10 +37,11 @@ var gastos_mensuales = {
 var experience: int = 1
 var education: Array[String] = []
 var inventory: Array[String] = []
-var lugar_actual: String = ""
 var cortisol: int = 30
 var salud: int = 100
-var estado: int = 50
+var estado: int = 100
+
+var lugar_actual: String = "casa"
 
 var hours: int = 15
 var minutes: int = 0

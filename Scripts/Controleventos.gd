@@ -39,25 +39,38 @@ func _crear_botones(p_recurso: EventResource):
 func _on_opcion_seleccionada(indice: int):
 	var opcion_elegida: String
 	var valor_slider = slider_cantidad.value
-	var value = recurso.valores[indice]
-	opcion_elegida = recurso.ids_consecuencia[indice]
+	opcion_elegida = recurso.consecuencias[indice]
 	var consecuencias = opcion_elegida.split(",")
 	for consecuencia in consecuencias:
-		match consecuencia:
-			"nada":
-				pass
+		if consecuencia == "nada":
+				Global.hay_evento_activo = false
+				queue_free()
+				Global.event_finished.emit()
+				return
+		var partes = consecuencia.split(":")
+		var accion = str(partes[0])
+		var valor
+		if accion == "activar gamestate" or "desactivar gamestate":
+			valor = partes[1]
+		else:
+			valor = int(partes[1])			
+		match accion:
 			"quitar dinero":
-				Global.change_money(-value)
+				Global.change_money(-valor)
 			"ganar dinero":
-				Global.change_money(value)
+				Global.change_money(valor)
 			"quitar dinero slider":
 				Global.change_money(-valor_slider)
 			"ganar dinero slider":
 				Global.change_money(valor_slider)
 			"avanzar tiempo":
-				Global.advance_time(0, 0, 0, value)
+				Global.advance_time(0,0,0,valor)
+			"activar gamestate":
+				Global.gamestates[valor] = true
+			"desactivar gamestate":
+				Global.gamestates[valor] = false
 			"lanzar evento":
-				var ruta_evento = Global.id_eventos[value]
+				var ruta_evento = Global.id_eventos[valor]
 				var recurso_evento = load(ruta_evento)
 				Global.hay_evento_activo = false
 				queue_free()
