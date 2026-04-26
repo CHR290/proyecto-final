@@ -7,6 +7,7 @@ var activos: bool = false # Estado de la pestaña actual
 func _ready() -> void:
 	actualizar_tabla()
 	$switch.pressed.connect(on_switch_pressed)
+	Global.day_changed.connect(actualizar_tabla)
 
 func actualizar_tabla() -> void:
 	for child in contenedor_filas.get_children():

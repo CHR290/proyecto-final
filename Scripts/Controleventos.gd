@@ -68,12 +68,26 @@ func _on_opcion_seleccionada(indice: int):
 				Global.gamestates[valor_str] = true
 			"desactivar gamestate":
 				Global.gamestates[valor_str] = false
+			"abrir menu":
+				Global.gestionar_menu(valor)
 			"lanzar evento":
 				Global.hay_evento_activo = false
 				queue_free()
 				Global.event_finished.emit()
 				Global.lanzar_evento(load(Global.id_eventos[valor]))
 				return
+			"subir cortisol":
+				Global.cortisol += valor
+			"bajar cortisol":
+				Global.cortisol -= valor
+			"subir salud":
+				Global.cortisol += valor
+			"bajar salud":
+				Global.cortisol -= valor
+			"subir felicidad":
+				Global.felicidad += valor
+			"bajar felicidad":
+				Global.felicidad -= valor
 	Global.hay_evento_activo = false
 	queue_free()
 	Global.event_finished.emit()

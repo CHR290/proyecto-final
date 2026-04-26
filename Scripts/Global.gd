@@ -3,12 +3,13 @@ signal money_changed(new_amount)
 signal time_changed
 signal event_triggered
 signal menu_changed(menu_id)
+signal day_changed
 @warning_ignore("unused_signal")
 signal event_finished
 
 var menu_actual: int = 0
 
-var schedule = []
+var horario = []
 
 var gamestates = {
 	"vivenda padres": false,
@@ -16,7 +17,6 @@ var gamestates = {
 	"vehículo": false,
 	"mascota": false,
 	"trabajo con jefe": false,
-	"negocio": false
 	}
 
 var hay_evento_activo: bool = false
@@ -25,7 +25,7 @@ var id_eventos = {}
 
 var registro_eventos = {}
 
-var eventos_activados: bool = true
+var eventos_activados: bool = false
 
 var evento: String = ""
 
@@ -34,10 +34,11 @@ var gastos_mensuales = {
 
 }
 
-var experience: int = 1
 var education: Array[String] = []
 var inventory: Array[String] = []
-var cortisol: int = 30
+
+var cortisol: int = 10
+var felicidad: int = 100
 var salud: int = 100
 var estado: int = 100
 
@@ -64,22 +65,17 @@ func _ready():
 	for d in range(7):
 		var dia = []
 		for h in range(24):
-			dia.append(0)
-		schedule.append(dia)
-	entrar_curso(load("res://resources/Cursos/Secundaria.tres")) 
+			dia.append("libre")
+		horario.append(dia)
+	entrar_curso(load("res://resources/Cursos/secundaria.tres")) 
 	cursos_activos[0].dias_asistidos = 239
 
 func actualizar_informacion_diaria():
 	registro_eventos.clear()
-	for curso in cursos_activos:
-		if curso.dias_asistidos >= curso.duracion_dias:
-			education.append(curso.nombre)
-			cursos_activos.erase(curso)
-			mark_schedule(curso.horario[0], curso.horario[1], curso.dias_semana, false)
-		else:
-			curso.dias_asistidos += 1
+	actualizar_cursos()
 	if day == 2 or day == 16:	
 		quincena()
+	day_changed.emit()
 
 func actualizar_informacion_mensual():
 	for gasto in gastos_mensuales.values():
@@ -102,14 +98,14 @@ func horario_libre(inicio: int, fin: int, dias: Array) -> bool:
 	for dia in range(dias[0], dias[1]+1):
 		var dia_index = dia - 1
 		for h in range(inicio, fin):
-			if schedule[dia_index-1][h] == 1:
+			if horario[dia_index-1][h] != "libre":
 				return false
 	return true
 
-func mark_schedule(inicio: int, fin: int, dias: Array, ocupado: bool):
+func mark_schedule(inicio: int, fin: int, dias: Array, marca: String):
 	for d in range(dias[0], dias[1]+1):
 		for h in range(inicio, fin):
-			schedule[d-1][h] = 1 if ocupado else 0
+			horario[d-1][h] = marca 
 
 func cargar_recursos(ruta_carpeta: String):
 	# acceso a la carpeta
@@ -145,29 +141,27 @@ func contratar_trabajo(trabajo: ResourceTrabajo) -> bool:
 	if horario_libre(trabajo.horario[0], trabajo.horario[1], trabajo.dias_semana):
 		trabajos_disponibles.erase(trabajo)
 		trabajos_activos.append(trabajo)
-		mark_schedule(trabajo.horario[0], trabajo.horario[1], trabajo.dias_semana, true)
+		mark_schedule(trabajo.horario[0], trabajo.horario[1], trabajo.dias_semana, trabajo.nombre)
 		return true
 	return false
 
 func renunciar_trabajo(trabajo: ResourceTrabajo):
 	trabajos_activos.erase(trabajo)
 	trabajos_disponibles.append(trabajo)
-	mark_schedule(trabajo.horario[0], trabajo.horario[1], trabajo.dias_semana, false)
+	mark_schedule(trabajo.horario[0], trabajo.horario[1], trabajo.dias_semana, "libre")
 
 func entrar_curso(curso: ResourceCurso):
 		cursos_disponibles.erase(curso)
 		cursos_activos.append(curso)
-		mark_schedule(curso.horario[0], curso.horario[1], curso.dias_semana, true)
+		mark_schedule(curso.horario[0], curso.horario[1], curso.dias_semana, curso.nombre)
 
 func salir_curso(curso: ResourceCurso):
 	curso.dias_asistidos = 0
 	cursos_activos.erase(curso)
 	cursos_disponibles.append(curso)
-	mark_schedule(curso.horario[0], curso.horario[1], curso.dias_semana, false)
+	mark_schedule(curso.horario[0], curso.horario[1], curso.dias_semana, "libre")
 
 func trabajo_cumple_requisitos(trabajo: ResourceTrabajo) -> bool:
-	if Global.experience < trabajo.experiencia:
-		return false
 	if trabajo.educacion.size() > 0:
 		for edu in trabajo.educacion:
 			if edu not in Global.education:
@@ -246,6 +240,7 @@ func lanzar_evento(ruta_recurso: EventResource):
 		event_triggered.emit()
 		hay_evento_activo = true
 		speed = 0
+		gestionar_menu(menu_actual)
 		
 func try_evento():
 	if eventos_activados == false:
@@ -292,3 +287,24 @@ func _cumple_condiciones(id: int, recurso: EventResource) -> bool:
 				hora_valida = true
 				break
 	return hora_valida
+
+func imprimir_horario():
+	for i in range(0,24):
+		var linea: String = ""
+		for accion in horario:
+			linea += accion[i]
+			for espacio in range(0, 14-accion[i].length()):
+				linea += " "
+		print(linea)
+		linea = ""
+
+func actualizar_cursos():
+	for curso in cursos_activos:
+		if curso.dias_asistidos >= curso.duracion_dias:
+			education.append(curso.nombre)
+			cursos_activos.erase(curso)
+			mark_schedule(curso.horario[0], curso.horario[1], curso.dias_semana, "libre")
+			var graduacion = load("res://Events/grado_"+curso.nombre.to_lower()+".tres")
+			lanzar_evento(graduacion)			
+		else:
+			curso.dias_asistidos += 1	

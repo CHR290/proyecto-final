@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="EventResource" format=3 uid="uid://dbdgow47exvxj"]
+
+[ext_resource type="Texture2D" uid="uid://dyg5x36kj6f86" path="res://Sprites/Eventos/grado.png" id="1_34qbc"]
+[ext_resource type="Script" uid="uid://bgock86usd1r5" path="res://Scripts/ResourceEvento.gd" id="2_jo52f"]
+
+[resource]
+script = ExtResource("2_jo52f")
+titulo = "Felicidades!"
+texto = "Te has graduado de secundaria! ahora empieza un nuevo capitulo en tu vida, ve a mirar que carrera estudiaras en el menu de cursos"
+imagen = ExtResource("1_34qbc")
+id = 1000
+opciones = Array[String](["Continuar", "ir a Cursos"])
+consecuencias = Array[String](["nada", "abrir menu:3"])
+metadata/_custom_type_script = "uid://bgock86usd1r5"
