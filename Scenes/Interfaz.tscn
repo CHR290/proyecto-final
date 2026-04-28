@@ -13,7 +13,7 @@
 [ext_resource type="Texture2D" uid="uid://cfexi0n6w1653" path="res://Sprites/extras/numeros.png" id="10_xooom"]
 [ext_resource type="Texture2D" uid="uid://cfvsgs4h7u715" path="res://Sprites/interfaz/icono_dinero.png" id="11_sdey8"]
 [ext_resource type="Script" uid="uid://ciflxgra48r31" path="res://Scripts/boton_estado.gd" id="11_xooom"]
-[ext_resource type="Script" uid="uid://ciujio5etrp6v" path="res://Scripts/AnimarIcono.gd" id="12_44adm"]
+[ext_resource type="Script" uid="uid://ciujio5etrp6v" path="res://Scripts/icono_dinero.gd" id="12_44adm"]
 [ext_resource type="Texture2D" uid="uid://ehfwjo424yxf" path="res://Sprites/interfaz/estado_1.png" id="12_ebxty"]
 [ext_resource type="Texture2D" uid="uid://bfyckm6gkhi0g" path="res://Sprites/interfaz/estado_2.png" id="13_lficq"]
 [ext_resource type="Script" uid="uid://dhdh0ke6ihe8f" path="res://Scripts/reloj.gd" id="13_s3xe3"]
@@ -27,7 +27,9 @@
 [ext_resource type="Texture2D" uid="uid://5ldx3od72kw4" path="res://Sprites/interfaz/calendario_pressed.png" id="18_px3cy"]
 [ext_resource type="Texture2D" uid="uid://bsiclknlmss2l" path="res://Sprites/interfaz/calendario_hover.png" id="19_fhsir"]
 [ext_resource type="Texture2D" uid="uid://b87sa18lxusll" path="res://Sprites/interfaz/calendario.png" id="20_pdv2c"]
+[ext_resource type="Texture2D" uid="uid://ddg2jpv1y8vm4" path="res://Sprites/interfaz/icono_debito.png" id="21_lficq"]
 [ext_resource type="Texture2D" uid="uid://b1ttwlwxj86ne" path="res://Sprites/fondos/habitacion.png" id="23_47irw"]
+[ext_resource type="Texture2D" uid="uid://bm8uc6mr03aea" path="res://Sprites/interfaz/icono_credito.png" id="24_6vngg"]
 [ext_resource type="Texture2D" uid="uid://d2uhdfru2nln" path="res://Sprites/fondos/mesero.png" id="24_wbk2n"]
 [ext_resource type="Script" uid="uid://c8m2j017q3ktc" path="res://Scripts/line_edit.gd" id="25_x1nb3"]
 [ext_resource type="Texture2D" uid="uid://bv3whds0b73fn" path="res://Sprites/interfaz/estado_5.png" id="26_dxuy8"]
@@ -269,14 +271,16 @@ grow_horizontal = 2
 alignment = 1
 script = ExtResource("9_dxuy8")
 digit_spritesheet = ExtResource("10_xooom")
-money = 9999999999
 
-[node name="Simbolo_dinero" type="TextureRect" parent="contador_efectivo" unique_id=125754393]
+[node name="Simbolo_dinero" type="TextureButton" parent="contador_efectivo" unique_id=994243510]
+custom_minimum_size = Vector2(28, 48)
 layout_mode = 2
 size_flags_horizontal = 8
-texture = ExtResource("11_sdey8")
-stretch_mode = 5
+stretch_mode = 0
 script = ExtResource("12_44adm")
+efectivo = ExtResource("11_sdey8")
+debito = ExtResource("21_lficq")
+credito = ExtResource("24_6vngg")
 
 [node name="Control" type="Control" parent="contador_efectivo" unique_id=1563154779]
 layout_mode = 2
@@ -291,7 +295,7 @@ offset_right = 4.0
 offset_bottom = 4.0
 
 [node name="digitos" type="HBoxContainer" parent="contador_efectivo" unique_id=1112976649]
-modulate = Color(0.40784314, 0.6862745, 0.33333334, 1)
+modulate = Color(0.67058825, 0.2784314, 0.2509804, 1)
 layout_mode = 2
 size_flags_horizontal = 0
 

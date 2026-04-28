@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="EventResource" format=3 uid="uid://cdh4qam1e5ndf"]
+
+[ext_resource type="Script" uid="uid://bgock86usd1r5" path="res://Scripts/ResourceEvento.gd" id="1_ujihg"]
+
+[resource]
+script = ExtResource("1_ujihg")
+id = 1
+cierra_menu = false
+modo_control = 1
+opciones = Array[String](["aceptar", "cancelar"])
+cantidad_max = 0
+consecuencias = Array[String](["quitar dinero:slider,depositar banco:slider", "nada"])
+metadata/_custom_type_script = "uid://bgock86usd1r5"

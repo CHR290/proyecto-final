@@ -6,7 +6,7 @@ class_name BotonAnimado
 
 func _ready():
 	pivot_offset = size / 2
-	# Se conectan las señales de entrada al Script
+	#Se conectan las señales de entrada al Script
 	self.mouse_entered.connect(_on_mouse_entered)	
 	self.mouse_exited.connect(_on_mouse_exited)
 	self.button_down.connect(_on_button_down)
@@ -19,7 +19,7 @@ func animar_flotado():
 	tween.tween_property(self, "position:y", original_pos.y - 2, 1.5).set_trans(Tween.TRANS_SINE)
 	tween.tween_property(self, "position:y", original_pos.y, 1.5).set_trans(Tween.TRANS_SINE)
 	
-# estas dos funciones hacen que el botn se agrande mientras el mouse esta encima
+# estas dos funciones hacen que el boton se agrande mientras el mouse esta encima
 func _on_mouse_entered():
 	create_tween().tween_property(self, "scale", original_scale * 1.1, 0.1)
 func _on_mouse_exited():

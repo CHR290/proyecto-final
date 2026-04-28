@@ -1,7 +1,6 @@
 extends HBoxContainer
 
 @export var digit_spritesheet: Texture2D
-@export var money: int = 3000
 @onready var contenedor_sombras = $Control/sombras
 @onready var contenedor_digitos = $digitos
 var digit_w: int = 6
@@ -12,19 +11,23 @@ func _ready():
 	Global.money_changed.connect(_update_money_display)
 	contenedor_sombras.modulate = color_sombra
 	contenedor_sombras.position = desplazamiento_sombra
-	_update_money_display(Global.money)
+	_update_money_display()
 
-func _update_money_display(amount: int):
-	
+func _update_money_display():
 	for child in contenedor_digitos.get_children():
 		child.queue_free()	
 	for child in contenedor_sombras.get_children():
 		child.queue_free()	
-	# Convertimos el número a texto para recorrer cada dígito
-	var money_string = str(amount)
-
-	
-	#Creamos un TextureRect por cada número
+	# Se convierte el número a texto para recorrer cada dígito
+	var money_string: String
+	match Global.pago_activo:
+		0:
+			money_string = str(Global.dinero_efectivo)
+		1:
+			money_string = str(Global.dinero_banco)
+		2:
+			money_string = str(Global.dinero_banco)
+	#Se crea un Sprite por cada número
 	for char_digit in money_string:
 		var digit_val = int(char_digit)
 		var texture_recortada = get_digit_texture(digit_val)
@@ -35,15 +38,24 @@ func _update_money_display(amount: int):
 		var rect_real = _create_rect_digit(texture_recortada)
 		contenedor_digitos.add_child(rect_real)
 	queue_sort()
+	match Global.pago_activo:
+		0:
+			contenedor_digitos.modulate = Color8(104,175,85,255)
+		1:
+			contenedor_digitos.modulate = Color8(50,117,193,255)
+		2:
+			contenedor_digitos.modulate = Color8(171,71,64,255)
+
 func _create_rect_digit(tex: Texture2D) -> TextureRect:
 	var rect = TextureRect.new()
 	rect.texture = tex
 	# Configuraciones para Pixel Art
 	rect.texture_filter = CanvasItem.TEXTURE_FILTER_NEAREST
 	rect.stretch_mode = TextureRect.STRETCH_KEEP_ASPECT_CENTERED
-	# Aplicamos la escala
+	# Aplicacion de la escala
 	rect.custom_minimum_size = Vector2(digit_w * 4, digit_h * 4)
 	return rect
+
 func get_digit_texture(digit: int) -> AtlasTexture:
 	var atlas = AtlasTexture.new()
 	atlas.atlas = digit_spritesheet

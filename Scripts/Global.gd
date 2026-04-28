@@ -1,5 +1,5 @@
 extends Node
-signal money_changed(new_amount)
+signal money_changed
 signal time_changed
 signal event_triggered
 signal menu_changed(menu_id)
@@ -17,6 +17,7 @@ var gamestates = {
 	"vehículo": false,
 	"mascota": false,
 	"trabajo con jefe": false,
+	"tabajo": false
 	}
 
 var hay_evento_activo: bool = false
@@ -29,10 +30,17 @@ var eventos_activados: bool = false
 
 var evento: String = ""
 
-var money: int = 100000
+var pago_activo: int = 0
+var dinero_credito = 0
+var dinero_efectivo: int = 100000
+var dinero_banco: int = 0
+var dinero_total: int:	 
+	get: return dinero_efectivo + dinero_banco
+var score_crediticio = 400
+
 var gastos_mensuales = {
 
-}
+	}
 
 var education: Array[String] = []
 var inventory: Array[String] = []
@@ -184,8 +192,12 @@ func curso_cumple_requisitos(curso: ResourceCurso) -> bool:
 	return true
 
 func change_money(value: int): 
-	money += value
-	money_changed.emit(money)
+	dinero_efectivo += value
+	money_changed.emit()
+
+func change_money_bank(value: int):
+	dinero_banco += value
+	money_changed.emit()
 
 func advance_time(mo: int, d: int, h: int, m: int):
 	minutes += m
@@ -234,13 +246,15 @@ func registrar_evento(id: int):
 	else:
 		registro_eventos[id] = 1
 
-func lanzar_evento(ruta_recurso: EventResource):
+func lanzar_evento(id: int):
+	var event = load(Global.id_eventos[id])
 	if !hay_evento_activo:
-		evento = ruta_recurso.resource_path
+		evento = event.resource_path
 		event_triggered.emit()
 		hay_evento_activo = true
 		speed = 0
-		gestionar_menu(menu_actual)
+		if event.cierra_menu:
+			gestionar_menu(menu_actual)
 		
 func try_evento():
 	if eventos_activados == false:
@@ -258,7 +272,7 @@ func try_evento():
 		else:
 			probabilidad = evento_elegido["resource"].probabilidad
 		if randf() <= probabilidad:
-			lanzar_evento(evento_elegido["resource"])
+			lanzar_evento(evento_elegido["id"])
 			registrar_evento(evento_elegido["id"])
 			
 func _cumple_condiciones(id: int, recurso: EventResource) -> bool:
@@ -266,8 +280,6 @@ func _cumple_condiciones(id: int, recurso: EventResource) -> bool:
 		var apariciones = registro_eventos.get(id, 0)
 		if apariciones >= recurso.limite_diario:
 			return false
-	if recurso.lugar != "" and recurso.lugar != lugar_actual:
-		return false
 	if recurso.dias.size() > 0 and weekday not in recurso.dias:
 		return false
 	if recurso.fechas.size() > 0 and day not in recurso.fechas:
@@ -278,6 +290,11 @@ func _cumple_condiciones(id: int, recurso: EventResource) -> bool:
 		for state in recurso.gamestate:
 			if gamestates.get(state, false) == false:
 				return false
+	if recurso.lugar.size() != 0:
+		for lugar in recurso.lugar:
+			if lugar == lugar_actual:
+				return true
+		return false
 	var hora_valida = false
 	if recurso.horarios_validos.size() == 0:
 		hora_valida = true
@@ -305,6 +322,6 @@ func actualizar_cursos():
 			cursos_activos.erase(curso)
 			mark_schedule(curso.horario[0], curso.horario[1], curso.dias_semana, "libre")
 			var graduacion = load("res://Events/grado_"+curso.nombre.to_lower()+".tres")
-			lanzar_evento(graduacion)			
+			lanzar_evento(graduacion.id)			
 		else:
 			curso.dias_asistidos += 1	

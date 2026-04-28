@@ -18,7 +18,7 @@ func _input(event: InputEvent) -> void:
 func _on_text_submitted(new_text: String) -> void:
 	match tipo:
 		0:
-			Global.lanzar_evento(load(Global.id_eventos[int(new_text)]))
+			Global.lanzar_evento(new_text.to_int())
 		1:
 			Global.day = int(new_text.substr(0, 2))
 			Global.month = int(new_text.substr(2, 3))

@@ -72,7 +72,7 @@ func update_clock_ui():
 	]
 	$"/root/InterfazPrincipal/indicador_semana".mover_indicador(Global.weekday - 1)
 	var month_name = MONTHS[Global.month - 1]	
-	# Asignamos las texturas a los TextureRects
+	# Asignar las texturas a los TextureRects
 	$decena_hora.texture = get_digit_texture(digits[0])
 	$unidad_hora.texture = get_digit_texture(digits[1])
 	$decena_minuto.texture = get_digit_texture(digits[2])

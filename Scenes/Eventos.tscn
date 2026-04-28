@@ -208,3 +208,4 @@ theme_override_icons/grabber_highlight = ExtResource("3_b1he3")
 theme_override_styles/slider = SubResource("StyleBoxFlat_b1he3")
 theme_override_styles/grabber_area = SubResource("StyleBoxFlat_sre5a")
 theme_override_styles/grabber_area_highlight = SubResource("StyleBoxFlat_5c3cn")
+step = 1000.0

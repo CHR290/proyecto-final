@@ -18,9 +18,15 @@ func configurar_evento(p_recurso: EventResource):
 	else:
 		contenedor_slider.show()
 		slider_cantidad.min_value = recurso.cantidad_min
-		slider_cantidad.max_value = recurso.cantidad_max
+		match recurso.cantidad_max:
+			0:
+				slider_cantidad.max_value = Global.dinero_efectivo
+			-1:
+				slider_cantidad.max_value = Global.dinero_banco
+			_:
+				slider_cantidad.max_value = recurso.cantidad_max
 		slider_cantidad.value = recurso.cantidad_por_defecto
-		slider_cantidad.value_changed.connect(func(v): label_slider.text = "$" + str(v))
+		slider_cantidad.value_changed.connect(func(v): label_slider.text = "$" + str(int(v)))
 	_crear_botones(recurso)
 
 func _crear_botones(p_recurso: EventResource):
@@ -55,13 +61,25 @@ func _on_opcion_seleccionada(indice: int):
 		
 		match accion:
 			"quitar dinero":
-				Global.change_money(-valor)
+				if valor_str == "slider":
+					Global.change_money(-valor_slider)
+				else:
+					Global.change_money(-valor)
 			"ganar dinero":
-				Global.change_money(valor)
-			"quitar dinero slider":
-				Global.change_money(-valor_slider)
-			"ganar dinero slider":
-				Global.change_money(valor_slider)
+				if valor_str == "slider":
+					Global.change_money(valor_slider)
+				else:
+					Global.change_money(valor)
+			"retirar banco":
+				if valor_str == "slider":
+					Global.change_money_bank(-valor_slider)
+				else:
+					Global.change_money_bank(-valor)
+			"depositar banco":
+				if valor_str == "slider":
+					Global.change_money_bank(valor_slider)
+				else:
+					Global.change_money_bank(valor)
 			"avanzar tiempo":
 				Global.advance_time(0,0,0,valor)
 			"activar gamestate":
@@ -74,7 +92,7 @@ func _on_opcion_seleccionada(indice: int):
 				Global.hay_evento_activo = false
 				queue_free()
 				Global.event_finished.emit()
-				Global.lanzar_evento(load(Global.id_eventos[valor]))
+				Global.lanzar_evento(valor)
 				return
 			"subir cortisol":
 				Global.cortisol += valor
