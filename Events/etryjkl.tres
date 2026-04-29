@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="EventResource" format=3 uid="uid://dxvnp42wp0t37"]
+
+[ext_resource type="Texture2D" uid="uid://vcnnokmcolkb" path="res://Sprites/Eventos/prueba_2.png" id="1_2u7yr"]
+[ext_resource type="Script" uid="uid://bgock86usd1r5" path="res://Scripts/ResourceEvento.gd" id="1_m4f41"]
+
+[resource]
+script = ExtResource("1_m4f41")
+titulo = "robo"
+texto = "llega un personaje con nacionalidad vecina y te roba tu celular "
+imagen = ExtResource("1_2u7yr")
+id = 1007
+opciones = Array[String](["entregarel celular", "resistirse "])
+consecuencias = Array[String](["quitar dinero:100000", "quitar salud:50,quitar felicidad:20"])
+limite_diario = 1
+horarios_validos = Array[Array]([[19, 12]])
+metadata/_custom_type_script = "uid://bgock86usd1r5"

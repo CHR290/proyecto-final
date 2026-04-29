@@ -106,6 +106,10 @@ func _on_opcion_seleccionada(indice: int):
 				Global.felicidad += valor
 			"bajar felicidad":
 				Global.felicidad -= valor
+			"dar objeto":
+				Global.inventory.append(valor_str)
+			"quitar objeto":
+				Global.inventory.erase(valor_str)
 	Global.hay_evento_activo = false
 	queue_free()
 	Global.event_finished.emit()
