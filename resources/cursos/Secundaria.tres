@@ -4,8 +4,9 @@
 
 [resource]
 script = ExtResource("1_7wplu")
-nombre = "Secundaria"
+nombre = "secundaria"
 duracion_meses = 10
 horario = Array[int]([7, 14])
 dias_semana = Array[int]([1, 5])
+lugar = "colegio"
 metadata/_custom_type_script = "uid://7do166ojig01"

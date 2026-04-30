@@ -4,9 +4,11 @@
 
 [resource]
 script = ExtResource("1_dsyk1")
-nombre = "Peluqueria"
+nombre = "peluqueria"
 duracion_meses = 6
 horario = Array[int]([7, 11])
 dias_semana = Array[int]([3, 5])
 costo_semestre = 500000
+lugar = "universidad"
+educacion = Array[String](["secundaria"])
 metadata/_custom_type_script = "uid://7do166ojig01"

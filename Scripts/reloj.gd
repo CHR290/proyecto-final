@@ -19,7 +19,7 @@ var day: int = 1
 var month: int = 10
 var year: int = 2025
 var weekday: int = 3
-var time_accumulator: float = 0.0
+
 # Función para obtener la imagen de una letra
 func get_char_texture(character: String) -> AtlasTexture:
 	var atlas = AtlasTexture.new()
@@ -41,24 +41,6 @@ func get_digit_texture(digit: int) -> AtlasTexture:
 	atlas.region = Rect2(digit * char_width, 0, char_width, char_height)
 	return atlas
 # Avanza 1 minuto de juego
-func _process(delta):
-	
-	# Definimos cuántos minutos de juego pasan por cada segundo real
-	var minutes_per_second: float = 0.0
-	match Global.speed:
-		0: minutes_per_second = 0.0     # Pausado
-		1: minutes_per_second = 1.0     # 1 min/seg
-		2: minutes_per_second = 10.0    # 10 min/seg
-		3: minutes_per_second = 60.0    # 1 hora/seg
-		4: minutes_per_second = 1440.0  # 1 día/seg
-	
-	# Acumulamos el tiempo transcurrido
-	time_accumulator += delta * minutes_per_second
-	
-	# Mientras el acumulador tenga al menos 1 minuto entero...
-	while time_accumulator >= 1.0:
-		Global.advance_time(0, 0, 0, 1) # Avanzamos de 1 en 1 minuto
-		time_accumulator -= 1.0
 
 func update_clock_ui():
 	# Esto extrae los dígitos

@@ -33,20 +33,13 @@
 [ext_resource type="Texture2D" uid="uid://d2uhdfru2nln" path="res://Sprites/fondos/mesero.png" id="24_wbk2n"]
 [ext_resource type="Script" uid="uid://c8m2j017q3ktc" path="res://Scripts/line_edit.gd" id="25_x1nb3"]
 [ext_resource type="Texture2D" uid="uid://bv3whds0b73fn" path="res://Sprites/interfaz/estado_5.png" id="26_dxuy8"]
+[ext_resource type="Texture2D" uid="uid://xekm6aewcf4n" path="res://Sprites/fondos/caminando.png" id="31_1qcgs"]
+[ext_resource type="Texture2D" uid="uid://dtxux6y1velqb" path="res://Sprites/fondos/domiciliario.png" id="32_1wrx1"]
+[ext_resource type="Texture2D" uid="uid://dvi25xkki3v88" path="res://Sprites/fondos/default.png" id="32_lau65"]
+[ext_resource type="Texture2D" uid="uid://br2ovj3t58fsd" path="res://Sprites/fondos/estudiar.png" id="33_lau65"]
+[ext_resource type="Texture2D" uid="uid://w0hvotf7mhfj" path="res://Sprites/fondos/paseador.png" id="35_1qcgs"]
 
 [sub_resource type="CanvasTexture" id="CanvasTexture_c32x4"]
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_wbk2n"]
-atlas = ExtResource("23_47irw")
-region = Rect2(0, 0, 80, 42)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_x1nb3"]
-atlas = ExtResource("23_47irw")
-region = Rect2(0, 42, 80, 42)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_dxuy8"]
-atlas = ExtResource("23_47irw")
-region = Rect2(0, 84, 80, 42)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_xooom"]
 atlas = ExtResource("24_wbk2n")
@@ -60,21 +53,27 @@ region = Rect2(0, 42, 80, 42)
 atlas = ExtResource("24_wbk2n")
 region = Rect2(0, 84, 80, 42)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_1qcgs"]
+atlas = ExtResource("23_47irw")
+region = Rect2(0, 0, 80, 42)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kcgn6"]
+atlas = ExtResource("23_47irw")
+region = Rect2(0, 42, 80, 42)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8bfmn"]
+atlas = ExtResource("23_47irw")
+region = Rect2(0, 84, 80, 42)
+
 [sub_resource type="SpriteFrames" id="SpriteFrames_fhsir"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_wbk2n")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_x1nb3")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_dxuy8")
+"texture": ExtResource("32_1wrx1")
 }],
 "loop": true,
-"name": &"default",
-"speed": 3.0
+"name": &"Tdomiciliario",
+"speed": 5.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -87,27 +86,53 @@ animations = [{
 "texture": SubResource("AtlasTexture_44adm")
 }],
 "loop": true,
-"name": &"mesero",
+"name": &"Tmesero",
 "speed": 5.0
 }, {
-"frames": [],
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("35_1qcgs")
+}],
 "loop": true,
-"name": &"new_animation_1",
+"name": &"Tpaseador",
 "speed": 5.0
 }, {
-"frames": [],
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("31_1qcgs")
+}],
 "loop": true,
-"name": &"new_animation_2",
+"name": &"caminando",
 "speed": 5.0
 }, {
-"frames": [],
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1qcgs")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kcgn6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8bfmn")
+}],
 "loop": true,
-"name": &"new_animation_3",
+"name": &"casa",
 "speed": 5.0
 }, {
-"frames": [],
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("32_lau65")
+}],
 "loop": true,
-"name": &"new_animation_4",
+"name": &"default",
+"speed": 3.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("33_lau65")
+}],
+"loop": true,
+"name": &"estudiar",
 "speed": 5.0
 }]
 
@@ -424,7 +449,7 @@ mouse_filter = 1
 position = Vector2(160, 84)
 scale = Vector2(4, 3.9999998)
 sprite_frames = SubResource("SpriteFrames_fhsir")
-frame_progress = 0.38997597
+animation = &"Tpaseador"
 
 [node name="Eventos" type="Control" parent="Contenido" unique_id=587460445]
 anchors_preset = 0

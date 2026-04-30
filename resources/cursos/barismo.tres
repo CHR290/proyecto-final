@@ -4,8 +4,9 @@
 
 [resource]
 script = ExtResource("1_j2mf1")
-nombre = "Barismo"
+nombre = "barismo"
 duracion_meses = 2
 horario = Array[int]([14, 16])
 dias_semana = Array[int]([6, 7])
+lugar = "universidad"
 metadata/_custom_type_script = "uid://7do166ojig01"

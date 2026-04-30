@@ -4,8 +4,11 @@ signal time_changed
 signal event_triggered
 signal menu_changed(menu_id)
 signal day_changed
+signal place_changed
 @warning_ignore("unused_signal")
 signal event_finished
+@warning_ignore("unused_signal")
+signal minute_passed
 
 var menu_actual: int = 0
 
@@ -51,7 +54,9 @@ var salud: int = 100
 var estado: int = 100
 
 var lugar_actual: String = "casa"
+var accion_actual: String = "nada"
 
+var time_accumulator: float = 0.0
 var hours: int = 15
 var minutes: int = 0
 var day: int = 14
@@ -77,6 +82,26 @@ func _ready():
 		horario.append(dia)
 	entrar_curso(load("res://resources/Cursos/secundaria.tres")) 
 	cursos_activos[0].dias_asistidos = 239
+
+func _process(delta):
+	
+	# Definimos cuántos minutos de juego pasan por cada segundo real
+	var minutes_per_second: float = 0.0
+	match speed:
+		0: minutes_per_second = 0.0     # Pausado
+		1: minutes_per_second = 1.0     # 1 min/seg
+		2: minutes_per_second = 10.0    # 10 min/seg
+		3: minutes_per_second = 60.0    # 1 hora/seg
+		4: minutes_per_second = 1440.0  # 1 día/seg
+	
+	# Acumulamos el tiempo transcurrido
+	time_accumulator += delta * minutes_per_second
+	
+	# Mientras el acumulador tenga al menos 1 minuto entero...
+	while time_accumulator >= 1.0:
+		advance_time(0, 0, 0, 1) # Avanzamos de 1 en 1 minuto
+		minute_passed.emit()
+		time_accumulator -= 1.0
 
 func actualizar_informacion_diaria():
 	registro_eventos.clear()
@@ -149,7 +174,8 @@ func contratar_trabajo(trabajo: ResourceTrabajo) -> bool:
 	if horario_libre(trabajo.horario[0], trabajo.horario[1], trabajo.dias_semana):
 		trabajos_disponibles.erase(trabajo)
 		trabajos_activos.append(trabajo)
-		mark_schedule(trabajo.horario[0], trabajo.horario[1], trabajo.dias_semana, trabajo.nombre)
+		var trabajo_nombre: String = "T"+trabajo.nombre
+		mark_schedule(trabajo.horario[0], trabajo.horario[1], trabajo.dias_semana, trabajo_nombre)
 		return true
 	return false
 
@@ -161,7 +187,7 @@ func renunciar_trabajo(trabajo: ResourceTrabajo):
 func entrar_curso(curso: ResourceCurso):
 		cursos_disponibles.erase(curso)
 		cursos_activos.append(curso)
-		mark_schedule(curso.horario[0], curso.horario[1], curso.dias_semana, curso.nombre)
+		mark_schedule(curso.horario[0], curso.horario[1], curso.dias_semana, "C"+curso.nombre)
 
 func salir_curso(curso: ResourceCurso):
 	curso.dias_asistidos = 0
@@ -206,6 +232,7 @@ func advance_time(mo: int, d: int, h: int, m: int):
 	while minutes >= 60:
 		minutes -= 60
 		hours += 1
+		actualizar_informacion_hora()
 		if speed == 4:
 			try_evento()
 	hours += h
@@ -294,6 +321,10 @@ func _cumple_condiciones(id: int, recurso: EventResource) -> bool:
 		for lugar in recurso.lugar:
 			if lugar == lugar_actual:
 				return true
+	if recurso.accion.size() != 0:
+		for accion in recurso.accion:
+			if accion == accion_actual:
+				return true
 		return false
 	var hora_valida = false
 	if recurso.horarios_validos.size() == 0:
@@ -325,3 +356,29 @@ func actualizar_cursos():
 			lanzar_evento(graduacion.id)			
 		else:
 			curso.dias_asistidos += 1	
+
+func actualizar_informacion_hora():
+	actualizar_lugar()
+
+func actualizar_lugar():
+	var hora_objetivo
+	if hours == 24:
+		hora_objetivo = 0
+	else:
+		hora_objetivo = hours	
+	var accion_objetivo: String = horario[weekday-1][hora_objetivo]
+	if !(accion_objetivo == accion_actual):
+		print(accion_actual)
+		print(accion_objetivo)
+		var recurso
+		accion_actual = accion_objetivo
+		if accion_actual.begins_with("T"):
+			recurso = load("res://resources/Trabajos/"+accion_actual.erase(0)+".tres")
+			lugar_actual = recurso.lugar
+		elif accion_actual.begins_with("C"):
+			recurso = load("res://resources/cursos/"+accion_actual.erase(0)+".tres")
+			lugar_actual = recurso.lugar
+		else:
+			lugar_actual = "casa"
+		place_changed.emit()
+		

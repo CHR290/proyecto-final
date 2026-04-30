@@ -25,6 +25,7 @@ enum TipoControl { OPCIONES, SLIDER }
 @export var fechas: Array[int] = [1,31]
 @export var meses: Array[int] = [1,12]
 @export var lugar: Array[String] = []
+@export var accion: Array[String] = []
 @export var gamestate: Array[String] = []
 @export var probabilidad: float = 0.0 
 @export var estado: int

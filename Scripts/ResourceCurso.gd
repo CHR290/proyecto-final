@@ -6,6 +6,7 @@ class_name ResourceCurso
 @export var horario: Array[int]
 @export var dias_semana: Array[int]
 @export var costo_semestre: int
+@export var lugar: String
 @export_group("Requisitos")
 @export var educacion: Array[String]
 #------------------------------------

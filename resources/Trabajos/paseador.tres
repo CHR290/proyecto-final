@@ -10,4 +10,5 @@ nombre = "paseador"
 horario = Array[int]([5, 7])
 dias_semana = Array[int]([1, 5])
 paga_por_hora = 2500
+lugar = "calle"
 metadata/_custom_type_script = "uid://do3f68gq3fo87"
