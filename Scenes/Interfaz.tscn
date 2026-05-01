@@ -449,7 +449,7 @@ mouse_filter = 1
 position = Vector2(160, 84)
 scale = Vector2(4, 3.9999998)
 sprite_frames = SubResource("SpriteFrames_fhsir")
-animation = &"Tpaseador"
+animation = &"casa"
 
 [node name="Eventos" type="Control" parent="Contenido" unique_id=587460445]
 anchors_preset = 0

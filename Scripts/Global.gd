@@ -225,6 +225,10 @@ func change_money_bank(value: int):
 	dinero_banco += value
 	money_changed.emit()
 
+func change_money_credit(value:int):
+	dinero_credito += value
+	money_changed.emit()
+
 func advance_time(mo: int, d: int, h: int, m: int):
 	minutes += m
 	if speed < 4:
@@ -368,8 +372,6 @@ func actualizar_lugar():
 		hora_objetivo = hours	
 	var accion_objetivo: String = horario[weekday-1][hora_objetivo]
 	if !(accion_objetivo == accion_actual):
-		print(accion_actual)
-		print(accion_objetivo)
 		var recurso
 		accion_actual = accion_objetivo
 		if accion_actual.begins_with("T"):

@@ -10,7 +10,7 @@ func _ready():
 	Global.menu_changed.connect(gestionar_menu)
 	Global.place_changed.connect(transicionar)
 	Global.minute_passed.connect(actualizar_contador)
-	$Contenido/Fondo.play("default")
+	$Contenido/Fondo.play("casa")
 
 # Función para disparar cualquier evento
 func lanzar_evento():

@@ -62,10 +62,44 @@ func _on_opcion_seleccionada(indice: int):
 		match accion:
 			"quitar dinero":
 				if valor_str == "slider":
+					match Global.pago_activo:
+						0:
+							Global.change_money(-valor_slider)
+						1:
+							Global.change_money_bank(-valor_slider)
+						3:
+							Global.change_money_credit(-valor_slider)
+				else:
+					match Global.pago_activo:
+						0:
+							Global.change_money(-valor)
+						1:
+							Global.change_money_bank(-valor)
+						3:
+							Global.change_money_credit(-valor)
+			"ganar dinero":
+				if valor_str == "slider":
+					match Global.pago_activo:
+						0:
+							Global.change_money(valor_slider)
+						1:
+							Global.change_money_bank(valor_slider)
+						3:
+							Global.change_money_credit(valor_slider)
+				else:
+					match Global.pago_activo:
+						0:
+							Global.change_money(valor)
+						1:
+							Global.change_money_bank(valor)
+						3:
+							Global.change_money_bank(valor)
+			"ganar dinero efectivo":
+				if valor_str == "slider":
 					Global.change_money(-valor_slider)
 				else:
 					Global.change_money(-valor)
-			"ganar dinero":
+			"quitar dinero efectivo":
 				if valor_str == "slider":
 					Global.change_money(valor_slider)
 				else:
@@ -80,6 +114,12 @@ func _on_opcion_seleccionada(indice: int):
 					Global.change_money_bank(valor_slider)
 				else:
 					Global.change_money_bank(valor)
+			"quitar dinero credito":
+				if valor_str == "slider":
+					Global.change_money_credit(valor)
+				else:
+					Global.change_money_credit(valor)
+
 			"avanzar tiempo":
 				Global.advance_time(0,0,0,valor)
 			"activar gamestate":
