@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="EventResource" format=3 uid="uid://ch3ib85771cur"]
+
+[ext_resource type="Script" uid="uid://bgock86usd1r5" path="res://Scripts/ResourceEvento.gd" id="1_uns6r"]
+
+[resource]
+script = ExtResource("1_uns6r")
+titulo = "Bancolombia"
+texto = "La entidad bancaria \"Bancolombia\" te ofrece una tarjeta de crédito con una cuota de manejo del 2% y un interés del 5% mensual, ¿lo aceptas?"
+opciones = Array[String](["No", "Si"])
+consecuencias = Array[String](["nada", "cobrarcuotademanejo"])
+dias = Array[int]([7, 15])
+meses = Array[int]([8, 9])
+probabilidad = 1.0
+metadata/_custom_type_script = "uid://bgock86usd1r5"
