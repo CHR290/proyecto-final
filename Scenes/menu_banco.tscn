@@ -1,16 +1,20 @@
 [gd_scene format=3 uid="uid://bqto8xetrm37m"]
 
-[ext_resource type="Texture2D" uid="uid://cleg5cqhdr7r6" path="res://Sprites/menu_banco/fondo.png" id="1_dlrbx"]
 [ext_resource type="Script" uid="uid://b3d7itx3b626i" path="res://Scripts/menu_banco.gd" id="1_tpswl"]
 [ext_resource type="Texture2D" uid="uid://d0ib36fyxkqyx" path="res://Sprites/menu_banco/icono_ahorros.png" id="2_bakew"]
+[ext_resource type="Texture2D" uid="uid://blolko1hkxa0r" path="res://Sprites/menu_banco/fondo_principal.png" id="2_ss1nk"]
 [ext_resource type="Texture2D" uid="uid://o5ev2wca6j82" path="res://Sprites/menu_banco/icono_tarjetas.png" id="3_6r3jg"]
 [ext_resource type="Texture2D" uid="uid://dmniylliae81a" path="res://Sprites/menu_banco/icono_prestamo.png" id="4_hvcr5"]
+[ext_resource type="Texture2D" uid="uid://svyav0oaoh7q" path="res://Sprites/menu_banco/icono_ahorros_hover.png" id="4_ss1nk"]
 [ext_resource type="Texture2D" uid="uid://dgl2ucpvv6cx2" path="res://Sprites/menu_banco/icono_seguros.png" id="5_0oli0"]
 [ext_resource type="Texture2D" uid="uid://dwq5ealjh2yfd" path="res://Sprites/menu_banco/icono_depositar.png" id="6_hvcr5"]
+[ext_resource type="Texture2D" uid="uid://d1bqnoh6tsnoj" path="res://Sprites/menu_banco/icono_tarjetas_hover.png" id="6_j0y5t"]
 [ext_resource type="FontFile" uid="uid://p7hn8oq4t1r4" path="res://Fonts/advanced_pixel-7.ttf" id="6_nkiuh"]
 [ext_resource type="Texture2D" uid="uid://bv6vy0wrfrmc4" path="res://Sprites/menu_banco/icono_depositar_hover.png" id="7_nkiuh"]
+[ext_resource type="Texture2D" uid="uid://cddfdv6y4o7g0" path="res://Sprites/menu_banco/icono_seguros_hover.png" id="8_0b5uw"]
 [ext_resource type="Texture2D" uid="uid://blyr4p1u4k4pj" path="res://Sprites/menu_banco/icono_retirar.png" id="8_0oli0"]
 [ext_resource type="Texture2D" uid="uid://cx3lcc8unvlh6" path="res://Sprites/menu_banco/icono_retirar_hover.png" id="9_tpswl"]
+[ext_resource type="Texture2D" uid="uid://ebdjah710ymy" path="res://Sprites/menu_banco/icono_prestamo_hover.png" id="10_bcjfu"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_tpswl"]
 font = ExtResource("6_nkiuh")
@@ -35,7 +39,7 @@ script = ExtResource("1_tpswl")
 layout_mode = 0
 offset_right = 320.0
 offset_bottom = 168.0
-texture = ExtResource("1_dlrbx")
+texture = ExtResource("2_ss1nk")
 
 [node name="ahorros" type="TextureButton" parent="." unique_id=2063820643]
 layout_mode = 0
@@ -44,6 +48,7 @@ offset_top = 64.0
 offset_right = 76.0
 offset_bottom = 124.0
 texture_normal = ExtResource("2_bakew")
+texture_hover = ExtResource("4_ss1nk")
 stretch_mode = 0
 
 [node name="tarjetas" type="TextureButton" parent="." unique_id=671401565]
@@ -53,6 +58,7 @@ offset_top = 64.0
 offset_right = 152.0
 offset_bottom = 124.0
 texture_normal = ExtResource("3_6r3jg")
+texture_hover = ExtResource("6_j0y5t")
 stretch_mode = 0
 
 [node name="seguros" type="TextureButton" parent="." unique_id=512765309]
@@ -62,6 +68,7 @@ offset_top = 64.0
 offset_right = 228.0
 offset_bottom = 124.0
 texture_normal = ExtResource("5_0oli0")
+texture_hover = ExtResource("8_0b5uw")
 stretch_mode = 0
 
 [node name="prestamos" type="TextureButton" parent="." unique_id=1330913249]
@@ -71,6 +78,7 @@ offset_top = 64.0
 offset_right = 304.0
 offset_bottom = 124.0
 texture_normal = ExtResource("4_hvcr5")
+texture_hover = ExtResource("10_bcjfu")
 stretch_mode = 0
 
 [node name="depositar" type="TextureButton" parent="." unique_id=610677422]
@@ -103,6 +111,16 @@ label_settings = SubResource("LabelSettings_tpswl")
 horizontal_alignment = 1
 vertical_alignment = 1
 
+[node name="tiempo_ahorro" type="Label" parent="." unique_id=1041451497]
+layout_mode = 0
+offset_left = 48.0
+offset_top = 241.0
+offset_right = 272.0
+offset_bottom = 281.0
+label_settings = SubResource("LabelSettings_tpswl")
+horizontal_alignment = 1
+vertical_alignment = 1
+
 [node name="score_crediticio" type="Control" parent="." unique_id=212894864]
 anchors_preset = 0
 offset_left = 36.0
@@ -116,5 +134,9 @@ offset_right = 4.0
 offset_bottom = 12.0
 texture = SubResource("CanvasTexture_tpswl")
 
+[connection signal="pressed" from="ahorros" to="." method="_on_ahorros_pressed"]
+[connection signal="pressed" from="tarjetas" to="." method="_on_tarjetas_pressed"]
+[connection signal="pressed" from="seguros" to="." method="_on_seguros_pressed"]
+[connection signal="pressed" from="prestamos" to="." method="_on_prestamos_pressed"]
 [connection signal="pressed" from="depositar" to="." method="_on_depositar_pressed"]
 [connection signal="pressed" from="retirar" to="." method="_on_retirar_pressed"]

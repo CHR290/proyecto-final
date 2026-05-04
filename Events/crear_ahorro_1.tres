@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="EventResource" format=3 uid="uid://cemhjya0au40n"]
+
+[ext_resource type="Script" uid="uid://bgock86usd1r5" path="res://Scripts/ResourceEvento.gd" id="1_mvavr"]
+
+[resource]
+script = ExtResource("1_mvavr")
+id = 3
+cierra_menu = false
+modo_control = 1
+opciones = Array[String](["cancelar", "aceptar"])
+cantidad_max = -1
+consecuencias = Array[String](["nada", "añadir ahorro:slider,activar gamestate:ahorro activo,lanzar evento:4"])
+metadata/_custom_type_script = "uid://bgock86usd1r5"

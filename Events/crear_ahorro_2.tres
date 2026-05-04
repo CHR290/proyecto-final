@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="EventResource" format=3 uid="uid://dbs0pgdrsb7k6"]
+
+[ext_resource type="Script" uid="uid://bgock86usd1r5" path="res://Scripts/ResourceEvento.gd" id="1_e8bs7"]
+
+[resource]
+script = ExtResource("1_e8bs7")
+id = 4
+cierra_menu = false
+opciones = Array[String](["15 dias(10%)", "1 mes (40%)", "2 meses(70%)", "6 meses(100%)"])
+consecuencias = Array[String](["tiempo ahorro:15,bonificacion ahorro:1.1", "tiempo ahorro:30,bonificacion ahorro:1.4", "tiempo ahorro:60,bonificacion ahorro:1.7", "tiempo ahorro:180,bonificacion ahorro:2"])
+metadata/_custom_type_script = "uid://bgock86usd1r5"

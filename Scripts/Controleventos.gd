@@ -56,6 +56,8 @@ func _on_opcion_seleccionada(indice: int):
 		var partes = consecuencia.split(":")
 		var accion = str(partes[0])
 		var valor: int
+		var valor_f: float
+		valor_f = float(partes[1])
 		valor = int(partes[1])
 		var valor_str = partes[1]
 		
@@ -119,7 +121,6 @@ func _on_opcion_seleccionada(indice: int):
 					Global.change_money_credit(valor)
 				else:
 					Global.change_money_credit(valor)
-
 			"avanzar tiempo":
 				Global.advance_time(0,0,0,valor)
 			"activar gamestate":
@@ -150,6 +151,27 @@ func _on_opcion_seleccionada(indice: int):
 				Global.inventory.append(valor_str)
 			"quitar objeto":
 				Global.inventory.erase(valor_str)
+			"añadir ahorro":
+				Global.dinero_ahorrado += valor_slider
+				Global.change_money_bank(-valor_slider)
+			"tiempo ahorro":
+				Global.tiempo_ahorro = valor
+			"bonificacion ahorro":
+				Global.bonificacion_ahorro = valor_f
+			"retiro de emergencia":
+				var penalizacion: float
+				match Global.bonificacion_ahorro:
+					1.1:
+						penalizacion = 0.9
+					1.4:
+						penalizacion = 0.8
+					1.7:
+						penalizacion = 0.7
+					2.0:
+						penalizacion = 0.5
+				var pago_penalizado: float = Global.dinero_ahorrado * penalizacion
+				Global.change_money_bank(int(pago_penalizado))
+				Global.dinero_ahorrado = 0
 	Global.hay_evento_activo = false
 	queue_free()
 	Global.event_finished.emit()

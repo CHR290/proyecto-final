@@ -20,7 +20,8 @@ var gamestates = {
 	"vehículo": false,
 	"mascota": false,
 	"trabajo con jefe": false,
-	"tabajo": false
+	"tabajo": false,
+	"ahorro activo": false
 	}
 
 var hay_evento_activo: bool = false
@@ -39,6 +40,9 @@ var dinero_efectivo: int = 100000
 var dinero_banco: int = 0
 var dinero_total: int:	 
 	get: return dinero_efectivo + dinero_banco
+var dinero_ahorrado: int
+var tiempo_ahorro: int
+var bonificacion_ahorro: float
 var score_crediticio = 400
 
 var gastos_mensuales = {
@@ -109,6 +113,7 @@ func actualizar_informacion_diaria():
 	if day == 2 or day == 16:	
 		quincena()
 	day_changed.emit()
+	actualizar_ahorro()
 
 func actualizar_informacion_mensual():
 	for gasto in gastos_mensuales.values():
@@ -384,3 +389,11 @@ func actualizar_lugar():
 			lugar_actual = "casa"
 		place_changed.emit()
 		
+func actualizar_ahorro():
+	if gamestates["ahorro activo"]:
+		tiempo_ahorro -= 1
+		if tiempo_ahorro == 0:
+			print(dinero_ahorrado * bonificacion_ahorro)
+			var pago_ahorro: float = dinero_ahorrado * bonificacion_ahorro
+			change_money_bank(int(pago_ahorro))
+			gamestates["ahorro_activo"] = false

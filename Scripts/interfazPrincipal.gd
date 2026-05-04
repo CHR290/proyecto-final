@@ -47,7 +47,8 @@ func gestionar_menu(menu_id: int):
 			nombre_menu = "menu_inversiones"
 		6:
 			nombre_menu = "menu_finanzas"
-			Global.imprimir_horario()					
+			#Global.imprimir_horario()
+			print(Global.gamestates)					
 		7:
 			nombre_menu = "menu_calendario"
 	var ruta_menu = "res://Scenes/" + nombre_menu + ".tscn"

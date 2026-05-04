@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="EventResource" format=3 uid="uid://c4txsg21u5j7w"]
+
+[ext_resource type="Script" uid="uid://bgock86usd1r5" path="res://Scripts/ResourceEvento.gd" id="1_u34i1"]
+
+[resource]
+script = ExtResource("1_u34i1")
+id = 5
+cierra_menu = false
+opciones = Array[String](["retiro de emergencia", "cancelar"])
+consecuencias = Array[String](["retiro de emergencia:0,desactivar gamestate:ahorro activo", "nada"])
+metadata/_custom_type_script = "uid://bgock86usd1r5"
