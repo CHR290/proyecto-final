@@ -6,9 +6,9 @@
 script = ExtResource("1_uns6r")
 titulo = "Bancolombia"
 texto = "La entidad bancaria \"Bancolombia\" te ofrece una tarjeta de crédito con una cuota de manejo del 2% y un interés del 5% mensual, ¿lo aceptas?"
+id = 1010
 opciones = Array[String](["No", "Si"])
-consecuencias = Array[String](["nada", "cobrarcuotademanejo"])
-dias = Array[int]([7, 15])
-meses = Array[int]([8, 9])
+consecuencias = Array[String](["nada", "abrir menu:2"])
+limite_diario = 1
 probabilidad = 1.0
 metadata/_custom_type_script = "uid://bgock86usd1r5"
