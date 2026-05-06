@@ -28,7 +28,7 @@ func _on_seguros_pressed() -> void:
 
 
 func _on_tarjetas_pressed() -> void:
-	pass # Replace with function body.
+	pass # Replace with function body.	
 
 
 func _on_ahorros_pressed() -> void:

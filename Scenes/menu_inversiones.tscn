@@ -1,9 +1,42 @@
 [gd_scene format=3 uid="uid://cnmsvnvdcn580"]
 
+[ext_resource type="Texture2D" uid="uid://soq7hukn1pyr" path="res://Sprites/menu_inversiones/fondo.png" id="1_1m0m7"]
+
 [node name="Control" type="Control" unique_id=681016984]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_left = 224.0
+offset_top = 104.0
+offset_right = -224.0
+offset_bottom = -160.0
 grow_horizontal = 2
 grow_vertical = 2
+
+[node name="fondo" type="TextureRect" parent="." unique_id=860164712]
+layout_mode = 0
+offset_right = 320.0
+offset_bottom = 168.0
+texture = ExtResource("1_1m0m7")
+
+[node name="sectores" type="TextureButton" parent="." unique_id=1987526156]
+layout_mode = 0
+offset_left = 8.0
+offset_top = 40.0
+offset_right = 104.0
+offset_bottom = 136.0
+
+[node name="crypto" type="TextureButton" parent="." unique_id=2111030630]
+layout_mode = 0
+offset_left = 112.0
+offset_top = 39.0
+offset_right = 208.0
+offset_bottom = 135.0
+
+[node name="bienes raices" type="TextureButton" parent="." unique_id=1172424370]
+layout_mode = 0
+offset_left = 216.0
+offset_top = 40.0
+offset_right = 312.0
+offset_bottom = 136.0
