@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://cnmsvnvdcn580"]
 
 [ext_resource type="Texture2D" uid="uid://soq7hukn1pyr" path="res://Sprites/menu_inversiones/fondo.png" id="1_1m0m7"]
+[ext_resource type="Script" uid="uid://bin3na0l4cs4q" path="res://Scripts/menu_inversiones.gd" id="1_8opa3"]
 
 [node name="Control" type="Control" unique_id=681016984]
 layout_mode = 3
@@ -13,6 +14,7 @@ offset_right = -224.0
 offset_bottom = -160.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_8opa3")
 
 [node name="fondo" type="TextureRect" parent="." unique_id=860164712]
 layout_mode = 0

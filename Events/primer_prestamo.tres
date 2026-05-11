@@ -5,7 +5,7 @@
 [resource]
 script = ExtResource("1_uns6r")
 titulo = "Bancolombia"
-texto = "La entidad bancaria \"Bancolombia\" te ofrece una tarjeta de crédito con una cuota de manejo del 2% y un interés del 5% mensual, ¿lo aceptas?"
+texto = "La entidad bancaria Bancacorro te ofrece una tarjeta de crédito con una cuota de manejo del 2% y un interés del 5% mensual, ¿lo aceptas?"
 id = 1010
 opciones = Array[String](["No", "Si"])
 consecuencias = Array[String](["nada", "abrir menu:2"])
