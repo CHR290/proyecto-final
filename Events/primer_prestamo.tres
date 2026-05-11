@@ -4,14 +4,13 @@
 
 [resource]
 script = ExtResource("1_uns6r")
-titulo = "Bancolombia"
-texto = "La entidad bancaria Bancacorro te ofrece una tarjeta de crédito con una cuota de manejo del 2% y un interés del 5% mensual, ¿lo aceptas?"
+titulo = "Banco"
+texto = "Una entidad bancaria te ofrece una tarjeta de crédito, ¿lo aceptas?"
 id = 1010
-opciones = Array[String](["No", "Si"])
+opciones = Array[String](["ignorar", "ir a ver"])
 consecuencias = Array[String](["nada", "abrir menu:2"])
 limite_diario = 1
-dias = Array[int]([1, 2])
-fechas = Array[int]([13, 15])
-meses = Array[int]([1, 2])
+fechas = Array[int]([13, 13])
+meses = Array[int]([1, 1])
 probabilidad = 0.8
 metadata/_custom_type_script = "uid://bgock86usd1r5"

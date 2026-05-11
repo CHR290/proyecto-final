@@ -322,7 +322,7 @@ func _cumple_condiciones(id: int, recurso: EventResource) -> bool:
 		if apariciones >= recurso.limite_diario:
 			print("error 1")
 			return false
-	if recurso.dias.size() > 0 and weekday not in recurso.dias:
+	if recurso.dias.size() > 0 and weekday not in range(recurso.dias[0], recurso.dias[1]):
 		print("error 2")
 		return false
 	if recurso.fechas.size() > 0 and day not in range(recurso.fechas[0], recurso.fechas[1]):
