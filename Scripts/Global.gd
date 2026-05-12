@@ -409,3 +409,9 @@ func actualizar_ahorro():
 			var pago_ahorro: float = dinero_ahorrado * bonificacion_ahorro
 			change_money_bank(int(pago_ahorro))
 			gamestates["ahorro_activo"] = false
+
+func calcular_estado() -> int:
+	var estado_calculado = 0
+	estado_calculado += (felicidad + salud) / 2
+	estado_calculado -= cortisol / 2
+	return int(estado_calculado)

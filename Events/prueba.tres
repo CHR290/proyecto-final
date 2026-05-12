@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="EventResource" format=3 uid="uid://bog0akuak3eyd"]
+
+[ext_resource type="Script" uid="uid://bgock86usd1r5" path="res://Scripts/ResourceEvento.gd" id="1_cghq4"]
+
+[resource]
+script = ExtResource("1_cghq4")
+titulo = "asdfghjkl"
+texto = "sdfghjklñ{"
+id = 9999
+opciones = Array[String](["cortisol", "felicidad", "salud"])
+consecuencias = Array[String](["subir cortisol:10", "subir felicidad: 10", "subir salud:10"])
+metadata/_custom_type_script = "uid://bgock86usd1r5"
