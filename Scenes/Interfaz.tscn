@@ -34,6 +34,7 @@
 [ext_resource type="Script" uid="uid://c8m2j017q3ktc" path="res://Scripts/line_edit.gd" id="25_x1nb3"]
 [ext_resource type="Texture2D" uid="uid://bv3whds0b73fn" path="res://Sprites/interfaz/estado_5.png" id="26_dxuy8"]
 [ext_resource type="Texture2D" uid="uid://xekm6aewcf4n" path="res://Sprites/fondos/caminando.png" id="31_1qcgs"]
+[ext_resource type="Texture2D" uid="uid://cl1fh31w4jtvd" path="res://Sprites/fondos/barismo.png" id="31_kcgn6"]
 [ext_resource type="Texture2D" uid="uid://dtxux6y1velqb" path="res://Sprites/fondos/domiciliario.png" id="32_1wrx1"]
 [ext_resource type="Texture2D" uid="uid://dvi25xkki3v88" path="res://Sprites/fondos/default.png" id="32_lau65"]
 [ext_resource type="Texture2D" uid="uid://br2ovj3t58fsd" path="res://Sprites/fondos/estudiar.png" id="33_lau65"]
@@ -67,6 +68,14 @@ region = Rect2(0, 84, 80, 42)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_fhsir"]
 animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("31_kcgn6")
+}],
+"loop": true,
+"name": &"Cbarismo",
+"speed": 5.0
+}, {
 "frames": [{
 "duration": 1.0,
 "texture": ExtResource("32_1wrx1")
@@ -449,7 +458,7 @@ mouse_filter = 1
 position = Vector2(160, 84)
 scale = Vector2(4, 3.9999998)
 sprite_frames = SubResource("SpriteFrames_fhsir")
-animation = &"casa"
+animation = &"Cbarismo"
 
 [node name="Eventos" type="Control" parent="Contenido" unique_id=587460445]
 anchors_preset = 0
