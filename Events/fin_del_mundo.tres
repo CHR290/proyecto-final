@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="EventResource" format=3 uid="uid://ddf8rhc57k6pq"]
+
+[ext_resource type="Script" uid="uid://bgock86usd1r5" path="res://Scripts/ResourceEvento.gd" id="1_ktn4s"]
+
+[resource]
+script = ExtResource("1_ktn4s")
+titulo = "El mundo se ha acabado"
+texto = "Ha caído una bomba nuclear y todos fueron papeados termonuclearmente ¿Cuáles serán tus últimas palabras?"
+id = 6767
+opciones = Array[String](["67", "Dab", "Griddy", "Emotiza insana"])
+consecuencias = Array[String](["bajar salud:100", "bajar salud:100", "bajar salud:100", "bajar salud:100"])
+dias = Array[int]([5, 5])
+fechas = Array[int]([13, 13])
+probabilidad = 0.1
+metadata/_custom_type_script = "uid://bgock86usd1r5"

@@ -13,4 +13,5 @@ horarios_validos = Array[Array]([])
 fechas = Array[int]([8, 8])
 meses = Array[int]([5, 5])
 lugar = Array[String](["casa"])
+probabilidad = 1.0
 metadata/_custom_type_script = "uid://bgock86usd1r5"
