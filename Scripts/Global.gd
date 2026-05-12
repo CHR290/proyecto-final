@@ -55,7 +55,7 @@ var inventory: Array[String] = []
 var cortisol: int = 10
 var felicidad: int = 100
 var salud: int = 100
-var estado: int = 100
+var estado: int = 20
 
 var lugar_actual: String = "casa"
 var accion_actual: String = "nada"
@@ -300,10 +300,10 @@ func try_evento():
 	var eventos_posibles = []
 	for id in id_eventos.keys():
 		var recurso = load(id_eventos[id])
-		print("Evaluando evento: ", id, " con recurso: ", recurso)
+		
 		if _cumple_condiciones(id, recurso):
 			eventos_posibles.append({"id": id, "resource": recurso})
-		print("Evento ", id, " cumple condiciones: ", _cumple_condiciones(id, recurso))
+
 	if eventos_posibles.size() > 0:
 		var evento_elegido = eventos_posibles.pick_random()
 		var probabilidad: float
@@ -314,27 +314,27 @@ func try_evento():
 		if randf() <= probabilidad:
 			lanzar_evento(evento_elegido["id"])
 			registrar_evento(evento_elegido["id"])
-	print("Eventos posibles: ", eventos_posibles.size())
+
 			
 func _cumple_condiciones(id: int, recurso: EventResource) -> bool:
 	if recurso.limite_diario > 0:
 		var apariciones = registro_eventos.get(id, 0)
 		if apariciones >= recurso.limite_diario:
-			print("error 1")
+			
 			return false
 	if recurso.dias.size() > 0 and weekday not in range(recurso.dias[0], recurso.dias[1]):
-		print("error 2")
+		
 		return false
 	if recurso.fechas.size() > 0 and day not in range(recurso.fechas[0], recurso.fechas[1]):
-		print("error 3")
+		
 		return false
 	if recurso.meses.size() > 0 and month not in range(recurso.meses[0], recurso.meses[1]):
-		print("error 4")
+		
 		return false
 	if recurso.gamestate.size() > 0:
 		for state in recurso.gamestate:
 			if gamestates.get(state, false) == false:
-				print("error 5")
+				
 				return false
 	if recurso.lugar.size() != 0:
 		for lugar in recurso.lugar:
@@ -344,7 +344,7 @@ func _cumple_condiciones(id: int, recurso: EventResource) -> bool:
 		for accion in recurso.accion:
 			if accion == accion_actual:
 				return true
-		print("error 6")
+		
 		return false
 	var hora_valida = false
 	if recurso.horarios_validos.size() == 0:

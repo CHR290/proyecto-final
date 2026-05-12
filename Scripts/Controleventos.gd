@@ -95,17 +95,17 @@ func _on_opcion_seleccionada(indice: int):
 						1:
 							Global.change_money_bank(valor)
 						3:
-							Global.change_money_bank(valor)
+							Global.change_money_credit(valor)
 			"ganar dinero efectivo":
-				if valor_str == "slider":
-					Global.change_money(-valor_slider)
-				else:
-					Global.change_money(-valor)
-			"quitar dinero efectivo":
 				if valor_str == "slider":
 					Global.change_money(valor_slider)
 				else:
 					Global.change_money(valor)
+			"quitar dinero efectivo":
+				if valor_str == "slider":
+					Global.change_money(-valor_slider)
+				else:
+					Global.change_money(-valor)
 			"retirar banco":
 				if valor_str == "slider":
 					Global.change_money_bank(-valor_slider)
