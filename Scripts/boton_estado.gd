@@ -26,6 +26,8 @@ func _on_button_up():
 	self.self_modulate = Color(1,1,1,1)
 
 func cambiar_icono():
+	Global.estado = Global.calcular_estado()
+	print("Cortisol: ", Global.cortisol, " Felicidad: ", Global.felicidad, " Salud: ", Global.salud, " Estado: ", Global.estado)
 	if Global.estado >= 80:
 		self.texture_normal = estado5
 	elif Global.estado >= 60:
