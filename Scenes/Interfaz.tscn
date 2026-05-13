@@ -33,7 +33,6 @@
 [ext_resource type="Script" uid="uid://c8m2j017q3ktc" path="res://Scripts/line_edit.gd" id="25_x1nb3"]
 [ext_resource type="Texture2D" uid="uid://bv3whds0b73fn" path="res://Sprites/interfaz/estado_5.png" id="26_dxuy8"]
 [ext_resource type="Texture2D" uid="uid://xekm6aewcf4n" path="res://Sprites/fondos/caminando.png" id="31_1qcgs"]
-[ext_resource type="Texture2D" uid="uid://cl1fh31w4jtvd" path="res://Sprites/fondos/barismo.png" id="31_kcgn6"]
 [ext_resource type="Texture2D" uid="uid://dtxux6y1velqb" path="res://Sprites/fondos/domiciliario.png" id="32_1wrx1"]
 [ext_resource type="Texture2D" uid="uid://dvi25xkki3v88" path="res://Sprites/fondos/default.png" id="32_lau65"]
 [ext_resource type="Texture2D" uid="uid://br2ovj3t58fsd" path="res://Sprites/fondos/estudiar.png" id="33_lau65"]
@@ -43,6 +42,9 @@
 load_path = "res://.godot/imported/interfaz_base.png-7b02827f502d482d08fce1a246c6395a.ctex"
 
 [sub_resource type="CanvasTexture" id="CanvasTexture_c32x4"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_lau65"]
+load_path = "res://.godot/imported/barismo.png-501dc592ddaeaab303147c6f458cd298.ctex"
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_xooom"]
 atlas = ExtResource("24_wbk2n")
@@ -55,6 +57,22 @@ region = Rect2(0, 42, 80, 42)
 [sub_resource type="AtlasTexture" id="AtlasTexture_44adm"]
 atlas = ExtResource("24_wbk2n")
 region = Rect2(0, 84, 80, 42)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4fklj"]
+atlas = ExtResource("31_1qcgs")
+region = Rect2(0, 0, 80, 42)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_r62ch"]
+atlas = ExtResource("31_1qcgs")
+region = Rect2(0, 42, 80, 42)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ljf22"]
+atlas = ExtResource("31_1qcgs")
+region = Rect2(0, 84, 80, 42)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_n4myn"]
+atlas = ExtResource("31_1qcgs")
+region = Rect2(0, 126, 80, 42)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_1qcgs"]
 atlas = ExtResource("23_47irw")
@@ -72,7 +90,7 @@ region = Rect2(0, 84, 80, 42)
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("31_kcgn6")
+"texture": SubResource("CompressedTexture2D_lau65")
 }],
 "loop": true,
 "name": &"Cbarismo",
@@ -110,7 +128,16 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("31_1qcgs")
+"texture": SubResource("AtlasTexture_4fklj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_r62ch")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ljf22")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_n4myn")
 }],
 "loop": true,
 "name": &"caminando",
@@ -460,7 +487,7 @@ mouse_filter = 1
 position = Vector2(160, 84)
 scale = Vector2(4, 3.9999998)
 sprite_frames = SubResource("SpriteFrames_fhsir")
-animation = &"Cbarismo"
+animation = &"casa"
 
 [node name="Eventos" type="Control" parent="Contenido" unique_id=587460445]
 anchors_preset = 0

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://xlfca2yueuv4"
-path="res://.godot/imported/barismo.png-501dc592ddaeaab303147c6f458cd298.ctex"
+uid="uid://b8wg4qwhkbige"
+path="res://.godot/imported/cripto.png-1cbd84f698c4a9ce80d4ffe148b15b10.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/fondos/barismo.png"
-dest_files=["res://.godot/imported/barismo.png-501dc592ddaeaab303147c6f458cd298.ctex"]
+source_file="res://Sprites/menu_inversiones/cripto.png"
+dest_files=["res://.godot/imported/cripto.png-1cbd84f698c4a9ce80d4ffe148b15b10.ctex"]
 
 [params]
 

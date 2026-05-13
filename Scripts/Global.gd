@@ -20,8 +20,9 @@ var gamestates = {
 	"vehículo": false,
 	"mascota": false,
 	"trabajo con jefe": false,
-	"tabajo": false,
-	"ahorro activo": false
+	"trabajo": false,
+	"ahorro activo": false,
+	"eventos_inversiones": false
 	}
 
 var hay_evento_activo: bool = false

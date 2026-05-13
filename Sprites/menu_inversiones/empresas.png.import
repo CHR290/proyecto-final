@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://xlfca2yueuv4"
-path="res://.godot/imported/barismo.png-501dc592ddaeaab303147c6f458cd298.ctex"
+uid="uid://58j66whgltb0"
+path="res://.godot/imported/empresas.png-c5119aaa661acb8002a498f9ef169d2d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/fondos/barismo.png"
-dest_files=["res://.godot/imported/barismo.png-501dc592ddaeaab303147c6f458cd298.ctex"]
+source_file="res://Sprites/menu_inversiones/empresas.png"
+dest_files=["res://.godot/imported/empresas.png-c5119aaa661acb8002a498f9ef169d2d.ctex"]
 
 [params]
 

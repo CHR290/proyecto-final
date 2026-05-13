@@ -49,7 +49,6 @@ func gestionar_menu(menu_id: int):
 			nombre_menu = "menu_finanzas"
 			#Global.imprimir_horario()
 			#print(Global.gamestates)	
-			print("felicidad: " + str(Global.felicidad) + " salud: " + str(Global.salud) + " cortisol: " + str(Global.cortisol) + " estado: " + str(Global.estado))
 	var ruta_menu = "res://Scenes/" + nombre_menu + ".tscn"
 	var escena_menu = load(ruta_menu)
 	var instancia_menu = escena_menu.instantiate()
