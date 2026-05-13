@@ -140,9 +140,9 @@ func _on_opcion_seleccionada(indice: int):
 			"bajar cortisol":
 				Global.cortisol -= valor
 			"subir salud":
-				Global.cortisol += valor
+				Global.salud += valor
 			"bajar salud":
-				Global.cortisol -= valor
+				Global.salud -= valor
 			"subir felicidad":
 				Global.felicidad += valor
 			"bajar felicidad":
