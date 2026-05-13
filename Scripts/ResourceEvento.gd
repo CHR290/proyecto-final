@@ -29,4 +29,3 @@ enum TipoControl { OPCIONES, SLIDER }
 @export var gamestate: Array[String] = []
 @export var probabilidad: float = 0.0 
 @export var estado: int
-
