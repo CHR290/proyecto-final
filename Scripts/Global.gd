@@ -412,6 +412,6 @@ func actualizar_ahorro():
 
 func calcular_estado() -> int:
 	var estado_calculado = 0
-	estado_calculado += (felicidad + salud) / 2
-	estado_calculado -= cortisol / 2
+	estado_calculado += (felicidad + salud) / 2.0
+	estado_calculado -= cortisol / 2.0
 	return int(estado_calculado)
