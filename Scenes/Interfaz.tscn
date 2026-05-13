@@ -1,7 +1,6 @@
 [gd_scene format=3 uid="uid://ctyufk1t8gst4"]
 
 [ext_resource type="Script" uid="uid://cvyw2j7yeslom" path="res://Scripts/interfazPrincipal.gd" id="1_5jhjj"]
-[ext_resource type="Texture2D" uid="uid://chu2khxripgud" path="res://Sprites/interfaz/interfaz_base.png" id="1_vmjln"]
 [ext_resource type="Texture2D" uid="uid://cev7ku5vjwm8s" path="res://Sprites/interfaz/icono_maletin.png" id="2_5jhjj"]
 [ext_resource type="Script" uid="uid://b7v42cr2uo6fl" path="res://Scripts/AnimarBoton.gd" id="3_pdv2c"]
 [ext_resource type="Texture2D" uid="uid://j2dxdwnp1ffp" path="res://Sprites/interfaz/icono_banco.png" id="4_px3cy"]
@@ -39,6 +38,9 @@
 [ext_resource type="Texture2D" uid="uid://dvi25xkki3v88" path="res://Sprites/fondos/default.png" id="32_lau65"]
 [ext_resource type="Texture2D" uid="uid://br2ovj3t58fsd" path="res://Sprites/fondos/estudiar.png" id="33_lau65"]
 [ext_resource type="Texture2D" uid="uid://w0hvotf7mhfj" path="res://Sprites/fondos/paseador.png" id="35_1qcgs"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_1qcgs"]
+load_path = "res://.godot/imported/interfaz_base.png-7b02827f502d482d08fce1a246c6395a.ctex"
 
 [sub_resource type="CanvasTexture" id="CanvasTexture_c32x4"]
 
@@ -162,7 +164,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("1_vmjln")
+texture = SubResource("CompressedTexture2D_1qcgs")
 
 [node name="boton_trabajo" type="TextureButton" parent="." unique_id=92870703]
 layout_mode = 1
