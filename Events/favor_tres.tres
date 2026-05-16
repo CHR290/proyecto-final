@@ -4,4 +4,10 @@
 
 [resource]
 script = ExtResource("1_54jvy")
+titulo = "Favor.."
+texto = "Una abuelita de tu barrio te pide el favor de que le configures el waza ya que ella no sabe ¿Qué harás?"
+id = 5252
+opciones = Array[String](["Aceptar(10000)", "Rechazar (0)"])
+consecuencias = Array[String](["ganar dinero:10000,subir felicidad:50", "bajar salud:20,bajar cortisol:30"])
+probabilidad = 0.002
 metadata/_custom_type_script = "uid://bgock86usd1r5"

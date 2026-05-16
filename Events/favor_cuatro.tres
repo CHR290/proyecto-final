@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="EventResource" format=3 uid="uid://dfy5uybm35nlp"]
+
+[ext_resource type="Script" uid="uid://bgock86usd1r5" path="res://Scripts/ResourceEvento.gd" id="1_0n1rm"]
+
+[resource]
+script = ExtResource("1_0n1rm")
+titulo = "Favor.."
+texto = "En la plaza de mercado un señor te pide el favor que le ayudes a cargar algunas canastas ¿Qué harás?"
+id = 5353
+opciones = Array[String](["Aceptar (10000)", "Rechazar (0)"])
+consecuencias = Array[String](["ganar dinero:10000,subir cortisol:40,bajar salud:20", "nada"])
+probabilidad = 0.001
+metadata/_custom_type_script = "uid://bgock86usd1r5"

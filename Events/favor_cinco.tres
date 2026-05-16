@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="EventResource" format=3 uid="uid://c851pld7qsgr0"]
+
+[ext_resource type="Script" uid="uid://bgock86usd1r5" path="res://Scripts/ResourceEvento.gd" id="1_0ehap"]
+
+[resource]
+script = ExtResource("1_0ehap")
+titulo = "Favor.."
+texto = "Tu tia te pide el favor de que le lleves un paquete a servidiligencias ya que se lo mandará a una sobrina ¿Qué harás? "
+id = 5454
+opciones = Array[String](["Aceptar (10000)", "Rechazar (0)"])
+consecuencias = Array[String](["ganar dinero:10000,subir cortisol:20", "bajar felicidad:25"])
+probabilidad = 0.001
+metadata/_custom_type_script = "uid://bgock86usd1r5"
