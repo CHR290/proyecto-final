@@ -63,6 +63,12 @@ func _on_opcion_seleccionada(indice: int):
 		
 		match accion:
 			"quitar dinero":
+				if verificar_dinero(valor):
+					Global.hay_evento_activo = false
+					queue_free()
+					Global.event_finished.emit()
+					Global.lanzar_evento(recurso.id)
+					return
 				if valor_str == "slider":
 					match Global.pago_activo:
 						0:
@@ -73,7 +79,7 @@ func _on_opcion_seleccionada(indice: int):
 							Global.change_money_credit(-valor_slider)
 				else:
 					match Global.pago_activo:
-						0:
+						0:								
 							Global.change_money(-valor)
 						1:
 							Global.change_money_bank(-valor)
@@ -175,3 +181,16 @@ func _on_opcion_seleccionada(indice: int):
 	Global.hay_evento_activo = false
 	queue_free()
 	Global.event_finished.emit()
+
+func verificar_dinero(valor: int) -> bool :
+	match Global.pago_activo:
+		0:
+			if valor > Global.dinero_efectivo:
+				return true
+		1:
+			if valor > Global.dinero_banco:
+				return true
+		3:
+			if valor > Global.dinero_credito:
+				return true
+	return false
