@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="EventResource" format=3 uid="uid://c036i6aqfkv7o"]
+
+[ext_resource type="Script" uid="uid://bgock86usd1r5" path="res://Scripts/ResourceEvento.gd" id="1_sct4p"]
+
+[resource]
+script = ExtResource("1_sct4p")
+titulo = "Visitante Inesperado"
+texto = "Ha aparecido un hombre en tu casa llamado Darius. Te ofrece una gran suma por trabajar un dia entero para él, pero no te especifica de que tratará el trabajo. "
+id = 6565
+opciones = Array[String](["Aceptar (+100000)", "Rechazar (0)"])
+consecuencias = Array[String](["ganar dinero:100000,bajar felicidad:100,bajar salud:20,bajar cortisol:30", "nada"])
+metadata/_custom_type_script = "uid://bgock86usd1r5"
