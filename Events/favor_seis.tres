@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="EventResource" format=3 uid="uid://cdujlx1ox2gqa"]
+
+[ext_resource type="Script" uid="uid://bgock86usd1r5" path="res://Scripts/ResourceEvento.gd" id="1_n141o"]
+
+[resource]
+script = ExtResource("1_n141o")
+titulo = "Favor de mamá.."
+texto = "Tu madre te ha pedido el favor de irle a hacer el mercado ya que ella está cansada ¿Qué harás?"
+id = 5555
+opciones = Array[String](["Aceptar (10000)", "Rechazar (0)"])
+consecuencias = Array[String](["ganar dinero:10000,bajar salud:30", "bajar felicidad:25"])
+probabilidad = 0.001
+metadata/_custom_type_script = "uid://bgock86usd1r5"

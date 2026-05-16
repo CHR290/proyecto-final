@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="EventResource" format=3 uid="uid://j8efivjkv2gw"]
+
+[ext_resource type="Script" uid="uid://bgock86usd1r5" path="res://Scripts/ResourceEvento.gd" id="1_gvm7n"]
+
+[resource]
+script = ExtResource("1_gvm7n")
+titulo = "Favor.."
+texto = "Te encuentras un paseador de perros y te pide el favor de que le sostengas las correas unos minutos ya que le surgió un problema ¿Qué harás?"
+id = 5656
+opciones = Array[String](["Aceptar (10000)", "Rechazar (0)"])
+consecuencias = Array[String](["ganar dinero:10000,subir felicidad:35", "bajar felicidad:25"])
+probabilidad = 0.001
+metadata/_custom_type_script = "uid://bgock86usd1r5"
