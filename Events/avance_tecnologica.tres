@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="EventResource" format=3 uid="uid://dr61q3e02bmd"]
+
+[ext_resource type="Script" uid="uid://bgock86usd1r5" path="res://Scripts/ResourceEvento.gd" id="1_p7nmj"]
+
+[resource]
+script = ExtResource("1_p7nmj")
+titulo = "Avance tecnologico"
+texto = "Ha salido la nueva consola pleys tation, y eres amante a los videojuegos ¿Qué harás?"
+id = 6363
+opciones = Array[String](["Comprarla (-500000)", "Ignorar (0)"])
+consecuencias = Array[String](["quitar dinero:500000,subir cortisol:100,subir felicidad:100", "bajar cortisol:50,bajar felicidad:80"])
+probabilidad = 0.002
+metadata/_custom_type_script = "uid://bgock86usd1r5"

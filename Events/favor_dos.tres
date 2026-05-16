@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="EventResource" format=3 uid="uid://bgwf54nf1eaq3"]
+
+[ext_resource type="Script" uid="uid://bgock86usd1r5" path="res://Scripts/ResourceEvento.gd" id="1_5ipgk"]
+
+[resource]
+script = ExtResource("1_5ipgk")
+titulo = "Tocan la puerta.."
+texto = "Los testigos de Jehová están tocando la puerta de tu casa, y te piden una pequeña colaboración ¿Qué harás?"
+id = 5151
+opciones = Array[String](["Colaborar (-15000)", "Rechazar (0)"])
+consecuencias = Array[String](["quitar dinero:15000,subir felicidad:60", "nada"])
+probabilidad = 0.003
+metadata/_custom_type_script = "uid://bgock86usd1r5"

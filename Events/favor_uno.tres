@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="EventResource" format=3 uid="uid://c1cxdhf0hv5fq"]
+
+[ext_resource type="Script" uid="uid://bgock86usd1r5" path="res://Scripts/ResourceEvento.gd" id="1_1yve2"]
+
+[resource]
+script = ExtResource("1_1yve2")
+titulo = "Favor.."
+texto = "Una vecina te ve y te pide ayuda para configurar su Tv, dice que te recompensará ¿Qué harás?"
+id = 5050
+opciones = Array[String](["Aceptar (15000)", "Rechazar (0)"])
+consecuencias = Array[String](["ganar dinero:15000,subir cortisol:60,subir felicidad:60", "nada"])
+probabilidad = 0.005
+metadata/_custom_type_script = "uid://bgock86usd1r5"
