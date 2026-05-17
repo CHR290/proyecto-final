@@ -32,6 +32,7 @@ func _on_tarjetas_pressed() -> void:
 
 
 func _on_ahorros_pressed() -> void:
+	print(Global.gamestates["ahorro activo"])
 	if Global.gamestates["ahorro activo"] == false:
 		Global.lanzar_evento(3)
 	else:

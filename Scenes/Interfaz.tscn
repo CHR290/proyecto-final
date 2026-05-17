@@ -35,7 +35,6 @@
 [ext_resource type="Texture2D" uid="uid://dvi25xkki3v88" path="res://Sprites/fondos/default.png" id="32_lau65"]
 [ext_resource type="Texture2D" uid="uid://dpwahtmmu3fvn" path="res://Sprites/fondos/habitacionNocturna.png" id="33_1qcgs"]
 [ext_resource type="Texture2D" uid="uid://br2ovj3t58fsd" path="res://Sprites/fondos/estudiar.png" id="33_lau65"]
-[ext_resource type="Texture2D" uid="uid://w0hvotf7mhfj" path="res://Sprites/fondos/paseador.png" id="35_1qcgs"]
 [ext_resource type="FontFile" uid="uid://p7hn8oq4t1r4" path="res://Fonts/advanced_pixel-7.ttf" id="37_lau65"]
 [ext_resource type="Script" uid="uid://b0fj6ldxigbdi" path="res://Scripts/estado.gd" id="38_1qcgs"]
 
@@ -154,10 +153,7 @@ animations = [{
 "name": &"Tmesero",
 "speed": 5.0
 }, {
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("35_1qcgs")
-}],
+"frames": [],
 "loop": true,
 "name": &"Tpaseador",
 "speed": 5.0
@@ -561,8 +557,8 @@ mouse_filter = 1
 position = Vector2(160, 84)
 scale = Vector2(4, 3.9999998)
 sprite_frames = SubResource("SpriteFrames_fhsir")
-animation = &"casa_n"
-frame_progress = 0.46729428
+animation = &"Tpaseador"
+frame_progress = 0.18643834
 
 [node name="Eventos" type="Control" parent="Contenido" unique_id=587460445]
 anchors_preset = 0

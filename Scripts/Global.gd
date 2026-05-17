@@ -408,11 +408,10 @@ func actualizar_ahorro():
 	if gamestates["ahorro activo"]:
 		tiempo_ahorro -= 1
 		if tiempo_ahorro == 0:
-			print(dinero_ahorrado * bonificacion_ahorro)
 			var pago_ahorro: float = dinero_ahorrado * bonificacion_ahorro
 			change_money_bank(int(pago_ahorro))
-			gamestates["ahorro_activo"] = false
-
+			gamestates["ahorro activo"] = false
+			print(pago_ahorro)
 func calcular_estado() -> int:
 	var estado_calculado = 0
 	estado_calculado += (felicidad + salud) / 2.0
