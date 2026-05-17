@@ -10,6 +10,7 @@ func _process(_delta: float) -> void:
 
 func _on_boton_estado_mouse_entered() -> void:
 	self.show()
+	print("felicidad: ", Global.felicidad, " salud: ", Global.salud, " cortisol: ", Global.cortisol)
 	actualizar_barras()
 
 
@@ -17,7 +18,6 @@ func _on_boton_estado_mouse_exited() -> void:
 	self.hide()
 
 func actualizar_barras() -> void:
-	print("felicidad: ", Global.felicidad, " salud: ", Global.salud, " cortisol: ", Global.cortisol)
 	$felicidad.value = Global.felicidad
 	$salud.value = Global.salud
 	$cortisol.value = Global.cortisol

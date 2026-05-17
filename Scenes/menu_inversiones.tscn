@@ -3,7 +3,14 @@
 [ext_resource type="Texture2D" uid="uid://soq7hukn1pyr" path="res://Sprites/menu_inversiones/fondo.png" id="1_1m0m7"]
 [ext_resource type="Script" uid="uid://bin3na0l4cs4q" path="res://Scripts/menu_inversiones.gd" id="1_8opa3"]
 [ext_resource type="Texture2D" uid="uid://b8wg4qwhkbige" path="res://Sprites/menu_inversiones/cripto.png" id="3_gkh0n"]
+[ext_resource type="Texture2D" uid="uid://b00r6bjco7ah1" path="res://Sprites/menu_inversiones/cripto_hover.png" id="4_by0te"]
 [ext_resource type="Texture2D" uid="uid://58j66whgltb0" path="res://Sprites/menu_inversiones/empresas.png" id="4_lwvfa"]
+[ext_resource type="FontFile" uid="uid://p7hn8oq4t1r4" path="res://Fonts/advanced_pixel-7.ttf" id="5_lwvfa"]
+[ext_resource type="Texture2D" uid="uid://drsdxdcy4lud" path="res://Sprites/menu_inversiones/empresas_hover.png" id="6_mebhj"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_lco2v"]
+font = ExtResource("5_lwvfa")
+font_size = 20
 
 [node name="Control" type="Control" unique_id=681016984]
 layout_mode = 3
@@ -31,6 +38,7 @@ offset_top = 88.0
 offset_right = 300.0
 offset_bottom = 152.0
 texture_normal = ExtResource("3_gkh0n")
+texture_hover = ExtResource("4_by0te")
 stretch_mode = 0
 
 [node name="empresas" type="TextureButton" parent="." unique_id=908009771]
@@ -40,4 +48,20 @@ offset_top = 16.0
 offset_right = 300.0
 offset_bottom = 80.0
 texture_normal = ExtResource("4_lwvfa")
+texture_hover = ExtResource("6_mebhj")
 stretch_mode = 0
+
+[node name="Label" type="Label" parent="." unique_id=2007781966]
+layout_mode = 0
+offset_left = 12.0
+offset_right = 216.0
+offset_bottom = 24.0
+text = "novedades"
+label_settings = SubResource("LabelSettings_lco2v")
+horizontal_alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1423673869]
+layout_mode = 0
+offset_top = 20.0
+offset_right = 220.0
+offset_bottom = 168.0

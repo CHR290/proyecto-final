@@ -85,7 +85,7 @@ func _ready():
 		for h in range(24):
 			dia.append("libre")
 		horario.append(dia)
-	var curso_inicial = load("res://resources/Cursos/Secundaria.tres")
+	var curso_inicial = load("res://resources/Cursos/secundaria.tres")
 	entrar_curso(curso_inicial)
 	cursos_disponibles.erase(curso_inicial) 
 	cursos_activos[0].dias_asistidos = 239
@@ -373,9 +373,11 @@ func actualizar_cursos():
 			education.append(curso.nombre)
 			cursos_activos.erase(curso)
 			mark_schedule(curso.horario[0], curso.horario[1], curso.dias_semana, "libre")
-			var graduacion = load("res://Events/grado_"+curso.nombre.to_lower()+".tres")
-			lanzar_evento(graduacion.id)
-						
+			var graduacion = load("res://Events/grado.tres")
+			if curso.nombre != "secundaria":
+				var texto_graduacion = "¡Has completado el curso de "+curso.nombre+"!"
+				graduacion.texto = texto_graduacion+"mira que oportunidades laborales nuevas tienes"
+			lanzar_evento(graduacion.id)				
 		else:
 			curso.dias_asistidos += 1	
 

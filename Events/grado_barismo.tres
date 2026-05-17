@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="EventResource" format=3 uid="uid://d1dryy8ewlpe"]
+
+[ext_resource type="Texture2D" uid="uid://dyg5x36kj6f86" path="res://Sprites/Eventos/grado.png" id="1_8p1jk"]
+[ext_resource type="Script" uid="uid://bgock86usd1r5" path="res://Scripts/ResourceEvento.gd" id="2_givil"]
+
+[resource]
+script = ExtResource("2_givil")
+titulo = "Felicidades!"
+texto = "Has terminado el curso de Barismo, ve a ver que opotunidades laborales nuevas tienes!"
+imagen = ExtResource("1_8p1jk")
+id = 1000
+opciones = Array[String](["Continuar", "ir a Cursos"])
+consecuencias = Array[String](["nada", "abrir menu:3"])
+metadata/_custom_type_script = "uid://bgock86usd1r5"

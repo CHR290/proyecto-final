@@ -46,6 +46,9 @@ load_path = "res://.godot/imported/interfaz_base.png-7b02827f502d482d08fce1a246c
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_lau65"]
 load_path = "res://.godot/imported/barismo.png-501dc592ddaeaab303147c6f458cd298.ctex"
 
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_kcgn6"]
+load_path = "res://.godot/imported/barismo.png-501dc592ddaeaab303147c6f458cd298.ctex"
+
 [sub_resource type="AtlasTexture" id="AtlasTexture_xooom"]
 atlas = ExtResource("24_wbk2n")
 region = Rect2(0, 0, 80, 42)
@@ -94,6 +97,14 @@ animations = [{
 }],
 "loop": true,
 "name": &"Cbarismo",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("CompressedTexture2D_kcgn6")
+}],
+"loop": true,
+"name": &"Ccocina",
 "speed": 5.0
 }, {
 "frames": [{
@@ -180,7 +191,7 @@ animations = [{
 bg_color = Color(0.9368312, 0.9368312, 0.9368312, 0.30588236)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8bfmn"]
-bg_color = Color(0.8352941, 0.67058825, 0.09411765, 1)
+bg_color = Color(0.84705883, 0.8117647, 0.0627451, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_lau65"]
 bg_color = Color(0.528903, 0.6592153, 0.116176285, 1)
@@ -502,7 +513,7 @@ mouse_filter = 1
 position = Vector2(160, 84)
 scale = Vector2(4, 3.9999998)
 sprite_frames = SubResource("SpriteFrames_fhsir")
-animation = &"casa"
+animation = &"Tmesero"
 
 [node name="Eventos" type="Control" parent="Contenido" unique_id=587460445]
 anchors_preset = 0
