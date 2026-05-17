@@ -23,8 +23,6 @@
 [ext_resource type="Script" uid="uid://ypvfag1wwjsm" path="res://Scripts/indicador_semana.gd" id="16_6vngg"]
 [ext_resource type="Texture2D" uid="uid://bptwj5pkj61cd" path="res://Sprites/interfaz/indicador.png" id="17_l5sm6"]
 [ext_resource type="Script" uid="uid://b1aqmq4dhovvv" path="res://Scripts/control_velocidad.gd" id="18_h1aem"]
-[ext_resource type="Texture2D" uid="uid://5ldx3od72kw4" path="res://Sprites/interfaz/calendario_pressed.png" id="18_px3cy"]
-[ext_resource type="Texture2D" uid="uid://bsiclknlmss2l" path="res://Sprites/interfaz/calendario_hover.png" id="19_fhsir"]
 [ext_resource type="Texture2D" uid="uid://b87sa18lxusll" path="res://Sprites/interfaz/calendario.png" id="20_pdv2c"]
 [ext_resource type="Texture2D" uid="uid://ddg2jpv1y8vm4" path="res://Sprites/interfaz/icono_debito.png" id="21_lficq"]
 [ext_resource type="Texture2D" uid="uid://b1ttwlwxj86ne" path="res://Sprites/fondos/habitacion.png" id="23_47irw"]
@@ -37,6 +35,8 @@
 [ext_resource type="Texture2D" uid="uid://dvi25xkki3v88" path="res://Sprites/fondos/default.png" id="32_lau65"]
 [ext_resource type="Texture2D" uid="uid://br2ovj3t58fsd" path="res://Sprites/fondos/estudiar.png" id="33_lau65"]
 [ext_resource type="Texture2D" uid="uid://w0hvotf7mhfj" path="res://Sprites/fondos/paseador.png" id="35_1qcgs"]
+[ext_resource type="FontFile" uid="uid://p7hn8oq4t1r4" path="res://Fonts/advanced_pixel-7.ttf" id="37_lau65"]
+[ext_resource type="Script" uid="uid://b0fj6ldxigbdi" path="res://Scripts/estado.gd" id="38_1qcgs"]
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_1qcgs"]
 load_path = "res://.godot/imported/interfaz_base.png-7b02827f502d482d08fce1a246c6395a.ctex"
@@ -173,6 +173,23 @@ animations = [{
 "name": &"estudiar",
 "speed": 5.0
 }]
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_lau65"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_kcgn6"]
+bg_color = Color(0.9368312, 0.9368312, 0.9368312, 0.30588236)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8bfmn"]
+bg_color = Color(0.8352941, 0.67058825, 0.09411765, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_lau65"]
+bg_color = Color(0.528903, 0.6592153, 0.116176285, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1wrx1"]
+bg_color = Color(0.7519796, 0.2375837, 0.15017, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_1qcgs"]
+font = ExtResource("37_lau65")
 
 [node name="InterfazPrincipal" type="Control" unique_id=1137798224]
 layout_mode = 3
@@ -317,8 +334,6 @@ offset_top = 164.0
 offset_right = 712.0
 offset_bottom = 284.0
 texture_normal = ExtResource("20_pdv2c")
-texture_pressed = ExtResource("18_px3cy")
-texture_hover = ExtResource("19_fhsir")
 stretch_mode = 0
 
 [node name="contador_efectivo" type="HBoxContainer" parent="." unique_id=999322556]
@@ -544,6 +559,68 @@ placeholder_text = "cantidad"
 script = ExtResource("25_x1nb3")
 tipo = 3
 
+[node name="Estado" type="Control" parent="." unique_id=1960751398]
+anchors_preset = 0
+offset_left = 786.0
+offset_top = 278.0
+offset_right = 913.0
+offset_bottom = 378.0
+script = ExtResource("38_1qcgs")
+
+[node name="fondo" type="TextureRect" parent="Estado" unique_id=747816033]
+self_modulate = Color(0.05805995, 0.05805995, 0.05805995, 0.5686275)
+layout_mode = 0
+offset_right = 127.0
+offset_bottom = 100.0
+texture = SubResource("CanvasTexture_lau65")
+expand_mode = 2
+
+[node name="felicidad" type="ProgressBar" parent="Estado" unique_id=2071206654]
+layout_mode = 0
+offset_left = 10.0
+offset_top = 28.0
+offset_right = 22.0
+offset_bottom = 92.0
+theme_override_styles/background = SubResource("StyleBoxFlat_kcgn6")
+theme_override_styles/fill = SubResource("StyleBoxFlat_8bfmn")
+rounded = true
+fill_mode = 3
+show_percentage = false
+
+[node name="salud" type="ProgressBar" parent="Estado" unique_id=1809610896]
+layout_mode = 0
+offset_left = 57.0
+offset_top = 28.0
+offset_right = 69.0
+offset_bottom = 92.0
+theme_override_styles/background = SubResource("StyleBoxFlat_kcgn6")
+theme_override_styles/fill = SubResource("StyleBoxFlat_lau65")
+rounded = true
+fill_mode = 3
+show_percentage = false
+
+[node name="cortisol" type="ProgressBar" parent="Estado" unique_id=1088525115]
+layout_mode = 0
+offset_left = 104.0
+offset_top = 28.0
+offset_right = 117.0
+offset_bottom = 92.0
+theme_override_styles/background = SubResource("StyleBoxFlat_kcgn6")
+theme_override_styles/fill = SubResource("StyleBoxFlat_1wrx1")
+rounded = true
+fill_mode = 3
+show_percentage = false
+
+[node name="Label" type="Label" parent="Estado" unique_id=1054157610]
+layout_mode = 0
+offset_right = 127.0
+offset_bottom = 23.0
+text = "felicidad  Salud  cortisol"
+label_settings = SubResource("LabelSettings_1qcgs")
+horizontal_alignment = 1
+
+[connection signal="mouse_entered" from="boton_estado" to="Estado" method="_on_boton_estado_mouse_entered"]
+[connection signal="mouse_exited" from="boton_estado" to="Estado" method="_on_boton_estado_mouse_exited"]
 [connection signal="text_submitted" from="DEBUG_eventos" to="DEBUG_eventos" method="_on_text_submitted"]
 [connection signal="text_submitted" from="DEBUG_fecha" to="DEBUG_fecha" method="_on_text_submitted"]
 [connection signal="text_submitted" from="DEBUG_hora" to="DEBUG_hora" method="_on_text_submitted"]
