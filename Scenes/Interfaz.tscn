@@ -33,6 +33,7 @@
 [ext_resource type="Texture2D" uid="uid://xekm6aewcf4n" path="res://Sprites/fondos/caminando.png" id="31_1qcgs"]
 [ext_resource type="Texture2D" uid="uid://dtxux6y1velqb" path="res://Sprites/fondos/domiciliario.png" id="32_1wrx1"]
 [ext_resource type="Texture2D" uid="uid://dvi25xkki3v88" path="res://Sprites/fondos/default.png" id="32_lau65"]
+[ext_resource type="Texture2D" uid="uid://dpwahtmmu3fvn" path="res://Sprites/fondos/habitacionNocturna.png" id="33_1qcgs"]
 [ext_resource type="Texture2D" uid="uid://br2ovj3t58fsd" path="res://Sprites/fondos/estudiar.png" id="33_lau65"]
 [ext_resource type="Texture2D" uid="uid://w0hvotf7mhfj" path="res://Sprites/fondos/paseador.png" id="35_1qcgs"]
 [ext_resource type="FontFile" uid="uid://p7hn8oq4t1r4" path="res://Fonts/advanced_pixel-7.ttf" id="37_lau65"]
@@ -88,6 +89,30 @@ region = Rect2(0, 42, 80, 42)
 [sub_resource type="AtlasTexture" id="AtlasTexture_8bfmn"]
 atlas = ExtResource("23_47irw")
 region = Rect2(0, 84, 80, 42)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tjpm4"]
+atlas = ExtResource("33_1qcgs")
+region = Rect2(0, 0, 80, 42)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qatmw"]
+atlas = ExtResource("33_1qcgs")
+region = Rect2(0, 84, 80, 42)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qsdgb"]
+atlas = ExtResource("33_1qcgs")
+region = Rect2(0, 126, 80, 42)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_g8kpi"]
+atlas = ExtResource("33_1qcgs")
+region = Rect2(0, 168, 80, 42)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kbryl"]
+atlas = ExtResource("33_1qcgs")
+region = Rect2(0, 210, 80, 42)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jhicv"]
+atlas = ExtResource("33_1qcgs")
+region = Rect2(0, 42, 80, 42)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_fhsir"]
 animations = [{
@@ -166,6 +191,29 @@ animations = [{
 }],
 "loop": true,
 "name": &"casa",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tjpm4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qatmw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qsdgb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_g8kpi")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kbryl")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jhicv")
+}],
+"loop": true,
+"name": &"casa_n",
 "speed": 5.0
 }, {
 "frames": [{
@@ -513,7 +561,8 @@ mouse_filter = 1
 position = Vector2(160, 84)
 scale = Vector2(4, 3.9999998)
 sprite_frames = SubResource("SpriteFrames_fhsir")
-animation = &"Tmesero"
+animation = &"casa_n"
+frame_progress = 0.46729428
 
 [node name="Eventos" type="Control" parent="Contenido" unique_id=587460445]
 anchors_preset = 0
