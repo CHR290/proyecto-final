@@ -1,0 +1,19 @@
+[gd_resource type="Resource" script_class="ResourceEmpresa" format=3 uid="uid://ceyv6ast0v8b1"]
+
+[ext_resource type="Script" uid="uid://50m8eo7mhigm" path="res://Scripts/ResourceEmpresa.gd" id="1_jykos"]
+[ext_resource type="Texture2D" uid="uid://dwn8ng2oubty5" path="res://Sprites/menu_inversiones/FletflixLogo.png" id="1_leab2"]
+
+[resource]
+script = ExtResource("1_jykos")
+id = 1
+imagen = ExtResource("1_leab2")
+nombre = "FletFlix"
+descripcion = "Un gigante del entretenimiento por streaming"
+acciones = 2000000
+nivel = "Grande"
+volatilidad_bajar = 0.03
+volatilidad_subir = 0.05
+tasa_dividendo = 0.07
+valor_total = 60000000
+variacion = 0.09
+metadata/_custom_type_script = "uid://50m8eo7mhigm"

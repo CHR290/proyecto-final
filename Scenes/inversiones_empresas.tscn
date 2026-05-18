@@ -1,9 +1,203 @@
 [gd_scene format=3 uid="uid://btgwgqt1t0ko1"]
 
+[ext_resource type="Texture2D" uid="uid://dhjhm708nafgi" path="res://Sprites/menu_inversiones/fondo_empresas.png" id="1_ox55y"]
+[ext_resource type="Texture2D" uid="uid://dwn8ng2oubty5" path="res://Sprites/menu_inversiones/FletflixLogo.png" id="2_iufdc"]
+[ext_resource type="FontFile" uid="uid://p7hn8oq4t1r4" path="res://Fonts/advanced_pixel-7.ttf" id="3_spx37"]
+[ext_resource type="Texture2D" uid="uid://b7rv48kaxymc" path="res://Sprites/extras/Indicador.png" id="4_rtc3u"]
+[ext_resource type="Texture2D" uid="uid://cpkjntnkcwhl5" path="res://Sprites/menu_inversiones/Boton.png" id="5_qohdb"]
+[ext_resource type="Texture2D" uid="uid://bivtgfukwldwq" path="res://Sprites/menu_inversiones/Boton_pressed.png" id="6_f7vgq"]
+[ext_resource type="Texture2D" uid="uid://cro2djyi8jby8" path="res://Sprites/menu_inversiones/Boton_hover.png" id="7_ug50b"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_dmhhr"]
+line_spacing = -6.0
+font = ExtResource("3_spx37")
+font_size = 18
+
+[sub_resource type="LabelSettings" id="LabelSettings_lw3q6"]
+line_spacing = -8.0
+font = ExtResource("3_spx37")
+font_size = 20
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ox55y"]
+bg_color = Color(0.3647059, 0.35686275, 0.35686275, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_spx37"]
+bg_color = Color(0.27752787, 0.27752766, 0.2775278, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_iufdc"]
+bg_color = Color(0.39688927, 0.39688927, 0.39688924, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_034bh"]
+font = ExtResource("3_spx37")
+font_size = 20
+
+[sub_resource type="LabelSettings" id="LabelSettings_c8svm"]
+font = ExtResource("3_spx37")
+font_size = 20
+
+[sub_resource type="LabelSettings" id="LabelSettings_ox55y"]
+font = ExtResource("3_spx37")
+font_size = 20
+
 [node name="Control" type="Control" unique_id=377811607]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_left = 224.0
+offset_top = 104.0
+offset_right = -224.0
+offset_bottom = -160.0
 grow_horizontal = 2
 grow_vertical = 2
+
+[node name="Fondo" type="TextureRect" parent="." unique_id=1606129261]
+layout_mode = 0
+offset_right = 320.0
+offset_bottom = 168.0
+texture = ExtResource("1_ox55y")
+
+[node name="LogoEmpresa" type="TextureRect" parent="." unique_id=1425164157]
+layout_mode = 0
+offset_left = 36.0
+offset_top = 28.0
+offset_right = 120.0
+offset_bottom = 112.0
+texture = ExtResource("2_iufdc")
+
+[node name="Descripcion" type="Label" parent="." unique_id=276636121]
+layout_mode = 0
+offset_left = 32.0
+offset_top = 121.0
+offset_right = 125.0
+offset_bottom = 166.0
+text = "Un gigante del entretenimiento por streaming"
+label_settings = SubResource("LabelSettings_dmhhr")
+horizontal_alignment = 1
+autowrap_mode = 3
+justification_flags = 138
+
+[node name="NombreEmpresa" type="Label" parent="." unique_id=1979645589]
+layout_mode = 0
+offset_left = 36.0
+offset_top = 110.0
+offset_right = 120.0
+offset_bottom = 130.0
+text = "FletFlix"
+label_settings = SubResource("LabelSettings_lw3q6")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Boton" type="Button" parent="." unique_id=2081866502]
+layout_mode = 0
+offset_left = 228.0
+offset_top = 4.0
+offset_right = 288.0
+offset_bottom = 20.0
+theme_override_styles/normal = SubResource("StyleBoxFlat_ox55y")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_spx37")
+theme_override_styles/hover = SubResource("StyleBoxFlat_iufdc")
+
+[node name="Tamaño" type="Label" parent="Boton" unique_id=410470739]
+layout_mode = 0
+offset_left = -4.0
+offset_top = -4.0
+offset_right = 64.0
+offset_bottom = 20.0
+text = "Pequeñas"
+label_settings = SubResource("LabelSettings_034bh")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="InfoEmpresa" type="VBoxContainer" parent="." unique_id=805855509]
+layout_mode = 0
+offset_left = 128.0
+offset_top = 28.0
+offset_right = 288.0
+offset_bottom = 132.0
+theme_override_constants/separation = 1
+
+[node name="TextoValor" type="Label" parent="InfoEmpresa" unique_id=1837492515]
+layout_mode = 2
+text = "Valor"
+label_settings = SubResource("LabelSettings_c8svm")
+vertical_alignment = 1
+
+[node name="Valor" type="HBoxContainer" parent="InfoEmpresa" unique_id=164289955]
+layout_mode = 2
+
+[node name="Valor" type="Label" parent="InfoEmpresa/Valor" unique_id=654007462]
+layout_mode = 2
+text = "$60.000.000 USD"
+label_settings = SubResource("LabelSettings_c8svm")
+vertical_alignment = 1
+
+[node name="Variacion" type="Label" parent="InfoEmpresa/Valor" unique_id=298730539]
+layout_mode = 2
+text = "10%"
+label_settings = SubResource("LabelSettings_c8svm")
+vertical_alignment = 1
+
+[node name="Indicador" type="TextureRect" parent="InfoEmpresa/Valor" unique_id=491731562]
+custom_minimum_size = Vector2(12, 0)
+layout_mode = 2
+texture = ExtResource("4_rtc3u")
+stretch_mode = 5
+
+[node name="Acciones" type="Label" parent="InfoEmpresa" unique_id=1820020364]
+layout_mode = 2
+text = "Acciones: 200000 (0)"
+label_settings = SubResource("LabelSettings_c8svm")
+vertical_alignment = 1
+
+[node name="ValorAcciones" type="Label" parent="InfoEmpresa" unique_id=2082233824]
+layout_mode = 2
+text = "Valor: 30 USD"
+label_settings = SubResource("LabelSettings_c8svm")
+vertical_alignment = 1
+
+[node name="Dividendos" type="Label" parent="InfoEmpresa" unique_id=2084972143]
+layout_mode = 2
+text = "Dividendos: 4%"
+label_settings = SubResource("LabelSettings_c8svm")
+vertical_alignment = 1
+
+[node name="Comprar" type="TextureButton" parent="." unique_id=50090421]
+layout_mode = 0
+offset_left = 128.0
+offset_top = 136.0
+offset_right = 204.0
+offset_bottom = 160.0
+texture_normal = ExtResource("5_qohdb")
+texture_pressed = ExtResource("6_f7vgq")
+texture_hover = ExtResource("7_ug50b")
+stretch_mode = 0
+
+[node name="Label" type="Label" parent="Comprar" unique_id=44929642]
+layout_mode = 0
+offset_right = 76.0
+offset_bottom = 24.0
+text = "Comprar"
+label_settings = SubResource("LabelSettings_ox55y")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Vender" type="TextureButton" parent="." unique_id=1499700098]
+layout_mode = 0
+offset_left = 208.0
+offset_top = 136.0
+offset_right = 284.0
+offset_bottom = 160.0
+texture_normal = ExtResource("5_qohdb")
+texture_pressed = ExtResource("6_f7vgq")
+texture_hover = ExtResource("7_ug50b")
+stretch_mode = 0
+
+[node name="Label" type="Label" parent="Vender" unique_id=1239207890]
+layout_mode = 0
+offset_right = 76.0
+offset_bottom = 24.0
+text = "Vender"
+label_settings = SubResource("LabelSettings_ox55y")
+horizontal_alignment = 1
+vertical_alignment = 1

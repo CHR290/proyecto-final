@@ -1,3 +1,4 @@
+class_name ResourceEmpresa
 extends Resource
 @export_group("Info")
 @export var id: int = 0
@@ -12,6 +13,24 @@ extends Resource
 @export var tasa_dividendo: float = 0.0
 @export_group("Estado")
 @export var valor_total: int = 0
-@export var valor_accion: int = 0
-@export var variacion: int = 0
+@export var valor_accion: float = 0
+@export var pago_dividendo: float = 0
+@export var variacion: float = 0
+@export var acciones_compradas: float = 0
+
+func actualizar_valor(extra: float) -> void:
+    if extra == 0:
+        var variacion_aleatoria = randf_range(-volatilidad_bajar, volatilidad_subir)
+        var nuevo_valor = valor_total*(1 + variacion_aleatoria)
+        valor_total = int(nuevo_valor)
+    else:
+        valor_total = int(valor_total * extra)
+    valor_accion = float(valor_total) / acciones
+    pago_dividendo = (valor_accion * acciones_compradas) * tasa_dividendo
+
+
+
+    
+        
+    
 

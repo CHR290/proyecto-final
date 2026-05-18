@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cmwj5nr4v0owb"
-path="res://.godot/imported/prueba_4.png-d4ef5b12a86793247f9eaa257f43cbd5.ctex"
+uid="uid://dhjhm708nafgi"
+path="res://.godot/imported/fondo_empresas.png-f3f373c95d2d085aa454ce1bd03dd205.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/Eventos/prueba_4.png"
-dest_files=["res://.godot/imported/prueba_4.png-d4ef5b12a86793247f9eaa257f43cbd5.ctex"]
+source_file="res://Sprites/menu_inversiones/fondo_empresas.png"
+dest_files=["res://.godot/imported/fondo_empresas.png-f3f373c95d2d085aa454ce1bd03dd205.ctex"]
 
 [params]
 

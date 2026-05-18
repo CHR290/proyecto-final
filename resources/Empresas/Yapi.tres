@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="ResourceEmpresa" format=3 uid="uid://1467ixrejqfx"]
+
+[ext_resource type="Script" uid="uid://50m8eo7mhigm" path="res://Scripts/ResourceEmpresa.gd" id="1_0lkus"]
+
+[resource]
+script = ExtResource("1_0lkus")
+id = 2
+nombre = "Yapi"
+descripcion = "reconocida empresa nacional de pasabocas"
+acciones = 200000
+volatilidad_bajar = 0.08
+volatilidad_subir = 0.1
+tasa_dividendo = 0.03
+valor_total = 2000000
+variacion = -0.02
+metadata/_custom_type_script = "uid://50m8eo7mhigm"

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://vcnnokmcolkb"
-path="res://.godot/imported/prueba_2.png-858a52c07567c19ef99bfa0e938db728.ctex"
+uid="uid://dwn8ng2oubty5"
+path="res://.godot/imported/FletflixLogo.png-86a231b301e506381e43419de4c43a6b.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/Eventos/prueba_2.png"
-dest_files=["res://.godot/imported/prueba_2.png-858a52c07567c19ef99bfa0e938db728.ctex"]
+source_file="res://Sprites/menu_inversiones/FletflixLogo.png"
+dest_files=["res://.godot/imported/FletflixLogo.png-86a231b301e506381e43419de4c43a6b.ctex"]
 
 [params]
 

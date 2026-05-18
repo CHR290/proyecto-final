@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cit34hv1fw3gi"
-path="res://.godot/imported/prueba_3.png-ba6f779a7a869a9929ce8f41e877cfdc.ctex"
+uid="uid://cro2djyi8jby8"
+path="res://.godot/imported/Boton_hover.png-1444a647e9912f484d170864e987e280.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/Eventos/prueba_3.png"
-dest_files=["res://.godot/imported/prueba_3.png-ba6f779a7a869a9929ce8f41e877cfdc.ctex"]
+source_file="res://Sprites/menu_inversiones/Boton_hover.png"
+dest_files=["res://.godot/imported/Boton_hover.png-1444a647e9912f484d170864e987e280.ctex"]
 
 [params]
 
