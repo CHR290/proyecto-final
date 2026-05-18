@@ -8,6 +8,7 @@ var recurso: EventResource
 @onready var contenedor_slider = $Zona_interaccion/Slider
 @onready var slider_cantidad = $Zona_interaccion/Slider/HSlider
 @onready var label_slider = $Zona_interaccion/Slider/valor/Label
+@onready var slider = $Zona_interaccion/Slider/HSlider
 func configurar_evento(p_recurso: EventResource):
 	recurso = p_recurso
 	label_titulo.text = recurso.titulo
@@ -21,12 +22,29 @@ func configurar_evento(p_recurso: EventResource):
 		match recurso.cantidad_max:
 			0:
 				slider_cantidad.max_value = Global.dinero_efectivo
+				slider.step = 1000
 			-1:
 				slider_cantidad.max_value = Global.dinero_banco
+				slider.step = 1000
+			-2:
+				slider_cantidad.max_value = Inversiones.dolares * 4000
+				slider.step = 1000
+			-3:
+				slider_cantidad.max_value = Inversiones.dolares
+				slider.step = 0.1
+			-4:
+				slider_cantidad.max_value = Inversiones.empresa_actual.acciones_compradas * Inversiones.empresa_actual.valor_accion
+				slider.step = 0.01
 			_:
 				slider_cantidad.max_value = recurso.cantidad_max
 		slider_cantidad.value = recurso.cantidad_por_defecto
-		slider_cantidad.value_changed.connect(func(v): label_slider.text = "$" + str(int(v)))
+		match recurso.tipo_texto:
+			0:
+				slider_cantidad.value_changed.connect(func(v):label_slider.text = "$" + str(int(v)))
+			1:
+				slider_cantidad.value_changed.connect(func(v): label_slider.text = "USD " + str(int(v)*0.00025) + " ($" + str(int(v)) + ")")
+			2:
+				slider_cantidad.value_changed.connect(func(v): label_slider.text = str(snapped(v/Inversiones.empresa_actual.valor_accion, 0.01)) + " ($" + str(v) + ")")		
 	_crear_botones(recurso)
 
 func _crear_botones(p_recurso: EventResource):
@@ -178,6 +196,16 @@ func _on_opcion_seleccionada(indice: int):
 				var pago_penalizado: float = Global.dinero_ahorrado * penalizacion
 				Global.change_money_bank(int(pago_penalizado))
 				Global.dinero_ahorrado = 0
+			"comprar dolares":
+				Inversiones.dolares += valor_slider * 0.00025
+				Global.change_money_bank(-valor_slider)
+			"vender dolares":
+				Inversiones.dolares -= valor_slider * 0.00025
+				Global.change_money_bank(valor_slider)
+			"comprar acciones":
+				Inversiones.comprar_acciones(valor_slider)
+			"vender acciones":
+				Inversiones.vender_acciones(valor_slider)
 	Global.hay_evento_activo = false
 	queue_free()
 	Global.event_finished.emit()

@@ -1,16 +1,18 @@
 [gd_resource type="Resource" script_class="ResourceEmpresa" format=3 uid="uid://1467ixrejqfx"]
 
 [ext_resource type="Script" uid="uid://50m8eo7mhigm" path="res://Scripts/ResourceEmpresa.gd" id="1_0lkus"]
+[ext_resource type="Texture2D" uid="uid://cihnxrxdgp345" path="res://Sprites/menu_inversiones/YapiLogo.png" id="1_odswj"]
 
 [resource]
 script = ExtResource("1_0lkus")
-id = 2
+imagen = ExtResource("1_odswj")
 nombre = "Yapi"
 descripcion = "reconocida empresa nacional de pasabocas"
 acciones = 200000
+nivel = "Mediana"
 volatilidad_bajar = 0.08
 volatilidad_subir = 0.1
-tasa_dividendo = 0.03
+tasa_dividendo = 0.06
 valor_total = 2000000
 variacion = -0.02
 metadata/_custom_type_script = "uid://50m8eo7mhigm"

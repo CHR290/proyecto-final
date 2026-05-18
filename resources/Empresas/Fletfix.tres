@@ -5,7 +5,6 @@
 
 [resource]
 script = ExtResource("1_jykos")
-id = 1
 imagen = ExtResource("1_leab2")
 nombre = "FletFlix"
 descripcion = "Un gigante del entretenimiento por streaming"
@@ -13,7 +12,7 @@ acciones = 2000000
 nivel = "Grande"
 volatilidad_bajar = 0.03
 volatilidad_subir = 0.05
-tasa_dividendo = 0.07
+tasa_dividendo = 0.05
 valor_total = 60000000
 variacion = 0.09
 metadata/_custom_type_script = "uid://50m8eo7mhigm"

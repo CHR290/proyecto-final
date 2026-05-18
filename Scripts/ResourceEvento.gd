@@ -2,7 +2,7 @@ extends Resource
 class_name EventResource
 
 enum TipoControl { OPCIONES, SLIDER }
-
+@export var tipo_texto: int = 0
 @export_group("Configuración del Evento")
 @export var titulo: String = ""
 @export_multiline var texto: String = ""

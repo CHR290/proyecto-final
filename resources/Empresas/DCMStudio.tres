@@ -1,16 +1,18 @@
 [gd_resource type="Resource" script_class="ResourceEmpresa" format=3 uid="uid://c0r6lpeqvl5cp"]
 
+[ext_resource type="Texture2D" uid="uid://bec27qgb3xisg" path="res://Sprites/menu_inversiones/DCMStudioLogo.png" id="1_85bf7"]
 [ext_resource type="Script" uid="uid://50m8eo7mhigm" path="res://Scripts/ResourceEmpresa.gd" id="1_vhet6"]
 
 [resource]
 script = ExtResource("1_vhet6")
-id = 3
+imagen = ExtResource("1_85bf7")
 nombre = "DCMStudio"
-descripcion = "Pequeño estudio de desarrolo indie de videojeugos"
+descripcion = "Pequeño estudio de desarrollo indie de videojeugos"
 acciones = 80000
 nivel = "Pequeña"
 volatilidad_bajar = 0.2
 volatilidad_subir = 0.45
 tasa_dividendo = 0.02
 valor_total = 100000
+variacion = 0.2
 metadata/_custom_type_script = "uid://50m8eo7mhigm"

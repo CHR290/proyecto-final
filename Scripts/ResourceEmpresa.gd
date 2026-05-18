@@ -1,7 +1,6 @@
 class_name ResourceEmpresa
 extends Resource
 @export_group("Info")
-@export var id: int = 0
 @export var imagen: Texture2D
 @export var nombre: String = ""
 @export var descripcion: String = ""

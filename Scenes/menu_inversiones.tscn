@@ -65,3 +65,5 @@ layout_mode = 0
 offset_top = 20.0
 offset_right = 220.0
 offset_bottom = 168.0
+
+[connection signal="pressed" from="empresas" to="." method="_on_empresas_pressed"]

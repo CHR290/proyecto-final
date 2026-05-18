@@ -1,0 +1,18 @@
+[gd_resource type="Resource" script_class="ResourceEmpresa" format=3 uid="uid://dfxicd01bdtbd"]
+
+[ext_resource type="Texture2D" uid="uid://dl86ue1ikxwbj" path="res://Sprites/menu_inversiones/MvideoLogo.png" id="1_tp101"]
+[ext_resource type="Script" uid="uid://50m8eo7mhigm" path="res://Scripts/ResourceEmpresa.gd" id="1_u7r6r"]
+
+[resource]
+script = ExtResource("1_u7r6r")
+imagen = ExtResource("1_tp101")
+nombre = "Mvideo"
+descripcion = "productora y distribuidora de tarjetas graficas"
+acciones = 3000000
+nivel = "Grande"
+volatilidad_bajar = 0.1
+volatilidad_subir = 0.4
+tasa_dividendo = 0.02
+valor_total = 100000000
+variacion = 0.1
+metadata/_custom_type_script = "uid://50m8eo7mhigm"

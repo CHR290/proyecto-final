@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="EventResource" format=3 uid="uid://bq0um66mt132x"]
+
+[ext_resource type="Script" uid="uid://bgock86usd1r5" path="res://Scripts/ResourceEvento.gd" id="1_x0bk7"]
+
+[resource]
+script = ExtResource("1_x0bk7")
+tipo_texto = 1
+id = 14
+cierra_menu = false
+modo_control = 1
+opciones = Array[String](["vender", "cancelar"])
+cantidad_max = -2
+consecuencias = Array[String](["vender dolares:slider", "nada"])
+metadata/_custom_type_script = "uid://bgock86usd1r5"

@@ -17,6 +17,7 @@ config/features=PackedStringArray("4.6", "Forward Plus")
 [autoload]
 
 Global="*uid://cudmdv1dushof"
+Inversiones="*uid://dxhim0vw6gy6b"
 
 [display]
 
