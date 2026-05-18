@@ -21,7 +21,7 @@ var horario = []
 var gamestates = {
 	"vivenda padres": false,
 	"vivienda propia": false,
-	"vehículo": false,
+	"vehiculo": false,
 	"mascota": false,
 	"trabajo con jefe": false,
 	"trabajo": false,
@@ -55,7 +55,8 @@ var gastos_mensuales = {
 	}
 
 var education: Array[String] = []
-var inventory: Array[String] = []
+var inventario: Array[ResourceObjeto] = []
+var objetos_disponibles: Array[ResourceObjeto] = []
 
 var cortisol: float = 10
 var multiplicador_cortisol: float = 0.0
@@ -87,6 +88,7 @@ func _ready():
 	cargar_recursos("res://resources/Trabajos")
 	cargar_recursos("res://resources/Cursos")
 	cargar_recursos("res://events")
+	cargar_recursos("res://resources/Objetos")
 	for d in range(7):
 		var dia = []
 		for h in range(24):
@@ -182,6 +184,8 @@ func cargar_recursos(ruta_carpeta: String):
 				if recurso is EventResource:
 					if not id_eventos.has(recurso):
 						id_eventos[recurso.id] = ruta_completa
+				if recurso is ResourceObjeto:
+						objetos_disponibles.append(recurso)
 			# siguiente archivo
 			nombre_archivo = dir.get_next()
 	else:

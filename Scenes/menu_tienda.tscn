@@ -1,9 +1,89 @@
 [gd_scene format=3 uid="uid://dfxmaxh8x07uv"]
 
+[ext_resource type="Script" uid="uid://bvdwa2uv56kw3" path="res://Scripts/menu_tienda.gd" id="1_usiqv"]
+[ext_resource type="Texture2D" uid="uid://2fpyqcupwwe2" path="res://Sprites/menu_tienda/Fondo_disponibles.png" id="2_2doxx"]
+[ext_resource type="PackedScene" uid="uid://v5ks763tywqa" path="res://Scenes/fila_menu_tienda.tscn" id="2_vgcx3"]
+[ext_resource type="Texture2D" uid="uid://dn816wb3guthx" path="res://Sprites/menu_tienda/Fondo_comprados.png" id="3_vgcx3"]
+[ext_resource type="FontFile" uid="uid://p7hn8oq4t1r4" path="res://Fonts/advanced_pixel-7.ttf" id="5_2doxx"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_vgcx3"]
+font = ExtResource("5_2doxx")
+font_size = 25
+
 [node name="Control" type="Control" unique_id=1134376249]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_left = 224.0
+offset_top = 104.0
+offset_right = -224.0
+offset_bottom = -160.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_usiqv")
+fila = ExtResource("2_vgcx3")
+menu_disponibles = ExtResource("2_2doxx")
+menu_comprados = ExtResource("3_vgcx3")
+
+[node name="Fondo" type="TextureRect" parent="." unique_id=854457618]
+custom_minimum_size = Vector2(320, 168)
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("2_2doxx")
+
+[node name="columna1" type="VBoxContainer" parent="." unique_id=1053086795]
+layout_mode = 0
+offset_left = 8.0
+offset_top = 28.0
+offset_right = 156.0
+offset_bottom = 164.0
+theme_override_constants/separation = 20
+
+[node name="columna2" type="VBoxContainer" parent="." unique_id=1155441359]
+layout_mode = 0
+offset_left = 164.0
+offset_top = 28.0
+offset_right = 312.0
+offset_bottom = 164.0
+theme_override_constants/separation = 20
+
+[node name="Label" type="Label" parent="." unique_id=586583007]
+layout_mode = 0
+offset_left = 8.0
+offset_right = 160.0
+offset_bottom = 28.0
+text = "Disponibles"
+label_settings = SubResource("LabelSettings_vgcx3")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label2" type="Label" parent="." unique_id=2076609262]
+layout_mode = 0
+offset_left = 161.0
+offset_right = 313.0
+offset_bottom = 28.0
+text = "Comprados"
+label_settings = SubResource("LabelSettings_vgcx3")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="disponibles" type="Button" parent="." unique_id=1129156752]
+self_modulate = Color(1, 1, 1, 0)
+layout_mode = 0
+offset_left = 8.0
+offset_top = 4.0
+offset_right = 156.0
+offset_bottom = 24.0
+
+[node name="comprados" type="Button" parent="." unique_id=167438184]
+self_modulate = Color(1, 1, 1, 0)
+layout_mode = 0
+offset_left = 164.0
+offset_top = 4.0
+offset_right = 312.0
+offset_bottom = 24.0
+
+[connection signal="pressed" from="disponibles" to="." method="_on_disponibles_pressed"]
+[connection signal="pressed" from="comprados" to="." method="_on_comprados_pressed"]

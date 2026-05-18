@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="EventResource" format=3 uid="uid://cfkpp81pf2sds"]
+
+[ext_resource type="Script" uid="uid://bgock86usd1r5" path="res://Scripts/ResourceEvento.gd" id="1_51f6n"]
+
+[resource]
+script = ExtResource("1_51f6n")
+titulo = "Pequeña tutoría.."
+texto = "Uno de tus exmaestros te contacta y te pide que le des una asesoría a un chico que le está costando entender un tema ¿Qué harás? "
+id = 5959
+opciones = Array[String](["Aceptar (30000)", "Rechazar (0)"])
+consecuencias = Array[String](["ganar dinero:30000,bajar salud:10,bajar cortisol:20", "nada"])
+probabilidad = 0.001
+metadata/_custom_type_script = "uid://bgock86usd1r5"

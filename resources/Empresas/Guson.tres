@@ -1,0 +1,18 @@
+[gd_resource type="Resource" script_class="ResourceEmpresa" format=3 uid="uid://cf2lpiha26hbc"]
+
+[ext_resource type="Texture2D" uid="uid://bnuag6xp7ijsq" path="res://Sprites/menu_inversiones/GusonLogo.png" id="1_0j60i"]
+[ext_resource type="Script" uid="uid://50m8eo7mhigm" path="res://Scripts/ResourceEmpresa.gd" id="1_dvqw0"]
+
+[resource]
+script = ExtResource("1_dvqw0")
+imagen = ExtResource("1_0j60i")
+nombre = "Guson"
+descripcion = "Fabricante de instrumentos"
+acciones = 600000
+nivel = "Mediana"
+volatilidad_bajar = 0.07
+volatilidad_subir = 0.07
+tasa_dividendo = 0.8
+valor_total = 5000000
+variacion = 0.04
+metadata/_custom_type_script = "uid://50m8eo7mhigm"

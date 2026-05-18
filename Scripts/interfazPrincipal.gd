@@ -70,6 +70,7 @@ func transicionar():
 	$Contenido/Fondo.play(Global.accion_actual)
 
 func actualizar_contador():
+	var lista_animaciones = $Contenido/Fondo.sprite_frames
 	if contador == 0 and transicion:
 		Global.lugar_actual = lugar
 		Global.accion_actual = accion
@@ -81,11 +82,15 @@ func actualizar_contador():
 		elif lugar == "colegio":
 			$Contenido/Fondo.play("estudiar")
 		else:
-			$Contenido/Fondo.play(accion)
+			if lista_animaciones.has_animation(Global.accion_actual):
+				$Contenido/Fondo.play(accion)
+			else:
+				$Contenido/Fondo.play("casa")
 		contador = 30
 		transicion = false
 	elif contador !=0 and transicion:
 		contador -= 1
+	
 
 func actualizar():
 	if lugar == "casa":

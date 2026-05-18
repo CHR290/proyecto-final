@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="ResourceObjeto" format=3 uid="uid://b26yaflghqk7"]
+
+[ext_resource type="Script" uid="uid://ba3pv5a35rmje" path="res://Scripts/ResourceObjeto.gd" id="1_hvljx"]
+
+[resource]
+script = ExtResource("1_hvljx")
+nombre = "televisor"
+costo = 1500000
+cortisol = -20
+felicidad = 30
+metadata/_custom_type_script = "uid://ba3pv5a35rmje"

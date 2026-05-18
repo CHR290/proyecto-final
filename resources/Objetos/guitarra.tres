@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="ResourceObjeto" format=3 uid="uid://c7phtcuurqjm7"]
+
+[ext_resource type="Script" uid="uid://ba3pv5a35rmje" path="res://Scripts/ResourceObjeto.gd" id="1_blrps"]
+
+[resource]
+script = ExtResource("1_blrps")
+nombre = "Guitarra"
+costo = 130000
+cortisol = -40
+felicidad = 30
+gamestates = Array[String](["instrumento"])
+metadata/_custom_type_script = "uid://ba3pv5a35rmje"

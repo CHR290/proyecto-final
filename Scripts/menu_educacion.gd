@@ -24,6 +24,7 @@ func actualizar_tabla() -> void:
 		contenedor_filas.add_child(fila_nueva)
 		fila_nueva.configurar(curso, activos)
 		fila_nueva.get_node("Button").pressed.connect(_on_fila_pressed.bind(curso))
+
 func on_switch_pressed():
 	activos = !activos
 	actualizar_tabla()

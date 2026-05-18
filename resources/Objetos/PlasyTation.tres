@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="ResourceObjeto" format=3 uid="uid://6oo0k4n7khgh"]
+
+[ext_resource type="Script" uid="uid://ba3pv5a35rmje" path="res://Scripts/ResourceObjeto.gd" id="1_ggo1u"]
+
+[resource]
+script = ExtResource("1_ggo1u")
+nombre = "PlasyTation"
+costo = 2400000
+cortisol = -50
+felicidad = 40
+energia = 5000
+metadata/_custom_type_script = "uid://ba3pv5a35rmje"

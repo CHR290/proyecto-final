@@ -1,0 +1,18 @@
+[gd_resource type="Resource" script_class="ResourceEmpresa" format=3 uid="uid://dwtg74s82dvet"]
+
+[ext_resource type="Texture2D" uid="uid://nihieucek7g8" path="res://Sprites/menu_inversiones/GreenCoLogo.png" id="1_08avd"]
+[ext_resource type="Script" uid="uid://50m8eo7mhigm" path="res://Scripts/ResourceEmpresa.gd" id="1_ho03a"]
+
+[resource]
+script = ExtResource("1_ho03a")
+imagen = ExtResource("1_08avd")
+nombre = "GreenCo"
+descripcion = "distribuidora emergente de comida saludable"
+acciones = 30000
+nivel = "Pequeña"
+volatilidad_bajar = 0.5
+volatilidad_subir = 0.5
+tasa_dividendo = 0.09
+valor_total = 50000
+variacion = 0.12
+metadata/_custom_type_script = "uid://50m8eo7mhigm"

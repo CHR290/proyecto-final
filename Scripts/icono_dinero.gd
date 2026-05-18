@@ -48,4 +48,5 @@ func _on_pressed():
 		Global.pago_activo = 0
 	cambiar_textura()
 	Global.money_changed.emit()
+
 	

@@ -1,0 +1,18 @@
+[gd_resource type="Resource" script_class="ResourceEmpresa" format=3 uid="uid://dpso6somu6wep"]
+
+[ext_resource type="Script" uid="uid://50m8eo7mhigm" path="res://Scripts/ResourceEmpresa.gd" id="1_dapaj"]
+[ext_resource type="Texture2D" uid="uid://dfrng14e88yiu" path="res://Sprites/menu_inversiones/CloseAILogo.png" id="1_e7yoa"]
+
+[resource]
+script = ExtResource("1_dapaj")
+imagen = ExtResource("1_e7yoa")
+nombre = "CloseAI"
+descripcion = "empresa de inteligencia artificial"
+acciones = 3000000
+nivel = "Grande"
+volatilidad_bajar = 0.04
+volatilidad_subir = 0.04
+tasa_dividendo = 0.03
+valor_total = 200000000
+variacion = 0.2
+metadata/_custom_type_script = "uid://50m8eo7mhigm"
