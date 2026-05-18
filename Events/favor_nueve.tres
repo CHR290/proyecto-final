@@ -9,4 +9,5 @@ texto = "Al estar por la calle te piden una donación para una fundación la cua
 id = 5858
 opciones = Array[String](["Colaborar (-15000)", "Rechazar (0)"])
 consecuencias = Array[String](["quitar dinero:15000,subir cortisol:30,subir felicidad:40", "nada"])
+probabilidad = 0.001
 metadata/_custom_type_script = "uid://bgock86usd1r5"
