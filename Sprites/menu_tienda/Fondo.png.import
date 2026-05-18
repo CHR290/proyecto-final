@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dtxux6y1velqb"
-path="res://.godot/imported/domiciliario.png-ea01ad1a260c55befbeb7a36682e6609.ctex"
+uid="uid://b06caijoabtt8"
+path="res://.godot/imported/Fondo.png-2a09941e5e6b4ffa35ae44ce7313b0ee.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/fondos/domiciliario.png"
-dest_files=["res://.godot/imported/domiciliario.png-ea01ad1a260c55befbeb7a36682e6609.ctex"]
+source_file="res://Sprites/menu_tienda/Fondo.png"
+dest_files=["res://.godot/imported/Fondo.png-2a09941e5e6b4ffa35ae44ce7313b0ee.ctex"]
 
 [params]
 

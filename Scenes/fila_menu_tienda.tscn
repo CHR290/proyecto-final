@@ -1,0 +1,61 @@
+[gd_scene format=3 uid="uid://v5ks763tywqa"]
+
+[ext_resource type="Script" uid="uid://dqmujcjrxvm5d" path="res://Scripts/fila_menu_tienda.gd" id="1_ohx5n"]
+[ext_resource type="FontFile" uid="uid://p7hn8oq4t1r4" path="res://Fonts/advanced_pixel-7.ttf" id="2_cj8bu"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_6aesd"]
+font = ExtResource("2_cj8bu")
+font_size = 20
+
+[sub_resource type="LabelSettings" id="LabelSettings_et068"]
+font = ExtResource("2_cj8bu")
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_cj8bu"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6aesd"]
+bg_color = Color(0.1254902, 0.1254902, 0.1254902, 0.27058825)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_et068"]
+bg_color = Color(1, 1, 1, 0.26666668)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_kluau"]
+bg_color = Color(0.21950102, 0.21950102, 0.21950102, 0.6156863)
+
+[node name="Control" type="Control" unique_id=1151959181]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 322.0
+offset_top = 192.0
+offset_right = -298.0
+offset_bottom = -224.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_ohx5n")
+
+[node name="info" type="HBoxContainer" parent="." unique_id=333800184]
+layout_mode = 0
+offset_right = 148.0
+offset_bottom = 20.0
+
+[node name="Objeto" type="Label" parent="info" unique_id=1685004450]
+custom_minimum_size = Vector2(74, 0)
+layout_mode = 2
+label_settings = SubResource("LabelSettings_6aesd")
+
+[node name="Costo" type="Label" parent="info" unique_id=1100594886]
+layout_mode = 2
+label_settings = SubResource("LabelSettings_et068")
+
+[node name="Boton" type="Button" parent="." unique_id=1102985620]
+layout_mode = 0
+offset_right = 148.0
+offset_bottom = 16.0
+theme_override_styles/normal = SubResource("StyleBoxFlat_cj8bu")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_6aesd")
+theme_override_styles/hover = SubResource("StyleBoxFlat_et068")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_kluau")
+
+[connection signal="pressed" from="Boton" to="." method="_on_boton_pressed"]
