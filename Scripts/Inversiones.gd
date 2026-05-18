@@ -2,9 +2,10 @@ extends Node
 var empresas_grandes_activas = []
 var empresas_medianas_activas = []
 var empresas_pequenas_activas = []
-var dolares: float = 17
+var dolares: float = 100
 var empresa_actual: ResourceEmpresa = null
 func _ready() -> void:
+	Global.day_changed.connect(actualizar_empresas)
 	cargar_recursos("res://resources/empresas")
 	print("Empresas grandes activas: ", empresas_grandes_activas.size())
 	print("Empresas medianas activas: ", empresas_medianas_activas.size())
@@ -50,3 +51,11 @@ func comprar_acciones(cantidad: float):
 func vender_acciones(cantidad: float):
 	empresa_actual.acciones_compradas -= cantidad / empresa_actual.valor_accion
 	dolares += cantidad
+
+func actualizar_empresas():
+	for empresa in empresas_grandes_activas:
+		empresa.actualizar_valor(0)
+	for empresa in empresas_medianas_activas:
+		empresa.actualizar_valor(0)
+	for empresa in empresas_pequenas_activas:
+		empresa.actualizar_valor(0)

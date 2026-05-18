@@ -11,6 +11,8 @@ signal event_finished
 signal minute_passed
 @warning_ignore("unused_signal")
 signal hour_passed
+@warning_ignore("unused_signal")
+signal month_changed
 
 var menu_actual: int = 0
 
@@ -127,6 +129,7 @@ func actualizar_informacion_diaria():
 func actualizar_informacion_mensual():
 	for gasto in gastos_mensuales.values():
 		change_money(-gasto)
+	month_changed.emit()
 
 func quincena():
 	for trabajo in trabajos_activos:
@@ -421,7 +424,6 @@ func actualizar_ahorro():
 			print(pago_ahorro)
 
 func calcular_estado():
-	print("Calculando estado...")
 	felicidad = felicidad + multiplicador_felicidad*5
 	cortisol = cortisol + multiplicador_cortisol*5
 	salud = salud + multiplicador_salud*5

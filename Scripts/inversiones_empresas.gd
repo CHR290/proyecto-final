@@ -5,8 +5,8 @@ var indice_empresa = 0
 var empresa: ResourceEmpresa
 func _ready() -> void:
 	actualizar_interfaz()
+	Global.day_changed.connect(actualizar_interfaz)
 	Global.event_finished.connect(actualizar_interfaz)
-
 func actualizar_interfaz():	
 	var variacion: float
 	match tipo_empresa:		
@@ -36,7 +36,7 @@ func actualizar_interfaz():
 	$NombreEmpresa.text = empresa.nombre
 	$Descripcion.text = empresa.descripcion
 	$InfoEmpresa/Valor/Valor.text = "$" + str(empresa.valor_total) + " USD"
-	$InfoEmpresa/Valor/Variacion.text = str(variacion) + "%"
+	$InfoEmpresa/Valor/Variacion.text = str(snapped(variacion, 0.01)) + "%"
 	var acciones = empresa.acciones_compradas
 	if !(acciones - int(acciones) > 0):
 		acciones = str(int(acciones))

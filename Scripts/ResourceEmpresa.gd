@@ -22,10 +22,18 @@ func actualizar_valor(extra: float) -> void:
         var variacion_aleatoria = randf_range(-volatilidad_bajar, volatilidad_subir)
         var nuevo_valor = valor_total*(1 + variacion_aleatoria)
         valor_total = int(nuevo_valor)
+        variacion += variacion_aleatoria
     else:
         valor_total = int(valor_total * extra)
     valor_accion = float(valor_total) / acciones
     pago_dividendo = (valor_accion * acciones_compradas) * tasa_dividendo
+
+func _ready() -> void:
+    Global.month_changed.connect(mensual_update)
+
+func mensual_update():
+    variacion = 0
+    Inversiones.dolares += pago_dividendo
 
 
 
