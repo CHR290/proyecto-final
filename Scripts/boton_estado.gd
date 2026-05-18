@@ -5,13 +5,14 @@ extends TextureButton
 @export var estado4: Texture2D
 @export var estado5: Texture2D
 
-func _ready() -> void:
-	cambiar_icono()
+func _ready() -> void:	
 	Global.time_changed.connect(cambiar_icono)
 	self.mouse_entered.connect(_on_mouse_entered)	
 	self.mouse_exited.connect(_on_mouse_exited)
 	self.button_down.connect(_on_button_down)
 	self.button_up.connect(_on_button_up)
+	cambiar_icono()
+	self.texture_normal = estado5
 
 func _on_mouse_entered():
 	self.self_modulate = Color(1.2,1.2,1.2,1)
@@ -26,7 +27,6 @@ func _on_button_up():
 	self.self_modulate = Color(1,1,1,1)
 
 func cambiar_icono():
-	Global.estado = Global.calcular_estado()
 	if Global.estado >= 80:
 		self.texture_normal = estado5
 	elif Global.estado >= 60:
@@ -44,6 +44,3 @@ func cambiar_icono():
 
 
 		
-
-
-

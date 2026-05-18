@@ -11,6 +11,7 @@ func _process(_delta: float) -> void:
 func _on_boton_estado_mouse_entered() -> void:
 	self.show()
 	print("felicidad: ", Global.felicidad, " salud: ", Global.salud, " cortisol: ", Global.cortisol)
+	print("multiplicadores - felicidad: ", Global.multiplicador_felicidad, " salud: ", Global.multiplicador_salud, " cortisol: ", Global.multiplicador_cortisol)
 	actualizar_barras()
 
 

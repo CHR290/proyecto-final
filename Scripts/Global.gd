@@ -9,6 +9,8 @@ signal place_changed
 signal event_finished
 @warning_ignore("unused_signal")
 signal minute_passed
+@warning_ignore("unused_signal")
+signal hour_passed
 
 var menu_actual: int = 0
 
@@ -53,9 +55,12 @@ var gastos_mensuales = {
 var education: Array[String] = []
 var inventory: Array[String] = []
 
-var cortisol: int = 10
-var felicidad: int = 100
-var salud: int = 100
+var cortisol: float = 10
+var multiplicador_cortisol: float = 0.0
+var felicidad: float = 80
+var multiplicador_felicidad: float = 0.0
+var salud: float = 100
+var multiplicador_salud: float = 0.0
 var estado: int = 20
 
 var lugar_actual: String = "casa"
@@ -117,6 +122,7 @@ func actualizar_informacion_diaria():
 		quincena()
 	day_changed.emit()
 	actualizar_ahorro()
+	calcular_estado()
 
 func actualizar_informacion_mensual():
 	for gasto in gastos_mensuales.values():
@@ -239,13 +245,14 @@ func change_money_credit(value:int):
 
 func advance_time(mo: int, d: int, h: int, m: int):
 	minutes += m
-	if speed < 4:
+	if speed < 3:
 		try_evento()
 	while minutes >= 60:
 		minutes -= 60
 		hours += 1
+		hour_passed.emit()
 		actualizar_informacion_hora()
-		if speed == 4:
+		if speed >=  4:
 			try_evento()
 	hours += h
 	while hours >= 24:
@@ -412,8 +419,22 @@ func actualizar_ahorro():
 			change_money_bank(int(pago_ahorro))
 			gamestates["ahorro activo"] = false
 			print(pago_ahorro)
-func calcular_estado() -> int:
-	var estado_calculado = 0
-	estado_calculado += (felicidad + salud) / 2.0
-	estado_calculado -= cortisol / 2.0
-	return int(estado_calculado)
+
+func calcular_estado():
+	print("Calculando estado...")
+	felicidad = felicidad + multiplicador_felicidad*5
+	cortisol = cortisol + multiplicador_cortisol*5
+	salud = salud + multiplicador_salud*5
+	if felicidad > 100:
+		felicidad = 100
+	if salud > 100:
+		salud = 100
+	if cortisol > 100:
+		cortisol = 100
+	if cortisol < 0:
+		cortisol = 0
+	if salud < 0:
+		salud = 0
+	if felicidad < 0:
+		felicidad = 0
+	estado = int(float(felicidad + salud)/2 - cortisol/2)

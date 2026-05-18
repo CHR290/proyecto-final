@@ -160,17 +160,17 @@ func _on_opcion_seleccionada(indice: int):
 				Global.lanzar_evento(valor)
 				return
 			"subir cortisol":
-				Global.cortisol += valor
+				Global.multiplicador_cortisol += valor * 0.01
 			"bajar cortisol":
-				Global.cortisol -= valor
+				Global.multiplicador_cortisol -= valor * 0.01
 			"subir salud":
-				Global.salud += valor
+				Global.multiplicador_salud += valor * 0.01
 			"bajar salud":
-				Global.salud -= valor
+				Global.multiplicador_salud -= valor * 0.01
 			"subir felicidad":
-				Global.felicidad += valor
+				Global.multiplicador_felicidad += valor * 0.01
 			"bajar felicidad":
-				Global.felicidad -= valor
+				Global.multiplicador_felicidad -= valor * 0.01
 			"dar objeto":
 				Global.inventory.append(valor_str)
 			"quitar objeto":

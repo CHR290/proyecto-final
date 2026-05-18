@@ -10,6 +10,7 @@ func _ready():
 	Global.menu_changed.connect(gestionar_menu)
 	Global.place_changed.connect(transicionar)
 	Global.minute_passed.connect(actualizar_contador)
+	Global.hour_passed.connect(actualizar)
 	$Contenido/Fondo.play("casa")
 
 # Función para disparar cualquier evento
@@ -51,6 +52,7 @@ func gestionar_menu(menu_id: int):
 			#print(Global.gamestates)	
 		7:
 			nombre_menu = "inversiones_empresas"
+		
 	var ruta_menu = "res://Scenes/" + nombre_menu + ".tscn"
 	var escena_menu = load(ruta_menu)
 	var instancia_menu = escena_menu.instantiate()
@@ -72,7 +74,10 @@ func actualizar_contador():
 		Global.lugar_actual = lugar
 		Global.accion_actual = accion
 		if lugar == "casa":
-			$Contenido/Fondo.play("casa")
+			if Global.hours >= 19 or Global.hours < 5:
+				$Contenido/Fondo.play("casa_n")
+			else:
+				$Contenido/Fondo.play("casa")
 		elif lugar == "colegio":
 			$Contenido/Fondo.play("estudiar")
 		else:
@@ -82,6 +87,12 @@ func actualizar_contador():
 	elif contador !=0 and transicion:
 		contador -= 1
 
+func actualizar():
+	if lugar == "casa":
+			if Global.hours >= 19 or Global.hours < 5:
+				$Contenido/Fondo.play("casa_n")
+			else:
+				$Contenido/Fondo.play("casa")
 
 
 
