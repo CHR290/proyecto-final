@@ -1,0 +1,18 @@
+[gd_resource type="Resource" script_class="ResourceEmpresa" format=3 uid="uid://bbsmeaoubmsvo"]
+
+[ext_resource type="Script" uid="uid://50m8eo7mhigm" path="res://Scripts/ResourceEmpresa.gd" id="1_77ala"]
+[ext_resource type="Texture2D" uid="uid://jgwiltm5sxed" path="res://Sprites/menu_inversiones/Lulu punkLogo.png" id="1_qoip3"]
+
+[resource]
+script = ExtResource("1_77ala")
+imagen = ExtResource("1_qoip3")
+nombre = "Lulu punk"
+descripcion = "distribuidora de ropa interior para mujer"
+acciones = 100000
+nivel = "Pequeña"
+volatilidad_bajar = 0.2
+volatilidad_subir = 0.3
+tasa_dividendo = 0.06
+valor_total = 80000
+pago_dividendo = 0.03
+metadata/_custom_type_script = "uid://50m8eo7mhigm"

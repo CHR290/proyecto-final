@@ -28,12 +28,6 @@ func actualizar_valor(extra: float) -> void:
     valor_accion = float(valor_total) / acciones
     pago_dividendo = (valor_accion * acciones_compradas) * tasa_dividendo
 
-func _ready() -> void:
-    Global.month_changed.connect(mensual_update)
-
-func mensual_update():
-    variacion = 0
-    Inversiones.dolares += pago_dividendo
 
 
 

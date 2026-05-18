@@ -5,6 +5,7 @@ var empresas_pequenas_activas = []
 var dolares: float = 100
 var empresa_actual: ResourceEmpresa = null
 func _ready() -> void:
+	Global.month_changed.connect(mensualidad)
 	Global.day_changed.connect(actualizar_empresas)
 	cargar_recursos("res://resources/empresas")
 	print("Empresas grandes activas: ", empresas_grandes_activas.size())
@@ -59,3 +60,21 @@ func actualizar_empresas():
 		empresa.actualizar_valor(0)
 	for empresa in empresas_pequenas_activas:
 		empresa.actualizar_valor(0)
+
+func mensualidad():
+	for empresa in empresas_grandes_activas:
+		actualziar_mensualidad(empresa)
+	for empresa in empresas_medianas_activas:
+		actualziar_mensualidad(empresa)
+	for empresa in empresas_pequenas_activas:
+		actualziar_mensualidad(empresa)
+	
+func actualziar_mensualidad(empresa: ResourceEmpresa):
+	if empresa.tasa_dividendo > 0 and empresa.acciones_compradas > 0:
+		print("Recibiendo dividendo de ", empresa.nombre, ": $", empresa.pago_dividendo)
+		var pago = empresa.pago_dividendo
+		print("Dolares antes del pago: ", dolares)
+		dolares += pago
+		print("Dolares después del pago: ", dolares)
+	empresa.variacion = 0
+		

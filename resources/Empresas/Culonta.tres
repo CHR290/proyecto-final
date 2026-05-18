@@ -1,0 +1,18 @@
+[gd_resource type="Resource" script_class="ResourceEmpresa" format=3 uid="uid://cay73bbqtrb2b"]
+
+[ext_resource type="Texture2D" uid="uid://siipn6g23qqm" path="res://Sprites/menu_inversiones/CulontaLogo.png" id="1_4e5yt"]
+[ext_resource type="Script" uid="uid://50m8eo7mhigm" path="res://Scripts/ResourceEmpresa.gd" id="1_tcp33"]
+
+[resource]
+script = ExtResource("1_tcp33")
+imagen = ExtResource("1_4e5yt")
+nombre = "Culonta"
+descripcion = "Productora y distribuidora de leche"
+acciones = 1000000
+nivel = "Mediana"
+volatilidad_bajar = 0.05
+volatilidad_subir = 0.055
+tasa_dividendo = 0.01
+valor_total = 40000000
+variacion = 0.02
+metadata/_custom_type_script = "uid://50m8eo7mhigm"

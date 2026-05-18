@@ -31,12 +31,12 @@ func actualizar_interfaz():
 		$InfoEmpresa/Valor/Indicador.self_modulate = Color(1, 0, 0)
 		$InfoEmpresa/Valor/Indicador.rotation_degrees = 0
 		$InfoEmpresa/Valor/Indicador.flip_v = false
-	$Dolares/Cantidad.text = "$ " + str(Inversiones.dolares) + " USD"
+	$Dolares/Cantidad.text = "$ " + str(snapped(Inversiones.dolares, 0.01)) + " USD"
 	$LogoEmpresa.texture = empresa.imagen
 	$NombreEmpresa.text = empresa.nombre
 	$Descripcion.text = empresa.descripcion
 	$InfoEmpresa/Valor/Valor.text = "$" + str(empresa.valor_total) + " USD"
-	$InfoEmpresa/Valor/Variacion.text = str(snapped(variacion, 0.01)) + "%"
+	$InfoEmpresa/Valor/Variacion.text = str(snapped(variacion, 0.1)) + "%"
 	var acciones = empresa.acciones_compradas
 	if !(acciones - int(acciones) > 0):
 		acciones = str(int(acciones))
