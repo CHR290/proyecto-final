@@ -1,0 +1,18 @@
+[gd_resource type="Resource" script_class="EventResource" format=3 uid="uid://boyux4wno5c13"]
+
+[ext_resource type="Script" uid="uid://bgock86usd1r5" path="res://Scripts/ResourceEvento.gd" id="1_xom4f"]
+
+[resource]
+script = ExtResource("1_xom4f")
+titulo = "Hora de irse"
+texto = "tus padres te han hechado de casa para que aprendas a vivir solo, tendras que pagar tus necesidades, para esto te ayudaran por un tiempo con una mesada, pero tendras que estar preparado par cuando dejen de hacerlo..."
+id = 10101
+opciones = Array[String](["continuar"])
+consecuencias = Array[String](["independencia:"])
+limite_diario = 1
+horarios_validos = Array[Array]([[18, 18]])
+fechas = Array[int]([6, 6])
+meses = Array[int]([1, 1])
+anios = 2026
+probabilidad = 1.0
+metadata/_custom_type_script = "uid://bgock86usd1r5"
