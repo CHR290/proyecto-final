@@ -35,6 +35,16 @@ func configurar_evento(p_recurso: EventResource):
 			-4:
 				slider_cantidad.max_value = Inversiones.empresa_actual.acciones_compradas * Inversiones.empresa_actual.valor_accion
 				slider.step = 0.01
+			-5:
+				if Global.score_crediticio >= 800:
+					slider_cantidad.max_value = 1000000
+				elif Global.score_crediticio >= 600:
+					slider_cantidad.max_value = 500000
+				elif Global.score_crediticio >= 400:
+					slider_cantidad.max_value = 200000
+				else:
+					slider_cantidad.max_value = 0
+				slider.step = 1000
 			_:
 				slider_cantidad.max_value = recurso.cantidad_max
 		slider_cantidad.value = recurso.cantidad_por_defecto
@@ -196,6 +206,7 @@ func _on_opcion_seleccionada(indice: int):
 				var pago_penalizado: float = Global.dinero_ahorrado * penalizacion
 				Global.change_money_bank(int(pago_penalizado))
 				Global.dinero_ahorrado = 0
+				Global.score_crediticio -= 50
 			"comprar dolares":
 				Inversiones.dolares += valor_slider * 0.00025
 				Global.change_money_bank(-valor_slider)
@@ -206,6 +217,27 @@ func _on_opcion_seleccionada(indice: int):
 				Inversiones.comprar_acciones(valor_slider)
 			"vender acciones":
 				Inversiones.vender_acciones(valor_slider)
+			"prestamo":
+				Global.change_money_bank(valor_slider)
+				Global.gamestates["prestamo activo"] = true
+				if valor_slider > 500000:
+					Global.tiempo_prestamo = 90
+				elif valor_slider > 200000:
+					Global.tiempo_prestamo = 60
+				else:
+					Global.tiempo_prestamo = 30		
+				Global.valor_prestamo = valor_slider
+			"pagar prestamo":
+				var pago: int
+				if Global.score_crediticio >= 800:
+					pago = int(Global.valor_prestamo * 1.1)
+				elif Global.score_crediticio >= 600:
+					pago = int(Global.valor_prestamo * 1.4)
+				else:
+					pago = int(Global.valor_prestamo * 1.5)
+				Global.change_money_bank(-pago)
+				Global.gamestates["prestamo activo"] = false
+				Global.score_crediticio += 50
 	Global.hay_evento_activo = false
 	queue_free()
 	Global.event_finished.emit()
