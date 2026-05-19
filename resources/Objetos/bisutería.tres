@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="ResourceObjeto" format=3 uid="uid://ti0ofkhb246b"]
+
+[ext_resource type="Script" uid="uid://ba3pv5a35rmje" path="res://Scripts/ResourceObjeto.gd" id="1_p1t8t"]
+
+[resource]
+script = ExtResource("1_p1t8t")
+nombre = "Joyas"
+costo = 1000000
+cortisol = -25
+felicidad = 45
+metadata/_custom_type_script = "uid://ba3pv5a35rmje"

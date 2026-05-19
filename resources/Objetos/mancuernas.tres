@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="ResourceObjeto" format=3 uid="uid://d1nrn1ies8vjo"]
+
+[ext_resource type="Script" uid="uid://ba3pv5a35rmje" path="res://Scripts/ResourceObjeto.gd" id="1_ctoc2"]
+
+[resource]
+script = ExtResource("1_ctoc2")
+nombre = "Mancuernas"
+costo = 200000
+cortisol = -15
+felicidad = 25
+salud = 40
+metadata/_custom_type_script = "uid://ba3pv5a35rmje"

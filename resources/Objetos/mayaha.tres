@@ -6,6 +6,6 @@
 script = ExtResource("1_y10tb")
 nombre = "mayaha r15"
 costo = 16500000
-cortisol = 15
+cortisol = -15
 felicidad = 40
 metadata/_custom_type_script = "uid://ba3pv5a35rmje"

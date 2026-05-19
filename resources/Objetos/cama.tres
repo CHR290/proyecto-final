@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="ResourceObjeto" format=3 uid="uid://cpfar0vq3qcn0"]
+
+[ext_resource type="Script" uid="uid://ba3pv5a35rmje" path="res://Scripts/ResourceObjeto.gd" id="1_fsg63"]
+
+[resource]
+script = ExtResource("1_fsg63")
+nombre = "Cama nueva"
+costo = 300000
+cortisol = -30
+felicidad = 40
+salud = 30
+metadata/_custom_type_script = "uid://ba3pv5a35rmje"

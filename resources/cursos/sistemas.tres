@@ -9,5 +9,6 @@ duracion_meses = 60
 horario = Array[int]([7, 13])
 dias_semana = Array[int]([1, 4])
 costo_semestre = 700000
+lugar = "colegio"
 educacion = Array[String](["Secundaria"])
 metadata/_custom_type_script = "uid://7do166ojig01"

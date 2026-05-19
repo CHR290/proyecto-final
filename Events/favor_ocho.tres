@@ -8,6 +8,6 @@ titulo = "Gran favor.."
 texto = "Un amigo te pide que le ayudes con su trasteo a una nueva casa y te dice que te recompensará bien ¿Qué harás?"
 id = 5757
 opciones = Array[String](["Aceptar (40000)", "Rechazar (0)"])
-consecuencias = Array[String](["ganar dinero:40000,bajar salud:35,subir cortisol:20", "bajar felicidad:15"])
+consecuencias = Array[String](["ganar dinero:40000,bajar salud:35,subir cortisol:12", "bajar felicidad:15, bajar cortisol:12"])
 probabilidad = 0.001
 metadata/_custom_type_script = "uid://bgock86usd1r5"

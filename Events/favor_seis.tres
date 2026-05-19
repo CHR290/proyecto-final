@@ -8,6 +8,6 @@ titulo = "Favor de mamá.."
 texto = "Tu madre te ha pedido el favor de irle a hacer el mercado ya que ella está cansada ¿Qué harás?"
 id = 5555
 opciones = Array[String](["Aceptar (10000)", "Rechazar (0)"])
-consecuencias = Array[String](["ganar dinero:10000,bajar salud:30", "bajar felicidad:25"])
+consecuencias = Array[String](["ganar dinero:10000,bajar salud:10", "bajar felicidad:20"])
 probabilidad = 0.001
 metadata/_custom_type_script = "uid://bgock86usd1r5"

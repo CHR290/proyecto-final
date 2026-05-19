@@ -4,7 +4,10 @@
 
 [resource]
 script = ExtResource("1_i34m1")
-nombre = "mantenimiento automotriz"
+nombre = "Mecánica"
 duracion_meses = 12
 horario = Array[int]([7, 13])
+dias_semana = Array[int]([1, 5])
+costo_semestre = 400000
+lugar = "colegio"
 metadata/_custom_type_script = "uid://7do166ojig01"

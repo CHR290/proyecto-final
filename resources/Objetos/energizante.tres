@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="ResourceObjeto" format=3 uid="uid://cu22oys0rwt85"]
+
+[ext_resource type="Script" uid="uid://ba3pv5a35rmje" path="res://Scripts/ResourceObjeto.gd" id="1_tdadg"]
+
+[resource]
+script = ExtResource("1_tdadg")
+nombre = "Energizante BlueCow"
+costo = 6000
+cortisol = -10
+felicidad = 10
+salud = -1
+metadata/_custom_type_script = "uid://ba3pv5a35rmje"

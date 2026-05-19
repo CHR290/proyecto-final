@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="ResourceObjeto" format=3 uid="uid://c3cu5a3xnyp3l"]
+
+[ext_resource type="Script" uid="uid://ba3pv5a35rmje" path="res://Scripts/ResourceObjeto.gd" id="1_djtwa"]
+
+[resource]
+script = ExtResource("1_djtwa")
+nombre = "Earpods"
+costo = 90000
+cortisol = -25
+felicidad = 35
+salud = -5
+metadata/_custom_type_script = "uid://ba3pv5a35rmje"

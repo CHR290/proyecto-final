@@ -8,6 +8,6 @@ titulo = "Favor.."
 texto = "Una vecina te ve y te pide ayuda para configurar su Tv, dice que te recompensará ¿Qué harás?"
 id = 5050
 opciones = Array[String](["Aceptar (15000)", "Rechazar (0)"])
-consecuencias = Array[String](["ganar dinero:15000,subir cortisol:60,subir felicidad:60", "nada"])
+consecuencias = Array[String](["ganar dinero:15000,subir cortisol:10,subir felicidad:60", "bajar cortisol:10"])
 probabilidad = 0.005
 metadata/_custom_type_script = "uid://bgock86usd1r5"

@@ -8,6 +8,6 @@ titulo = "Mujeres.."
 texto = "Una chica, la cual te gusta desde hace mucho, te dice de salir, pero la chica es del norte ¿Qué harás?"
 id = 6464
 opciones = Array[String](["Aceptar (-100000)", "Rechazar (0)"])
-consecuencias = Array[String](["quitar dinero:100000,subir cortisol:80,subir felicidad:100", "bajar felicidad:70,bajar cortisol:70"])
+consecuencias = Array[String](["quitar dinero:100000,subir cortisol:80,subir felicidad:60", "bajar felicidad:30,bajar cortisol:12"])
 probabilidad = 0.001
 metadata/_custom_type_script = "uid://bgock86usd1r5"

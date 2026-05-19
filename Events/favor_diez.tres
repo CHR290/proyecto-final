@@ -8,6 +8,6 @@ titulo = "Pequeña tutoría.."
 texto = "Uno de tus exmaestros te contacta y te pide que le des una asesoría a un chico que le está costando entender un tema ¿Qué harás? "
 id = 5959
 opciones = Array[String](["Aceptar (30000)", "Rechazar (0)"])
-consecuencias = Array[String](["ganar dinero:30000,bajar salud:10,bajar cortisol:20", "nada"])
+consecuencias = Array[String](["ganar dinero:30000,bajar salud:10,subir cortisol:15", "bajar felicidad:5"])
 probabilidad = 0.001
 metadata/_custom_type_script = "uid://bgock86usd1r5"

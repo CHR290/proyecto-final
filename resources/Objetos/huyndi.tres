@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="ResourceObjeto" format=3 uid="uid://c825a0mv3bw11"]
+
+[ext_resource type="Script" uid="uid://ba3pv5a35rmje" path="res://Scripts/ResourceObjeto.gd" id="1_44h6m"]
+
+[resource]
+script = ExtResource("1_44h6m")
+nombre = "carro huyndi"
+costo = 20000000
+felicidad = 50
+salud = 30
+metadata/_custom_type_script = "uid://ba3pv5a35rmje"
