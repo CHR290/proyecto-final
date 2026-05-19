@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="EventResource" format=3 uid="uid://cpvcl3oui40s6"]
+
+[ext_resource type="Script" uid="uid://bgock86usd1r5" path="res://Scripts/ResourceEvento.gd" id="1_j0pkt"]
+
+[resource]
+script = ExtResource("1_j0pkt")
+titulo = "No tienes suficiente dinero"
+id = 10
+opciones = Array[String](["aceptar"])
+cantidad_max = 0
+consecuencias = Array[String](["nada"])
+metadata/_custom_type_script = "uid://bgock86usd1r5"

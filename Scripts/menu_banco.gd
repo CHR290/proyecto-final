@@ -20,8 +20,20 @@ func actualizar_barra():
 
 
 func _on_prestamos_pressed() -> void:
-	pass # Replace with function body.
-
+	var pago: int
+	if Global.score_crediticio >= 800:
+		pago = int(Global.valor_prestamo * 1.1)
+	elif Global.score_crediticio >= 600:
+		pago = int(Global.valor_prestamo * 1.4)
+	else:
+		pago = int(Global.valor_prestamo * 1.5)	
+	if Global.gamestates["prestamo activo"] == false:
+		Global.lanzar_evento(8)
+	else:
+		if Global.dinero_banco >= pago:
+			Global.lanzar_evento(9)
+		else:
+			Global.lanzar_evento(10)
 
 func _on_seguros_pressed() -> void:
 	pass # Replace with function body.
@@ -32,7 +44,6 @@ func _on_tarjetas_pressed() -> void:
 
 
 func _on_ahorros_pressed() -> void:
-	print(Global.gamestates["ahorro activo"])
 	if Global.gamestates["ahorro activo"] == false:
 		Global.lanzar_evento(3)
 	else:

@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="EventResource" format=3 uid="uid://bomtu8op20027"]
+
+[ext_resource type="Script" uid="uid://bgock86usd1r5" path="res://Scripts/ResourceEvento.gd" id="1_88ppc"]
+
+[resource]
+script = ExtResource("1_88ppc")
+id = 9
+cierra_menu = false
+opciones = Array[String](["pagar", "cancelar"])
+cantidad_max = 0
+consecuencias = Array[String](["pagar prestamo:", "nada"])
+metadata/_custom_type_script = "uid://bgock86usd1r5"

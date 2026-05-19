@@ -26,7 +26,8 @@ var gamestates = {
 	"trabajo con jefe": false,
 	"trabajo": false,
 	"ahorro activo": false,
-	"eventos_inversiones": false
+	"eventos_inversiones": false,
+	"prestamo activo": false
 	}
 
 var hay_evento_activo: bool = false
@@ -49,7 +50,8 @@ var dinero_ahorrado: int
 var tiempo_ahorro: int
 var bonificacion_ahorro: float
 var score_crediticio = 400
-
+var tiempo_prestamo: int
+var valor_prestamo: int
 var gastos_mensuales = {
 
 	}
@@ -127,6 +129,7 @@ func actualizar_informacion_diaria():
 	day_changed.emit()
 	actualizar_ahorro()
 	calcular_estado()
+	actualizar_prestamo()
 
 func actualizar_informacion_mensual():
 	for gasto in gastos_mensuales.values():
@@ -320,18 +323,21 @@ func try_evento():
 			eventos_posibles.append({"id": id, "resource": recurso})
 
 	if eventos_posibles.size() > 0:
+		print("Eventos posibles: ", eventos_posibles.size())
 		var evento_elegido = eventos_posibles.pick_random()
 		var probabilidad: float
-		if speed < 4:
-			probabilidad = 1.0-((1-evento_elegido["resource"].probabilidad)**(1.0/60.0))
+		if speed < 3:
+			probabilidad = 1.0-((1-evento_elegido["resource"].probabilidad)**(1.0/2))*10
 		else:
-			probabilidad = evento_elegido["resource"].probabilidad
+			probabilidad = evento_elegido["resource"].probabilidad*10
 		if randf() <= probabilidad:
 			lanzar_evento(evento_elegido["id"])
 			registrar_evento(evento_elegido["id"])
 
 			
 func _cumple_condiciones(id: int, recurso: EventResource) -> bool:
+	if recurso.probabilidad == 0:
+		return false
 	if recurso.limite_diario > 0:
 		var apariciones = registro_eventos.get(id, 0)
 		if apariciones >= recurso.limite_diario:
@@ -425,8 +431,7 @@ func actualizar_ahorro():
 			var pago_ahorro: float = dinero_ahorrado * bonificacion_ahorro
 			change_money_bank(int(pago_ahorro))
 			gamestates["ahorro activo"] = false
-			print(pago_ahorro)
-
+			score_crediticio += 40
 func calcular_estado():
 	felicidad = felicidad + multiplicador_felicidad*5
 	cortisol = cortisol + multiplicador_cortisol*5
@@ -444,3 +449,9 @@ func calcular_estado():
 	if felicidad < 0:
 		felicidad = 0
 	estado = int(float(felicidad + salud)/2 - cortisol/2)
+
+func actualizar_prestamo():
+	if gamestates["prestamo activo"]:
+		tiempo_prestamo -= 1
+		if tiempo_prestamo < 0:
+			score_crediticio -= 50
