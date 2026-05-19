@@ -53,7 +53,10 @@ var score_crediticio = 400
 var tiempo_prestamo: int
 var valor_prestamo: int
 var gastos_mensuales = {
-
+	"agua": 80000,
+	"luz": 120000,
+	"internet": 60000,
+	"comida": 400000,
 	}
 
 var education: Array[String] = []
@@ -76,7 +79,7 @@ var hours: int = 15
 var minutes: int = 0
 var day: int = 11
 var month: int = 9
-var year: int = 2024
+var year: int = 2025
 var weekday: int = 1 
 var speed: int = 0 
 
@@ -340,22 +343,19 @@ func _cumple_condiciones(id: int, recurso: EventResource) -> bool:
 		return false
 	if recurso.limite_diario > 0:
 		var apariciones = registro_eventos.get(id, 0)
-		if apariciones >= recurso.limite_diario:
-			
+		if apariciones >= recurso.limite_diario:			
 			return false
-	if recurso.dias.size() > 0 and weekday not in range(recurso.dias[0], recurso.dias[1]):
-		
+	if recurso.dias.size() > 0 and weekday not in range(recurso.dias[0], recurso.dias[1]):		
 		return false
-	if recurso.fechas.size() > 0 and day not in range(recurso.fechas[0], recurso.fechas[1]):
-		
+	if recurso.fechas.size() > 0 and day not in range(recurso.fechas[0], recurso.fechas[1]):		
 		return false
-	if recurso.meses.size() > 0 and month not in range(recurso.meses[0], recurso.meses[1]):
-		
+	if recurso.meses.size() > 0 and month not in range(recurso.meses[0], recurso.meses[1]):		
+		return false
+	if recurso.anios > 0 and year != recurso.anios:
 		return false
 	if recurso.gamestate.size() > 0:
 		for state in recurso.gamestate:
-			if gamestates.get(state, false) == false:
-				
+			if gamestates.get(state, false) == false:			
 				return false
 	if recurso.lugar.size() != 0:
 		for lugar in recurso.lugar:
@@ -364,8 +364,7 @@ func _cumple_condiciones(id: int, recurso: EventResource) -> bool:
 	if recurso.accion.size() != 0:
 		for accion in recurso.accion:
 			if accion == accion_actual:
-				return true
-		
+				return true		
 		return false
 	var hora_valida = false
 	if recurso.horarios_validos.size() == 0:
