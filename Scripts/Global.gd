@@ -54,9 +54,9 @@ var tiempo_prestamo: int
 var valor_prestamo: int
 var gastos_mensuales = {
 	"agua": 80000,
-	"luz": 120000,
+	"luz": 12000,
 	"internet": 60000,
-	"comida": 400000,
+	"comida": 40000,
 	}
 
 var education: Array[String] = []
@@ -133,6 +133,8 @@ func actualizar_informacion_diaria():
 	actualizar_ahorro()
 	calcular_estado()
 	actualizar_prestamo()
+	if salud == 0:
+		lanzar_evento(5678765)
 
 func actualizar_informacion_mensual():
 	for gasto in gastos_mensuales.values():

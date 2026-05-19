@@ -31,6 +31,7 @@
 [ext_resource type="Script" uid="uid://c8m2j017q3ktc" path="res://Scripts/line_edit.gd" id="25_x1nb3"]
 [ext_resource type="Texture2D" uid="uid://bv3whds0b73fn" path="res://Sprites/interfaz/estado_5.png" id="26_dxuy8"]
 [ext_resource type="Texture2D" uid="uid://cnr5nfb0r4kkg" path="res://Sprites/fondos/Tdomiciliario.png" id="28_1qcgs"]
+[ext_resource type="Texture2D" uid="uid://w0hvotf7mhfj" path="res://Sprites/fondos/paseador.png" id="30_1qcgs"]
 [ext_resource type="Texture2D" uid="uid://xekm6aewcf4n" path="res://Sprites/fondos/caminando.png" id="31_1qcgs"]
 [ext_resource type="Texture2D" uid="uid://dvi25xkki3v88" path="res://Sprites/fondos/default.png" id="32_lau65"]
 [ext_resource type="Texture2D" uid="uid://dpwahtmmu3fvn" path="res://Sprites/fondos/habitacionNocturna.png" id="33_1qcgs"]
@@ -70,6 +71,26 @@ region = Rect2(0, 42, 80, 42)
 [sub_resource type="AtlasTexture" id="AtlasTexture_44adm"]
 atlas = ExtResource("24_wbk2n")
 region = Rect2(0, 84, 80, 42)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_48opm"]
+atlas = ExtResource("30_1qcgs")
+region = Rect2(0, 0, 80, 42)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2cge2"]
+atlas = ExtResource("30_1qcgs")
+region = Rect2(0, 42, 80, 42)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yn7n7"]
+atlas = ExtResource("30_1qcgs")
+region = Rect2(0, 84, 80, 42)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7qofv"]
+atlas = ExtResource("30_1qcgs")
+region = Rect2(0, 126, 80, 42)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hyy6y"]
+atlas = ExtResource("30_1qcgs")
+region = Rect2(0, 168, 80, 42)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_4fklj"]
 atlas = ExtResource("31_1qcgs")
@@ -154,6 +175,26 @@ animations = [{
 }],
 "loop": true,
 "name": &"Tmesero",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_48opm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2cge2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yn7n7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7qofv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hyy6y")
+}],
+"loop": true,
+"name": &"Tpaseador",
 "speed": 5.0
 }, {
 "frames": [{
@@ -555,7 +596,7 @@ mouse_filter = 1
 position = Vector2(160, 84)
 scale = Vector2(4, 3.9999998)
 sprite_frames = SubResource("SpriteFrames_fhsir")
-animation = &"estudiar"
+animation = &"Tpaseador"
 
 [node name="Eventos" type="Control" parent="Contenido" unique_id=587460445]
 anchors_preset = 0

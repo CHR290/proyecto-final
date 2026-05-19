@@ -4,8 +4,8 @@
 
 [resource]
 script = ExtResource("1_kaoph")
-nombre = "100 años acompañado"
-costo = 100000
+nombre = "Libro"
+costo = 70000
 cortisol = -20
 felicidad = 20
 salud = 50
