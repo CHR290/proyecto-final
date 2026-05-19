@@ -79,7 +79,7 @@ func actualizar_contador():
 				$Contenido/Fondo.play("casa_n")
 			else:
 				$Contenido/Fondo.play("casa")
-		elif lugar == "colegio":
+		elif accion.begins_with("C"):
 			$Contenido/Fondo.play("estudiar")
 		else:
 			if lista_animaciones.has_animation(Global.accion_actual):
