@@ -454,3 +454,16 @@ func actualizar_prestamo():
 		tiempo_prestamo -= 1
 		if tiempo_prestamo < 0:
 			score_crediticio -= 50
+
+func calcular_tiempo_libre():
+	var tiempo_ocupado = 0
+	for trabajo in trabajos_activos:
+		var horas_trabajo = trabajo.horario[1] - trabajo.horario[0]
+		tiempo_ocupado += horas_trabajo * (trabajo.dias_semana[1] - trabajo.dias_semana[0] + 1)
+	for curso in cursos_activos:
+		var horas_curso = curso.horario[1] - curso.horario[0]
+		tiempo_ocupado += horas_curso * (curso.dias_semana[1] - curso.dias_semana[0] + 1)
+	multiplicador_cortisol += tiempo_ocupado * 0.001
+
+
+	
