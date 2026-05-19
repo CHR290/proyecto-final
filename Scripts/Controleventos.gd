@@ -238,6 +238,9 @@ func _on_opcion_seleccionada(indice: int):
 				Global.change_money_bank(-pago)
 				Global.gamestates["prestamo activo"] = false
 				Global.score_crediticio += 50
+			"set salud":
+				Global.salud = 0
+				Global.lanzar_evento(5678765)
 	Global.hay_evento_activo = false
 	queue_free()
 	Global.event_finished.emit()
