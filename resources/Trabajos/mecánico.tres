@@ -1,9 +1,11 @@
 [gd_resource type="Resource" script_class="ResourceTrabajo" format=3 uid="uid://k47l8rpb42re"]
 
 [ext_resource type="Script" uid="uid://do3f68gq3fo87" path="res://Scripts/ResourceTrabajo.gd" id="1_2i6ne"]
+[ext_resource type="Texture2D" uid="uid://c6tvo32ewcys6" path="res://Sprites/menu_trabajo/icono_mecánica.png" id="1_4dd67"]
 
 [resource]
 script = ExtResource("1_2i6ne")
+icono = ExtResource("1_4dd67")
 nombre = "Mecánico"
 horario = Array[int]([8, 17])
 dias_semana = Array[int]([1, 5])

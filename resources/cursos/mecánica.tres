@@ -4,4 +4,7 @@
 
 [resource]
 script = ExtResource("1_i34m1")
+nombre = "mantenimiento automotriz"
+duracion_meses = 12
+horario = Array[int]([7, 13])
 metadata/_custom_type_script = "uid://7do166ojig01"
